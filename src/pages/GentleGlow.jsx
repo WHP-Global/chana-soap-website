@@ -1,9 +1,25 @@
+import { useGoogleSheets } from "../services/googleSheetService";
+
 export default function GentleGlow() {
+  const { getLocalizedData } = useGoogleSheets();
+
+  // ดึงข้อมูลจากชีต "gentle glow"
+  const gentleGlowData = getLocalizedData("gentle glow");
   return (
     <div>
       <div className="w-full h-[687px] max-h-[687px] bg-gray-400 flex justify-center items-center">
         image height = 687px
       </div>
+      <hr />
+      <div>
+        <div>
+          <h1>ข้อมูล gentle glow</h1>
+          {gentleGlowData.map((data, index) => (
+            <p key={index}>{data}</p>
+          ))}
+        </div>
+      </div>
+      <hr />
       GentleGlow
     </div>
   );

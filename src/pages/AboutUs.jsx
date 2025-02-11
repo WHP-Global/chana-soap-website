@@ -1,17 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useGoogleSheets } from "../services/googleSheetService";
 
 export default function AboutUs() {
   const location = useLocation();
-  const [imageUrls, setImageUrls] = useState(null);
   const { getLocalizedData } = useGoogleSheets();
 
   // ดึงข้อมูลจากชีต "about us"
   const aboutUsData = getLocalizedData("about us");
-  useEffect(() => {
-    setImageUrls(aboutUsData[35]);
-  }, []);
 
   useEffect(() => {
     const hash = location.hash;

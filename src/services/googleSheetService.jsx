@@ -11,7 +11,18 @@ export const GoogleSheetsProvider = ({ children }) => {
 
   // ฟังก์ชันดึงข้อมูลจาก Google Sheets
   const fetchData = async () => {
-    const ranges = ["about us", "inspiration", "contact", "products"];
+    const ranges = [
+      "about us",
+      "inspiration",
+      "contact",
+      "products",
+      "gentle glow",
+      "active refresh",
+      "projects",
+      "empowering project",
+      "aloe vera project",
+      "eq life project",
+    ];
     try {
       const data = await Promise.all(
         ranges.map(async (range) => {
