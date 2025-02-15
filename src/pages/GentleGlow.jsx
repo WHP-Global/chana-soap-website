@@ -9,12 +9,10 @@ export default function GentleGlow() {
   const { getLocalizedData } = useGoogleSheets();
   const gentleGlowData = getLocalizedData("gentle glow");
 
-  // Log the fetched data for debugging
   useEffect(() => {
     console.log("Fetched gentleGlowData:", gentleGlowData);
   }, [gentleGlowData]);
 
-  // Image state (default to first product image)
   const [selectedImage, setSelectedImage] = useState(chana);
 
   return (
@@ -35,7 +33,7 @@ export default function GentleGlow() {
         </h2>
       </div>
 
-      {/* Main Product Image (600x600) */}
+      {/* Main Product Image*/}
       <div className="max-w-2xl mx-auto p-6 flex justify-center">
         <img
           src={selectedImage}
@@ -44,7 +42,7 @@ export default function GentleGlow() {
         />
       </div>
 
-      {/* Small Image Grid (360x360 each) */}
+      {/* Small Image Grid */}
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 px-6 py-8">
         {[soapmock, chana, soapmock].map((image, index) => (
           <button
@@ -234,7 +232,7 @@ export default function GentleGlow() {
           {gentleGlowData[39] || "Who Can Use It?"}
         </h3>
 
-        {/* Centered List of Use Cases */}
+        {/* List of Use  */}
         <ul className="space-y-6 flex flex-col items-end">
           {[
             gentleGlowData[40],
