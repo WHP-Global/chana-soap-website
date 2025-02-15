@@ -52,7 +52,7 @@ export default function ActiveRefresh() {
             <img
               src={image}
               alt={`Product ${index + 1}`}
-              className="w-[360px] h-[360px] object-cover rounded-lg shadow-md hover:opacity-75 transition duration-300"
+              className="w-[400px] h-[400px] object-cover rounded-lg shadow-md hover:opacity-75 transition duration-300"
             />
           </button>
         ))}
