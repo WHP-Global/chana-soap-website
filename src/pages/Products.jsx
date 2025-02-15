@@ -179,7 +179,7 @@ export default function Products() {
         <p className="italic text-lg text-gray-700">
           Elevate your skincare routine with soaps that blend the finest natural
           ingredients for a luxurious, eco-conscious experience. Choose the care
-          you deserve.
+          you deserve
         </p>
 
         <div className="border-t border-gray-500 w-1/3 mx-auto mt-20 mb-15"></div>
