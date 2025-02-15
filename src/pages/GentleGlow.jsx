@@ -250,6 +250,7 @@ export default function GentleGlow() {
           ))}
         </ul>
       </div>
+      <div className="border-t border-gray-500 w-1/3 mx-auto mt-15 mb-20"></div>
     </div>
   );
 }
