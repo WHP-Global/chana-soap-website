@@ -53,7 +53,7 @@ export default function GentleGlow() {
             <img
               src={image}
               alt={`Product ${index + 1}`}
-              className="w-[500px] h-[340px] object-cover rounded-lg shadow-md transition duration-300"
+              className="w-[500px] h-[340px] object-cover rounded-lg shadow-md hover:opacity-75 transition duration-300"
             />
           </button>
         ))}
