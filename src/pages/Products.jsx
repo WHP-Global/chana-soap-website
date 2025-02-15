@@ -98,7 +98,7 @@ export default function Products() {
               : "Loading..."}
           </ul>
 
-          <button className="mt-4 bg-primary text-white px-6 py-2 rounded-lg shadow-md hover:bg-gray-700 ml-auto block">
+          <button className="mt-4 bg-[#293B2B] text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 ml-auto flex">
             LEARN MORE
           </button>
         </div>
@@ -152,7 +152,7 @@ export default function Products() {
                   .map((item, index) => <li key={index}>{item}</li>)
               : "Loading..."}
           </ul>
-          <button className="mt-4 bg-primary text-white px-6 py-2 rounded-lg shadow-md hover:bg-gray-700 ml-auto block">
+          <button className="mt-4 bg-[#293B2B] text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 ml-auto flex">
             LEARN MORE
           </button>
         </div>
