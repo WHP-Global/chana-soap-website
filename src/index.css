@@ -134,7 +134,8 @@
 /* ถ้าหน้าจอเล็กกว่า 640px (sm) ให้เป็น 14px */
 @media (max-width: 639px) {
   .font-body,
-  .font-body-bold {
+  .font-body-bold,
+  .font-sub-menu  {
     font-size: 14px;
   }
   .font-header {

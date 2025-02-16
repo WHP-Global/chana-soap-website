@@ -51,7 +51,7 @@ export default function Navbar({
         {menus.map((menu, index) => (
           <>
             <li key={index} className="relative hidden sm:block">
-              <div className="text-start w-[120px]">
+              <div className="text-start min-w-[120px] max-w-[120px] w-auto">
                 <RouterLink
                   to={menu.to}
                   className="py-1 hover:opacity-80 font-color-secondary font-menu"
@@ -65,7 +65,7 @@ export default function Navbar({
               </div>
             </li>
 
-            {openMenu === index && (
+            {(openMenu === index && openMenu !== -1 ) && (
               <div className="bg-primary w-full z-20 absolute mt-[200px] h-[150px] shadow-lg hidden sm:block">
                 <ul
                   className={`w-full font-color-secondary relative z-30 font-sub-menu`}
@@ -81,14 +81,14 @@ export default function Navbar({
                           {sub.name}
                         </RouterLink>
                       ) : (
-                        <ScrollLink
-                          to={sub.to}
-                          smooth={String(true)}
-                          duration={500}
-                          className=""
-                        >
-                          {sub.name}
-                        </ScrollLink>
+                        <RouterLink
+                      to={`${menu.to}#${sub.to}`}
+                      smooth={String(true)}
+                      duration={500}
+                      className=""
+                    >
+                      {sub.name}
+                    </RouterLink>
                       )}
                     </li>
                   ))}
@@ -100,14 +100,14 @@ export default function Navbar({
       </ul>
 
       {/* Logo and Name product */}
-      <div className="flex-1 font-color-secondary font-header flex items-center justify-center md:justify-start">
+      <div className="flex-1 font-color-secondary font-header flex items-center justify-center xl:justify-start">
         CHANA
       </div>
 
       {/* Show Language */}
       <div className="relative">
         <div
-          className="flex justify-center items-center pr-2 lg:pr-[40px] sm:w-[80px] h-full hover:opacity-50 cursor-pointer font-color-secondary font-menu"
+          className="flex justify-center items-center pr-2 lg:pr-[40px]  max-w-[80px] w-auto h-full hover:opacity-50 cursor-pointer font-color-secondary font-menu"
           role="button"
           onClick={toggleDropdown}
         >

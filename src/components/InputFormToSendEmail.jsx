@@ -84,7 +84,7 @@ export default function InputFormToSendEmail() {
 
       <button
         type="submit"
-        className="bg-primary font-color-secondary font-button py-1 my-2 w-[180px] rounded-md self-end cursor-pointer hover:opacity-90"
+         className="bg-[#4b664e] self-end font-color-secondary font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
       >
         {contactUsData[12]}
       </button>

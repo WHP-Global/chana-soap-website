@@ -8,18 +8,18 @@ export default function Footer({
 }) {
   return (
     <div className="min-h-[350px] bg-primary py-[40px] font-color-secondary flex flex-col gap-[40px] items-center">
-      <div className="grid grid-cols-4 md:grid-cols-5 w-full px-[40px] md:px-0 md:max-w-[85%] md:w-auto sm:gap-2">
+      <div className="grid grid-cols-4 lg:grid-cols-5 w-full px-[40px] gap-2 lg:px-0 lg:max-w-[85%] lg:w-auto ">
         {/* ข้อมูลติดต่อ (แสดงข้างบนเมื่อจอเล็ก) */}
-        <div className="order-first md:order-last col-span-5 md:col-span-1">
+        <div className="order-first lg:order-last col-span-5 lg:col-span-1">
           <div className="font-menu mb-2">We’re Here to Connect</div>
           <div className="font-sub-menu">
             <a href="mailto:info@chanasoapofficial.com">
-              <div>Email: info@chanasoapofficial.com</div>
+              <div className="text-wrap">Email: info@chanasoapofficial.com</div>
             </a>
             <div>Phone: +66 (123) 456-7890</div>
           </div>
           <hr className="my-2" />
-          <div className="flex gap-3 mb-4 md:gap-0 md:justify-between md:px-1">
+          <div className="flex gap-3 mb-4 lg:gap-2 lg:justify-between lg:px-1">
             {/* facebook icon */}
             <a
               href="https://www.facebook.com/share/15qZMQRGLa/"
@@ -118,7 +118,7 @@ export default function Footer({
         {menus.map((menu, index) => (
           <li
             key={index}
-            className="block col-span-3 sm:col-span-2 md:col-span-1 max-w-[240px]"
+            className="block col-span-3 sm:col-span-2 lg:col-span-1 max-w-[240px]"
           >
             <RouterLink
               to={menu.to}

@@ -8,7 +8,7 @@ import bannerImg3 from "/banner1.png";
 import bannerImg4 from "/banner9.png";
 import bannerImg5 from "/banner12.png";
 import productImg from "/image3.png";
-import Banner from "../components/banner";
+import Banner from "../components/Banner";
 export default function AboutUs() {
   const location = useLocation();
   const { getLocalizedData } = useGoogleSheets();
@@ -49,7 +49,7 @@ export default function AboutUs() {
         </div>
       </div>
       {/* content */}
-      <div className="font-color-primary">
+      <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-header text-center">{aboutUsData[5]}</div>
         <div className="pb-5 mx-2 font-title text-center">{aboutUsData[6]}</div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8">
@@ -57,7 +57,7 @@ export default function AboutUs() {
           <div>{aboutUsData[8]}</div>
           <div>{aboutUsData[9]}</div>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] md:mx-[12%] h-auto py-[20px] sm:py-[30px]">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
               <img
                 src={inspirationImg}
@@ -77,7 +77,7 @@ export default function AboutUs() {
           <div>{aboutUsData[10]}</div>
           <div>{aboutUsData[11]}</div>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] md:mx-[12%] h-auto py-[20px] sm:py-[30px]">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px]  h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
                 src={inspirationImg}
@@ -104,7 +104,7 @@ export default function AboutUs() {
       {/* banner */}
       <Banner img={bannerImg} />
       {/* content */}
-      <div className="font-color-primary">
+      <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-title text-center">{aboutUsData[16]}</div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16">
           <div className="font-subtitle">
@@ -144,17 +144,17 @@ export default function AboutUs() {
 
           <div className="text-center">{aboutUsData[27]}</div>
         </div>
-        {/* banner */}
-        <Banner img={bannerImg2} />
-        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16">
-          <div className="text-center font-caption my-[20px] sm:my-[30px] indent-0">
-            {aboutUsData[28]}
-          </div>
+      </div>
+      {/* banner */}
+      <Banner img={bannerImg2} />
+      <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 " >
+        <div className="text-center font-caption my-[20px] sm:my-[30px] indent-0 max-w-6xl mx-auto">
+          {aboutUsData[28]}
         </div>
       </div>
 
       {/*3. commitment */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] md:mx-[12%] h-auto py-[20px] sm:py-[30px]">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-6 h-auto py-[20px] sm:py-[30px] mx-5 sm:mx-8 md:mx-10 lg:mx-16">
         <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
           <img
             src={productImg}
@@ -172,13 +172,13 @@ export default function AboutUs() {
         </div>
       </div>
       {/* content */}
-      <div className="font-color-primary">
+      <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-title text-center">{aboutUsData[29]}</div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8">
           <div>{aboutUsData[30]}</div>
           <div>{aboutUsData[31]}</div>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] md:mx-[12%] h-auto py-[20px] sm:py-[30px]">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px]  h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
                 src={bannerImg3}
@@ -192,7 +192,7 @@ export default function AboutUs() {
             {aboutUsData[32]}
           </div>
 
-          <div className="flex flex-col justify-center items-center gap-[40px] md:mx-[12%] h-auto py-[20px] sm:py-[30px]">
+          <div className="flex flex-col justify-center items-center gap-[40px]  h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
                 src={bannerImg3}
@@ -213,11 +213,11 @@ export default function AboutUs() {
             {aboutUsData[33]}
           </div>
         </div>
-        {/* banner */}
-        <Banner img={bannerImg4} />
-        <div className="flex justify-center py-15">
-          <hr className="w-[250px] h-[1px] bg-primary border-none" />
-        </div>
+      </div>
+      {/* banner */}
+      <Banner img={bannerImg4} />
+      <div className="flex justify-center py-15">
+        <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>
     </div>
   );

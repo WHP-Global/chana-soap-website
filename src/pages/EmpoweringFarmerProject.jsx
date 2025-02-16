@@ -4,6 +4,7 @@ import bannerImg from "/image1.png";
 import Img from "/image4.png";
 import bannerImg2 from "/banner13.png";
 import bannerImg3 from "/banner4.png";
+import bannerImg4 from "/banner3.png";
 
 export default function EmpoweringFarmerProject() {
   const { getLocalizedData } = useGoogleSheets();
@@ -14,10 +15,14 @@ export default function EmpoweringFarmerProject() {
     <div>
       {/* banner */}
       <div className="w-full h-[487px] sm:h-[587] md:h-[687px] bg-gray-400 flex justify-center items-center">
-        img
+      <img
+          src={bannerImg4}
+          alt="bannerImg4"
+          className="h-full w-full object-cover"
+        />
       </div>
       {/* Introduction to African Nightcrawler Vermicomposting */}
-      <div className="font-color-primary">
+      <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16">
           {empoweringProjectData[1]}
         </div>
@@ -26,16 +31,16 @@ export default function EmpoweringFarmerProject() {
           <div className="font-subtitle text-center indent-0  sm:-mb-4">
             {empoweringProjectData[3]}
           </div>
-          <div>{empoweringProjectData[4]}</div>
+          <div className="md:text-nowrap">{empoweringProjectData[4]}</div>
           <div>{empoweringProjectData[5]}</div>
           <div>{empoweringProjectData[6]}</div>
         </div>
 
-        <Banner img={bannerImg} />
       </div>
+        <Banner img={bannerImg} />
 
       {/* Steps to Making Vermicompost */}
-      <div className="font-color-primary">
+      <div className="font-color-primary max-w-6xl mx-auto">
         <div className="text-center font-subtitle py-3 ">
           {empoweringProjectData[7]}
         </div>
@@ -68,10 +73,10 @@ export default function EmpoweringFarmerProject() {
           </div>
         </div>
 
-        <Banner img={bannerImg2} />
       </div>
+        <Banner img={bannerImg2} />
 
-      <div className="font-color-primary">
+      <div className="font-color-primary max-w-6xl mx-auto">
         <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 ">
           {/* Results in Mangosteen Orchards and Aloe Vera Farms */}
           <div className="font-subtitle">
@@ -83,7 +88,7 @@ export default function EmpoweringFarmerProject() {
           <div className="text-center indent-0">
             {empoweringProjectData[19]}
           </div>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] md:mx-[12%] h-auto py-[20px] sm:py-[30px]">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
                 src={Img}
@@ -126,11 +131,11 @@ export default function EmpoweringFarmerProject() {
             {empoweringProjectData[26]}
           </div>
         </div>
+      </div>
         <Banner img={bannerImg3} />
         <div className="flex justify-center py-15">
           <hr className="w-[250px] h-[1px] bg-primary border-none" />
         </div>
-      </div>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import lazadaImg from "/lazada.png";
 import lineImg from "/line.png";
 import InputFormToSendEmail from "../components/InputFormToSendEmail";
 import FAQ from "../components/FAQ";
+import banner1 from "/banner4.png";
 
 export default function ContactUs() {
   const location = useLocation();
@@ -30,7 +31,11 @@ export default function ContactUs() {
       {/*1. where to buy */}
       {/* banner */}
       <div className="w-full h-[487px] sm:h-[587] md:h-[687px] bg-gray-400 flex justify-center items-center">
-        img
+      <img
+          src={banner1}
+          alt="Banner"
+          className="w-full h-full object-cover"
+        />
         <div id="where-to-buy"></div>
       </div>
       {/* content */}
@@ -49,7 +54,7 @@ export default function ContactUs() {
                   className="h-full w-auto object-cover rounded-2xl"
                 />
               </div>
-              <button className="bg-primary font-color-secondary font-button py-1 w-[180px] rounded-md cursor-pointer  hover:opacity-90">
+              <button className="bg-[#4b664e] font-color-secondary font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
                 Shopee
               </button>
             </div>
@@ -61,7 +66,7 @@ export default function ContactUs() {
                   className="h-full w-auto object-cover rounded-2xl"
                 />
               </div>
-              <button className="bg-primary font-color-secondary font-button py-1 w-[180px] rounded-md cursor-pointer  hover:opacity-90">
+              <button className="bg-[#4b664e] font-color-secondary font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
                 Lazada
               </button>
             </div>
@@ -73,7 +78,7 @@ export default function ContactUs() {
                   className="h-full w-auto object-cover rounded-2xl"
                 />
               </div>
-              <button className="bg-primary font-color-secondary font-button py-1 w-[180px] rounded-md cursor-pointer hover:opacity-90">
+              <button className="bg-[#4b664e] font-color-secondary font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
                 Line Official
               </button>
             </div>
