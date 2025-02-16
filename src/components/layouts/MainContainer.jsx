@@ -87,7 +87,7 @@ export default function MainContainer() {
   return (
     <div>
       {/* Topbar */}
-      <div className="sticky top-0">
+      <div className="sticky top-0 z-10">
         <Topbar
           onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
           menus={menus}
@@ -102,7 +102,7 @@ export default function MainContainer() {
           <div className="popup-overlay">
             <div
               ref={sidebarRef}
-              className="fixed left-0 max-w-[485px] z-50 m-3 sm:m-6 h-[93%] fadeInLeft"
+              className="fixed left-0 max-w-[485px] m-3 sm:m-6 h-[93%] fadeInLeft"
             >
               <div className="h-full">
                 <Sidebar
@@ -118,7 +118,7 @@ export default function MainContainer() {
         )}
 
         {/* Main Content */}
-        <div className="flex-1">
+        <div className="flex-1 bg-fourth">
           <Outlet />
         </div>
       </div>

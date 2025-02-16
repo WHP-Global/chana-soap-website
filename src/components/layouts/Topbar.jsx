@@ -107,7 +107,7 @@ export default function Navbar({
       {/* Show Language */}
       <div className="relative">
         <div
-          className="flex justify-start items-center pr-[20px] sm:pr-[40px] sm:w-[80px] h-full hover:opacity-50 cursor-pointer font-color-secondary font-menu"
+          className="flex justify-center items-center pr-2 lg:pr-[40px] sm:w-[80px] h-full hover:opacity-50 cursor-pointer font-color-secondary font-menu"
           role="button"
           onClick={toggleDropdown}
         >

@@ -13,6 +13,10 @@
   background-color: #fff8f0;
 }
 
+.bg-input {
+  background-color: #dde3db;
+}
+
 .font-color-primary {
   color: #293b2b;
 }
@@ -31,7 +35,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .font-header {
@@ -41,28 +45,35 @@
 
 .font-title {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .font-button {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .font-subtitle {
   font-size: 24px;
   font-weight: 700;
+  font-style: italic;
 }
 
 .font-caption {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 400;
   font-style: italic;
 }
 
 .font-body {
   font-size: 20px;
   font-weight: 400;
+  font-style: normal !important;
+}
+
+.font-body-bold {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .font-menu {
@@ -118,4 +129,25 @@
   opacity: 0;
   -webkit-animation: fadeInLeft 0.8s forwards;
   animation: fadeInLeft 0.8s forwards;
+}
+
+/* ถ้าหน้าจอเล็กกว่า 640px (sm) ให้เป็น 14px */
+@media (max-width: 639px) {
+  .font-body,
+  .font-body-bold {
+    font-size: 14px;
+  }
+  .font-header {
+    font-size: 36px;
+  }
+  .font-title {
+    font-size: 24px;
+  }
+  .font-subtitle,
+  .font-caption {
+    font-size: 18px;
+  }
+  .font-button {
+    font-size: 20px;
+  }
 }

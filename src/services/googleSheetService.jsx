@@ -22,6 +22,7 @@ export const GoogleSheetsProvider = ({ children }) => {
       "empowering project",
       "aloe vera project",
       "eq life project",
+      "contact us",
     ];
     try {
       const data = await Promise.all(
