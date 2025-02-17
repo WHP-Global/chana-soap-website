@@ -117,7 +117,7 @@ export default function Projects() {
               className="block bg-[#DDE4D9] rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105"
             >
               <div className="flex flex-col sm:flex-row items-center sm:items-start p-6 space-y-4 sm:space-y-0 sm:space-x-6">
-                {/* Project Image - Moves to Top on Small Screens */}
+                {/* Project Image*/}
                 <img
                   src={project.image}
                   alt={project.title}
