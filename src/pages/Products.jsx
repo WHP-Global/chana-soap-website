@@ -330,10 +330,10 @@ export default function Products() {
             </ul>
           </div>
 
-          {/* Right Side - Fully Expanded Image (Hidden on small screens) */}
+          {/* Right side image */}
           <div className="hidden lg:block w-full lg:w-[55%]">
             <img
-              src={image5} // Replace with your image import
+              src={image5}
               alt="Chana Soap Product"
               className="w-full h-[550px] object-cover shadow-xl"
             />
