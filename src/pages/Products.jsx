@@ -11,11 +11,12 @@ import oil from "/oil.png";
 import earth from "/earth.png";
 import skin from "/skin.png";
 import leaf from "/leaf.png";
+import image5 from "/image5.png";
 import Banner from "../components/Banner";
 
 export default function Products() {
   const location = useLocation();
-  const { getLocalizedData, language} = useGoogleSheets();
+  const { getLocalizedData, language } = useGoogleSheets();
   const navigate = useNavigate();
 
   const productsData = getLocalizedData("products");
@@ -59,7 +60,7 @@ export default function Products() {
           <div className="border-b bg-fourth  w-1/3 mx-auto mt-10"></div>
         </div>
       </div>
-      <div id="gentle-glow"></div>       
+      <div id="gentle-glow"></div>
       {/* Two Types of Soaps Section */}
       <div className="max-w-5xl mx-auto text-center pt-12 px-6">
         <div className="font-title">
@@ -74,10 +75,10 @@ export default function Products() {
 
       {/* Gentle Glow  */}
       <div className="max-w-5xl mx-auto text-center py-12 px-6 mt-10">
-          <div className="font-subtitle ">{productsData[2]}</div>
-          <div className="mt-3 text-balance sm:text-wrap font-body">
-            {productsData[3]}
-          </div>
+        <div className="font-subtitle ">{productsData[2]}</div>
+        <div className="mt-3 text-balance sm:text-wrap font-body">
+          {productsData[3]}
+        </div>
       </div>
       {/* Ingredients */}
       <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-8 items-center py-6">
@@ -98,7 +99,10 @@ export default function Products() {
               : "Loading..."}
           </ul>
 
-          <button onClick={()=> (navigate("/gentle-glow") ,window.scroll(0, 0))} className="mt-4 font-body bg-primary font-color-secondary px-6 py-2 rounded-lg shadow-md hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 ml-auto flex">
+          <button
+            onClick={() => (navigate("/gentle-glow"), window.scroll(0, 0))}
+            className="mt-4 font-body bg-primary font-color-secondary px-6 py-2 rounded-lg shadow-md hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 ml-auto flex"
+          >
             {language === "EN" ? "LEARN MORE" : "ดูเพิ่มเติม"}
           </button>
         </div>
@@ -121,9 +125,9 @@ export default function Products() {
           className="w-1/3 max-w-xs rounded-lg"
         />
       </div>
-      <div id="active-refresh"></div>  
+      <div id="active-refresh"></div>
       <div className="border-b bg-fourth  w-1/3 mx-auto mt-10"></div>
-   
+
       {/* Active Refresh */}
       <div className="max-w-5xl mx-auto text-center py-12 px-6">
         <div className="font-subtitle mt-10">{productsData[5]}</div>
@@ -140,7 +144,7 @@ export default function Products() {
 
         {/* Ingredients List */}
         <div className=" bg-secondary p-6  rounded-lg shadow-md w-full sm:max-w-[65%] lg:max-w-[550px] text-balance sm:text-wrap">
-        <div className="font-subtitle text-center  mb-6">
+          <div className="font-subtitle text-center  mb-6">
             {language === "EN" ? "Natural Ingredients" : "ส่วนผสมของสบู่"}
           </div>
           <ul className="list-disc list-inside  mt-3 font-sub-menu">
@@ -150,12 +154,15 @@ export default function Products() {
                   .map((item, index) => <li key={index}>{item}</li>)
               : "Loading..."}
           </ul>
-          <button onClick={()=> (navigate("/active-refresh"),window.scroll(0, 0))} className="mt-4 font-body bg-primary font-color-secondary px-6 py-2 rounded-lg shadow-md hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 ml-auto flex">
+          <button
+            onClick={() => (navigate("/active-refresh"), window.scroll(0, 0))}
+            className="mt-4 font-body bg-primary font-color-secondary px-6 py-2 rounded-lg shadow-md hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 ml-auto flex"
+          >
             {language === "EN" ? "LEARN MORE" : "ดูเพิ่มเติม"}
           </button>
         </div>
       </div>
-       {/* Active Refresh image*/}
+      {/* Active Refresh image*/}
       <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center py-12">
         <img
           src={soapmock}
@@ -176,33 +183,35 @@ export default function Products() {
 
       <div className="max-w-5xl mx-auto text-center py-12 px-6">
         <div className="font-caption font-color-primary text-balance lg:text-wrap">
-         {language === "EN"  ? "Elevate your skincare routine with soaps that blend the finest natural ingredients for a luxurious, eco-conscious experience. Choose the care you deserve" : "ดูแลผิวของคุณให้ดียิ่งขึ้นด้วยสบู่ที่ผสานส่วนผสมจากธรรมชาติอย่างลงตัว มอบสัมผัสพอเศษและเป็นมิตรกับสิ่งแวดล้อม เพราะผิวของคุณสมควรได้รับการดูแลที่ดีที่สุด"
-        }
+          {language === "EN"
+            ? "Elevate your skincare routine with soaps that blend the finest natural ingredients for a luxurious, eco-conscious experience. Choose the care you deserve"
+            : "ดูแลผิวของคุณให้ดียิ่งขึ้นด้วยสบู่ที่ผสานส่วนผสมจากธรรมชาติอย่างลงตัว มอบสัมผัสพอเศษและเป็นมิตรกับสิ่งแวดล้อม เพราะผิวของคุณสมควรได้รับการดูแลที่ดีที่สุด"}
         </div>
 
         <div className="border-b bg-fourth  w-1/3 mx-auto mt-10"></div>
       </div>
-      <div id="why-chana"></div>  
+      <div id="why-chana"></div>
       <Banner img={banner5} />
-    
+
       {/* Why Chana */}
       <div className="max-w-4xl mx-auto text-center py-12 px-6 mt-15">
-        <div className="font-title">
-          {productsData[8] || "Loading..."}
-        </div>
+        <div className="font-title">{productsData[8] || "Loading..."}</div>
 
         {/* Table */}
         <div className="bg-[#EFF0E8] p-6 rounded-xl shadow-md mt-6 flex  justify-center">
           <table className="w-[900px] border-collapse overflow-hidden rounded-xl">
             <thead>
               <tr className="font-body-bold border-b border-gray-400">
-                <th className="py-4 px-6 text-center w-1/2">{language === "EN" ? "Property" : "คุณสมบัติ"}</th>
+                <th className="py-4 px-6 text-center w-1/2">
+                  {language === "EN" ? "Property" : "คุณสมบัติ"}
+                </th>
                 <th className="border-l border-gray-500"></th>
-                <th className="py-4 px-6 text-center w-1/2">{language === "EN" ? "Chana Soap" : "สบู่ชนะ"}</th>
+                <th className="py-4 px-6 text-center w-1/2">
+                  {language === "EN" ? "Chana Soap" : "สบู่ชนะ"}
+                </th>
               </tr>
             </thead>
             <tbody>
-              {/* Property of why Chana */}
               {[
                 [productsData[9], true],
                 [productsData[10], true],
@@ -243,7 +252,18 @@ export default function Products() {
                         : ""
                     }`}
                   >
-                    {check ? "✔️" : ""}
+                    {check ? (
+                      <svg
+                        fill="#6C7C6E"
+                        viewBox="-3.5 0 19 19"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-6 h-6 mx-auto"
+                      >
+                        <path d="M4.63 15.638a1.028 1.028 0 0 1-.79-.37L.36 11.09a1.03 1.03 0 1 1 1.58-1.316l2.535 3.043L9.958 3.32a1.029 1.029 0 0 1 1.783 1.03L5.52 15.122a1.03 1.03 0 0 1-.803.511.89.89 0 0 1-.088.004z"></path>
+                      </svg>
+                    ) : (
+                      ""
+                    )}
                   </td>
                 </tr>
               ))}
@@ -252,25 +272,14 @@ export default function Products() {
         </div>
       </div>
 
-      <div className="w-full mt-15 mb-10">
-        <div className="w-full h-[400px]">
-          <img
-            src={banner11}
-            alt="Everdrop Natural Care"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-
       {/* Key Takeaway for Chana Soap */}
-      <div className="w-full flex justify-center items-center py-12 px-6 ">
-        <div className="bg-secondary p-4 sm:p-10 rounded-lg shadow-lg max-w-4xl w-full">
-          <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-            <div className="font-title  mb-6 text-center">
-            {productsData[20]}
-            </div>
-
-            {/* Takeaways List */}
+      <div className="w-full bg-[#fdf8f2] py-12 px-6 lg:px-32">
+        <div className="max-w-[1800px] mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-16">
+          {/* Left Side - Key Takeaways */}
+          <div className="flex-1">
+            <h2 className="text-3xl font-extrabold font-body text-[#2F3E2E] mb-8 text-center lg:text-left">
+              Key Takeaways for Chana Soap
+            </h2>
             <ul className="space-y-6">
               {[
                 {
@@ -279,54 +288,65 @@ export default function Products() {
                     <img
                       src={notoxic}
                       alt="Icon"
-                      className="w-[80px] h-[80px]"
+                      className="w-[70px] h-[70px]"
                     />
                   ),
                 },
                 {
                   text: productsData[22],
                   icon: (
-                    <img src={oil} alt="Icon" className="w-[80px] h-[80px]" />
+                    <img src={oil} alt="Icon" className="w-[70px] h-[70px]" />
                   ),
                 },
                 {
                   text: productsData[23],
                   icon: (
-                    <img src={earth} alt="Icon" className="w-[80px] h-[80px]" />
+                    <img src={earth} alt="Icon" className="w-[70px] h-[70px]" />
                   ),
                 },
                 {
                   text: productsData[24],
                   icon: (
-                    <img src={skin} alt="Icon" className="w-[80px] h-[80px]" />
+                    <img src={skin} alt="Icon" className="w-[70px] h-[70px]" />
                   ),
                 },
                 {
                   text: productsData[25],
                   icon: (
-                    <img src={leaf} alt="Icon" className="w-[80px] h-[80px]" />
+                    <img src={leaf} alt="Icon" className="w-[70px] h-[70px]" />
                   ),
                 },
               ].map((item, index) => (
-                <li key={index} className="flex items-center justify-center sm:justify-start flex-col sm:flex-row space-y-4 sm:space-x-4">
+                <li
+                  key={index}
+                  className="flex items-start justify-start space-x-6 text-lg"
+                >
                   {item.icon}
-                  <div className="font-body font-color-primary text-center sm:text-start">
+                  <div className="font-body font-color-primary text-left">
                     {item.text || "Loading..."}
                   </div>
                 </li>
               ))}
             </ul>
           </div>
+
+          {/* Right Side - Fully Expanded Image (Hidden on small screens) */}
+          <div className="hidden lg:block w-full lg:w-[55%]">
+            <img
+              src={image5} // Replace with your image import
+              alt="Chana Soap Product"
+              className="w-full h-[550px] object-cover shadow-xl"
+            />
+          </div>
         </div>
       </div>
-      <div id="testimonials"></div>  
+
+      <div id="testimonials"></div>
       <div className="border-t border-gray-500 w-1/3 mx-auto mt-20 mb-15"></div>
 
       {/* Reviews Section */}
       <div className="max-w-7xl mx-auto text-center py-12 px-6">
-        <div className="font-title  mb-10">
-        {productsData[26]}
-        </div>
+        <div className="font-title  mb-10">{productsData[26]}</div>
 
         {/* Review Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -361,9 +381,7 @@ export default function Products() {
       </div>
       {/* Before and After Section */}
       <div className="max-w-5xl mx-auto text-center py-12 px-6 mt-10">
-        <div className="font-title  mb-10">
-        {productsData[33]}
-        </div>
+        <div className="font-title  mb-10">{productsData[33]}</div>
 
         {/* Images Grid */}
         <div className="grid grid-cols-2 gap-8">
@@ -374,7 +392,9 @@ export default function Products() {
               alt="Before"
               className="w-full max-w-md rounded-lg "
             />
-            <p className="mt-4 font-title font-medium font-color-primary">{language === "EN" ? "Before" : "ก่อน"}</p>
+            <p className="mt-4 font-title font-medium font-color-primary">
+              {language === "EN" ? "Before" : "ก่อน"}
+            </p>
           </div>
 
           {/* After Image */}
@@ -384,7 +404,9 @@ export default function Products() {
               alt="After"
               className="w-full max-w-md rounded-lg "
             />
-            <p className="mt-4 font-title font-medium font-color-primary">{language === "EN" ? "After" : "หลัง"}</p>
+            <p className="mt-4 font-title font-medium font-color-primary">
+              {language === "EN" ? "After" : "หลัง"}
+            </p>
           </div>
         </div>
       </div>
