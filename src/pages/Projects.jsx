@@ -23,9 +23,7 @@ export default function Projects() {
       </div>
 
       <div className="max-w-4xl mx-auto text-center py-16 px-6 font-color-primary">
-        <h1 className="font-header">
-          {projectsData[1] || "Project"}
-        </h1>
+        <h1 className="font-header">{projectsData[1] || "Project"}</h1>
 
         <div className="my-6 border-t bg-fourth  w-1/3 mx-auto mt-15 mb-8"></div>
 
@@ -82,31 +80,31 @@ export default function Projects() {
         </div>
       </div>
       {/* Let's Explore Our Project Section */}
-      <div className="w-full bg-[#fdf8f2] py-16 px-6 lg:px-20">
+      <div className="w-full bg-[#fdf8f2] py-12 px-4 sm:px-6 lg:px-20 -mt-4">
         {/* Section Title */}
-        <h2 className="text-center font-title font-color-primary mb-10">
-        {projectsData[8] || "Loading..."}
+        <h2 className="text-center font-title font-color-primary text-2xl sm:text-3xl lg:text-4xl mb-8 sm:mb-10">
+          {projectsData[8] || "Let's Explore Our Project"}
         </h2>
 
         {/* Project List */}
         <div className="max-w-4xl mx-auto space-y-6 font-color-primary">
           {[
             {
-              title: `${projectsData[9] || "Loading..."} `,
+              title: `${projectsData[9] || "Loading..."}`,
               description:
                 "Non blandit pretium, lorem urna mollis tortor, eu congue tortor libero elementum diam. Integer volutpat ex nec lacus maximus, et sagittis odio tristique. Pellentesque fringilla ut arcu eu imperdiet.",
               image: banner4,
               link: "/empowering-farmer",
             },
             {
-              title: `${projectsData[10] || "Loading..."} `,
+              title: `${projectsData[10] || "Loading..."}`,
               description:
                 "Non blandit pretium, lorem urna mollis tortor, eu congue tortor libero elementum diam. Integer volutpat ex nec lacus maximus, et sagittis odio tristique. Pellentesque fringilla ut arcu eu imperdiet.",
               image: banner4,
               link: "/aloe-vera",
             },
             {
-              title: `${projectsData[11] || "Loading..."} `,
+              title: `${projectsData[11] || "Loading..."}`,
               description:
                 "Non blandit pretium, lorem urna mollis tortor, eu congue tortor libero elementum diam. Integer volutpat ex nec lacus maximus, et sagittis odio tristique. Pellentesque fringilla ut arcu eu imperdiet.",
               image: banner4,
@@ -118,20 +116,20 @@ export default function Projects() {
               href={project.link}
               className="block bg-[#DDE4D9] rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105"
             >
-              <div className="flex items-center p-6 space-x-6">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start p-6 space-y-4 sm:space-y-0 sm:space-x-6">
                 {/* Project Image */}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-40 h-28 object-cover rounded-lg"
+                  className="w-full sm:w-40 h-40 object-cover rounded-lg"
                 />
 
                 {/* Project Content */}
-                <div>
-                  <div className="font-body-bold">
+                <div className="text-center sm:text-left">
+                  <div className="font-body-bold text-lg sm:text-xl">
                     {project.title}
                   </div>
-                  <div className="font-body mt-2">
+                  <div className="font-body mt-2 text-sm sm:text-base">
                     {project.description}
                   </div>
                 </div>
@@ -140,6 +138,7 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
       <div className="w-full">
         <div className="w-full h-[500px]">
           <img

@@ -9,7 +9,6 @@ export default function GentleGlow() {
   const { getLocalizedData } = useGoogleSheets();
   const gentleGlowData = getLocalizedData("gentle glow");
 
-
   const [selectedImage, setSelectedImage] = useState(chana);
 
   return (
@@ -25,9 +24,7 @@ export default function GentleGlow() {
 
       {/* Section Title */}
       <div className="text-center py-6 sm:py-12">
-        <h2 className="font-header ">
-          {gentleGlowData[1] || "Gentle Glow"}
-        </h2>
+        <h2 className="font-header ">{gentleGlowData[1] || "Gentle Glow"}</h2>
       </div>
 
       {/* Main Product Image*/}
@@ -43,16 +40,16 @@ export default function GentleGlow() {
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 px-6 py-8">
         {[soapmock, chana, soapmock].map((image, index) => (
           <div key={index} className="flex justify-center">
-          <button 
-            onClick={() => setSelectedImage(image)}
-            className="focus:outline-none"
-          >
-            <img
-              src={image}
-              alt={`Product ${index + 1}`}
-              className="w-[500px] h-[340px] object-cover rounded-lg shadow-md hover:opacity-75 transition duration-300"
-            />
-          </button>
+            <button
+              onClick={() => setSelectedImage(image)}
+              className="focus:outline-none"
+            >
+              <img
+                src={image}
+                alt={`Product ${index + 1}`}
+                className="w-[500px] h-[340px] object-cover rounded-lg shadow-md hover:opacity-75 transition duration-300"
+              />
+            </button>
           </div>
         ))}
       </div>
@@ -224,14 +221,14 @@ export default function GentleGlow() {
           />
         </div>
       </div>
-      <div className="max-w-xl mx-auto text-center py-6 sm:py-12 px-6 items-center mt-8">
-        {/* Section Title */}
+      <div className="max-w-xl mx-auto text-center py-6 sm:py-12 px-6 items-center mt-4">
+        {/* Who Can Use It? */}
         <h3 className="font-title italic mb-6">
           {gentleGlowData[39] || "Who Can Use It?"}
         </h3>
 
         {/* List of Use  */}
-        <ul className="space-y-6 flex flex-col items-end">
+        <ul className="space-y-6 flex flex-col items-start">
           {[
             gentleGlowData[40],
             gentleGlowData[41],
@@ -242,7 +239,19 @@ export default function GentleGlow() {
               key={index}
               className="flex items-center font-body w-full max-w-2xl text-wrap sm:whitespace-nowrap"
             >
-              <span className="text-[#61735F] text-lg sm:text-3xl mr-2 sm:mr-4">✔</span>
+              <span className="w-8 h-8 flex items-center justify-center mr-5">
+                <svg
+                  viewBox="0 0 32 32"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#6C7C6E"
+                  className="w-8 h-8"
+                >
+                  <g id="SVGRepo_iconCarrier">
+                    <path d="M16,2 C8.2680135,2 2,8.2680135 2,16 C2,23.7319865 8.2680135,30 16,30 C23.7319865,30 30,23.7319865 30,16 C30,8.2680135 23.7319865,2 16,2 Z M13,22.4142136 L7.29289322,16.7071068 C6.90236893,16.3165825 6.90236893,15.6834175 7.29289322,15.2928932 C7.68341751,14.9023689 8.31658249,14.9023689 8.70710678,15.2928932 L13,19.5857864 L23.2928932,9.29289322 C23.6834175,8.90236893 24.3165825,8.90236893 24.7071068,9.29289322 C25.0976311,9.68341751 25.0976311,10.3165825 24.7071068,10.7071068 L13,22.4142136 Z"></path>
+                  </g>
+                </svg>
+              </span>
               <p className="text-left flex-1">{item || "Loading..."}</p>
             </li>
           ))}
