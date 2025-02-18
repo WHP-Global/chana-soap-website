@@ -230,8 +230,8 @@ export default function ActiveRefresh() {
               />
             </div>
           </div>
-          <div className="max-w-xl mx-auto text-center py-6 sm:py-12 px-6 items-center mt-8">
-            {/* Section Title */}
+          <div className="max-w-xl mx-auto text-center py-6 sm:py-12 px-6 items-center mt-4">
+            {/* Who Can Use It? */}
             <h3 className="text-2xl font-semibold italic text-gray-800 mb-6">
               {activeRefreshData[39] || "Who Can Use It?"}
             </h3>

@@ -80,10 +80,10 @@ export default function Projects() {
         </div>
       </div>
       {/* Let's Explore Our Project Section */}
-      <div className="w-full bg-[#fdf8f2] py-16 px-6 lg:px-20">
+      <div className="w-full bg-[#fdf8f2] py-12 px-4 sm:px-6 lg:px-20 -mt-4">
         {/* Section Title */}
-        <h2 className="text-center font-title font-color-primary mb-10">
-          {projectsData[8] || "Loading..."}
+        <h2 className="text-center font-title font-color-primary text-2xl sm:text-3xl lg:text-4xl mb-8 sm:mb-10">
+          {projectsData[8] || "Let's Explore Our Project"}
         </h2>
 
         {/* Project List */}
@@ -117,17 +117,21 @@ export default function Projects() {
               className="block bg-[#DDE4D9] rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105"
             >
               <div className="flex flex-col sm:flex-row items-center sm:items-start p-6 space-y-4 sm:space-y-0 sm:space-x-6">
-                {/* Project Image*/}
+                {/* Project Image */}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full sm:w-40 h-30 object-cover rounded-lg"
+                  className="w-full sm:w-40 h-40 object-cover rounded-lg"
                 />
 
                 {/* Project Content */}
                 <div className="text-center sm:text-left">
-                  <div className="font-body-bold">{project.title}</div>
-                  <div className="font-body mt-2">{project.description}</div>
+                  <div className="font-body-bold text-lg sm:text-xl">
+                    {project.title}
+                  </div>
+                  <div className="font-body mt-2 text-sm sm:text-base">
+                    {project.description}
+                  </div>
                 </div>
               </div>
             </a>

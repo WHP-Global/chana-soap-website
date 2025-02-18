@@ -221,8 +221,8 @@ export default function GentleGlow() {
           />
         </div>
       </div>
-      <div className="max-w-xl mx-auto text-center py-6 sm:py-12 px-6 items-center mt-8">
-        {/* Section Title */}
+      <div className="max-w-xl mx-auto text-center py-6 sm:py-12 px-6 items-center mt-4">
+        {/* Who Can Use It? */}
         <h3 className="font-title italic mb-6">
           {gentleGlowData[39] || "Who Can Use It?"}
         </h3>
