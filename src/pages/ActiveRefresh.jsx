@@ -20,6 +20,7 @@ export default function ActiveRefresh() {
           alt="Banner"
           className="w-full h-full object-cover"
         />
+
         <div className="absolute text-center sm:text-start py-6 sm:py-12 ml-[5%]">
           <h2 className="font-header font-color-primary  drop-shadow-2xl shadow-amber-950">
             {activeRefreshData[1] || "Active refresh"}
@@ -27,6 +28,14 @@ export default function ActiveRefresh() {
             Comming soon...
           </h2>
         </div>
+         
+
+      {isHaveData && <div>
+         {/* Section Title */}
+      <div className="text-center py-6 sm:py-12">
+        <h2 className="font-header ">
+          {activeRefreshData[1]}
+        </h2>
       </div>
 
       {isHaveData && (
