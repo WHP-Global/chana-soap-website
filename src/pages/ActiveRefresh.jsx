@@ -23,7 +23,7 @@ export default function ActiveRefresh() {
          <div className="absolute text-center sm:text-start py-6 sm:py-12 ml-[5%]">
          <h2 className="font-header font-color-primary  drop-shadow-2xl shadow-amber-950">
           {activeRefreshData[1] || "Active refresh"}
-        <br/>Comming soon...
+        <br/>Coming soon...
         </h2>
       </div>
       </div>
