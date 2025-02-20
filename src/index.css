@@ -41,49 +41,58 @@
 .font-header {
   font-size: 48px;
   font-weight: 700;
+  font-family: "Inknut Antiqua", serif;
 }
 
 .font-title {
   font-size: 36px;
   font-weight: 500;
+  font-family: "Inknut Antiqua", serif;
 }
 
 .font-button {
   font-size: 24px;
   font-weight: 500;
+  font-family: "Inria Serif", serif;
 }
 
 .font-subtitle {
   font-size: 24px;
   font-weight: 700;
   font-style: italic;
+  font-family: "Inknut Antiqua", serif;
 }
 
 .font-caption {
   font-size: 24px;
   font-weight: 400;
   font-style: italic;
+  font-family: "Inria Serif", serif;
 }
 
 .font-body {
   font-size: 20px;
   font-weight: 400;
   font-style: normal !important;
+  font-family: "Inria Serif", serif;
 }
 
 .font-body-bold {
   font-size: 20px;
   font-weight: 700;
+  font-family: "Inria Serif", serif;
 }
 
 .font-menu {
   font-size: 20px;
   font-weight: 400;
+  font-family: "Inria Serif", serif;
 }
 
 .font-sub-menu {
   font-size: 16px;
   font-weight: 400;
+  font-family: "Inria Serif", serif;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -131,11 +140,24 @@
   animation: fadeInLeft 0.8s forwards;
 }
 
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* ถ้าหน้าจอเล็กกว่า 640px (sm) ให้เป็น 14px */
 @media (max-width: 639px) {
   .font-body,
   .font-body-bold,
-  .font-sub-menu  {
+  .font-sub-menu {
     font-size: 14px;
   }
   .font-header {

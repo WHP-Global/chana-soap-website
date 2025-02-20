@@ -228,7 +228,7 @@ export default function GentleGlow() {
         </h3>
 
         {/* List of Use  */}
-        <ul className="space-y-6 flex flex-col items-start">
+        <ul className="space-y-6 flex flex-col items-start sm:ml-[18%]">
           {[
             gentleGlowData[40],
             gentleGlowData[41],

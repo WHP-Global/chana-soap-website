@@ -39,18 +39,20 @@ export default function AboutUs() {
           className="h-full w-full object-cover"
         />
         <div className="absolute bottom-4 left-4 font-color-secondary">
-          <div className="font-header">{aboutUsData[4]}</div>
+          <div className="font-header">{aboutUsData[1]}</div>
           <hr className="w-[80%] h-[2px] my-2 bg-fourth border-none" />
           <div className="font-body">
-            <div>{aboutUsData[1]}</div>
             <div>{aboutUsData[2]}</div>
             <div>{aboutUsData[3]}</div>
+            <div>{aboutUsData[4]}</div>
           </div>
         </div>
       </div>
       {/* content */}
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="py-[40px] font-header text-center">{aboutUsData[5]}</div>
+        <div className="py-[40px] font-header text-center">
+          {aboutUsData[5]}
+        </div>
         <div className="py-5 mx-2 font-title text-center">{aboutUsData[6]}</div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 text-justify">
           <div>{aboutUsData[7]}</div>
@@ -138,7 +140,7 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="text-center font-caption my-2 sm:my-4 indent-0">
+          <div className="text-center font-caption my-2 sm:my-4 indent-0 ">
             {aboutUsData[26]}
           </div>
 
@@ -147,7 +149,7 @@ export default function AboutUs() {
       </div>
       {/* banner */}
       <Banner img={bannerImg2} />
-      <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 " >
+      <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 ">
         <div className="text-center font-caption my-[20px] sm:my-[30px] indent-0 max-w-6xl mx-auto text-balance">
           {aboutUsData[28]}
         </div>

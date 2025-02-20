@@ -5,6 +5,7 @@ import banner8 from "/banner8.png";
 import banner4 from "/banner4.png";
 import banner10 from "/banner10.png";
 import beach from "/beach.jpeg";
+import { Link } from "react-router-dom";
 
 export default function Projects() {
   const { getLocalizedData } = useGoogleSheets();
@@ -27,7 +28,7 @@ export default function Projects() {
 
         <div className="my-6 border-t bg-fourth  w-1/3 mx-auto mt-15 mb-8"></div>
 
-        <div className="font-title">
+        <div className="font-title text-balance">
           {projectsData[2] ||
             "Creating a Sustainable Ecosystem: The Journey of Chana Soap"}
         </div>
@@ -53,7 +54,7 @@ export default function Projects() {
             {projectsData[4] || "Loading..."}
           </p>
 
-          <p className="font-body  leading-relaxed  mt-6 indent-5 sm:indent-8 ">
+          <p className="font-body  leading-relaxed  mt-6 indent-5 sm:indent-8">
             {projectsData[5] || "Loading..."}
           </p>
         </div>
@@ -111,20 +112,18 @@ export default function Projects() {
               link: "/eq-life",
             },
           ].map((project, index) => (
-            <a
+            <Link
               key={index}
-              href={project.link}
+              to={project.link}
               className="block bg-[#DDE4D9] rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105"
+              onClick={() => window.scroll(0, 0)}
             >
               <div className="flex flex-col sm:flex-row items-center sm:items-start sm:p-6 space-y-4 sm:space-y-0 sm:space-x-6">
-                {/* Project Image */}
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full sm:w-40 h-40 object-cover rounded-b-none sm:rounded-b-lg rounded-lg"
                 />
-
-                {/* Project Content */}
                 <div className="text-center sm:text-left p-2 sm:p-0">
                   <div className="font-body-bold text-lg sm:text-xl">
                     {project.title}
@@ -134,7 +133,7 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

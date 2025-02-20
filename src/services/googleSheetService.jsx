@@ -4,62 +4,61 @@ const GoogleSheetsContext = createContext();
 
 export const GoogleSheetsProvider = ({ children }) => {
   const [sheetsData, setSheetsData] = useState({});
-  const [language, setLanguage] = useState("EN"); // ภาษาเริ่มต้นคืออังกฤษ
+  const [language, setLanguage] = useState("EN");
+  const [isLoading, setIsLoading] = useState(true); // เพิ่มสถานะกำลังโหลด
 
-  const sheetId = import.meta.env.VITE_SHEET_ID;
-  const apiKey = import.meta.env.VITE_API_KEY;
+  const API_URL = import.meta.env.VITE_SHEET_API_URL;
+  const sheetNames = [
+    "about us",
+    "inspiration",
+    "contact",
+    "products",
+    "gentle glow",
+    "active refresh",
+    "projects",
+    "empowering project",
+    "aloe vera project",
+    "eq life project",
+    "contact us",
+  ];
 
-  // ฟังก์ชันดึงข้อมูลจาก Google Sheets
   const fetchData = async () => {
-    const ranges = [
-      "about us",
-      "inspiration",
-      "contact",
-      "products",
-      "gentle glow",
-      "active refresh",
-      "projects",
-      "empowering project",
-      "aloe vera project",
-      "eq life project",
-      "contact us",
-    ];
+    setIsLoading(true); // เริ่มโหลดข้อมูล
     try {
       const data = await Promise.all(
-        ranges.map(async (range) => {
-          const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+        sheetNames.map(async (sheetName) => {
+          const url = `${API_URL}?sheet=${encodeURIComponent(sheetName)}`;
           const response = await fetch(url);
           const result = await response.json();
-          return { range, values: result.values };
+          return { sheetName, values: result };
         })
       );
-      const sheets = data.reduce((acc, { range, values }) => {
-        acc[range] = values;
+
+      const sheets = data.reduce((acc, { sheetName, values }) => {
+        acc[sheetName] = values;
         return acc;
       }, {});
-      setSheetsData(sheets); // เก็บข้อมูลที่ดึงมา
+
+      setSheetsData(sheets);
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally {
+      setIsLoading(false); // โหลดเสร็จ
     }
   };
 
   useEffect(() => {
     fetchData();
-  }, []); // ดึงข้อมูลจาก Google Sheets เมื่อโหลดครั้งแรก
+  }, []);
 
-  // ฟังก์ชันสลับภาษา
   const switchLanguage = (lang) => {
     setLanguage(lang);
   };
 
-  // ฟังก์ชันเพื่อดึงข้อมูลตามภาษา
   const getLocalizedData = (sheetName) => {
     const sheet = sheetsData[sheetName];
     if (!sheet) return [];
-    return sheet.map((row) => {
-      const localizedData = language === "EN" ? row[3] : row[2]; // index 2 = ภาษาไทย, index 3 = ภาษาอังกฤษ
-      return localizedData;
-    });
+    return sheet.map((row) => (language === "EN" ? row["EN"] : row["TH"]));
   };
 
   return (
@@ -68,7 +67,8 @@ export const GoogleSheetsProvider = ({ children }) => {
         sheetsData,
         language,
         switchLanguage,
-        getLocalizedData, // เพิ่มฟังก์ชันนี้ใน Context
+        getLocalizedData,
+        isLoading,
       }}
     >
       {children}
@@ -76,7 +76,6 @@ export const GoogleSheetsProvider = ({ children }) => {
   );
 };
 
-// hook สำหรับใช้ Context
 // eslint-disable-next-line react-refresh/only-export-components
 export const useGoogleSheets = () => {
   return useContext(GoogleSheetsContext);

@@ -3,54 +3,99 @@ import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
+import { useGoogleSheets } from "../../services/googleSheetService";
+import Loading from "../Loading";
 
 export default function MainContainer() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
   const sidebarRef = useRef(null);
+  const { isLoading, language } = useGoogleSheets();
 
   const menus = [
     {
-      name: "About Us",
+      name: `${language === "EN" ? "About Us" : "เกี่ยวกับ"}`,
       to: "/",
       subMenu: [
-        { name: "Our Story", to: "our-story" },
-        { name: "Sourcing And Impact", to: "sourcing-and-impact" },
         {
-          name: "Beyond Skincare: Chana Soap's Commitment",
+          name: `${language === "EN" ? "Our Story" : "เรื่องราวของเรา"}`,
+          to: "our-story",
+        },
+        {
+          name: `${
+            language === "EN"
+              ? "Sourcing And Impact"
+              : "การจัดหาวัตถุดิบและผลกระทบต่อชุมชน"
+          }`,
+          to: "sourcing-and-impact",
+        },
+        {
+          name: `${
+            language === "EN"
+              ? "Beyond Skincare: Chana Soap's Commitment"
+              : "เกินกว่าการดูแลผิว: ความมุ่งมั่นของสบู่ชนะ"
+          }`,
           to: "commitment",
         },
       ],
     },
     {
-      name: "Products",
+      name: `${language === "EN" ? "Products" : "สินค้า"}`,
       to: "/products",
       subMenu: [
         { name: "Gentle Glow", to: "gentle-glow" },
         { name: "Active Refresh", to: "active-refresh" },
-        { name: "Why Chana?", to: "why-chana" },
-        { name: "Testimonials", to: "testimonials" },
+        {
+          name: `${
+            language === "EN" ? "Why Chana?" : "ทำไมต้องเลือกสบู่ Chana?"
+          }`,
+          to: "why-chana",
+        },
+        {
+          name: `${
+            language === "EN" ? "Testimonials" : "รีวิวจากลูกค้าของเรา"
+          }`,
+          to: "testimonials",
+        },
       ],
     },
     {
-      name: "Projects",
+      name: `${language === "EN" ? "Projects" : "โปรเจค"}`,
       to: "/projects",
       subMenu: [
         {
-          name: "Empowering Farmers in Prachinburi",
+          name: `${
+            language === "EN"
+              ? "Empowering Farmers in Prachinburi"
+              : "สอนชาวบ้านปราจีนบุรีทำปุ๋ยไส้เดือน AF"
+          }`,
           to: "/empowering-farmer",
         },
-        { name: "Aloe vera", to: "/aloe-vera" },
+        {
+          name: `${language === "EN" ? "Aloe vera" : "การปลูกว่านหางจระเข้"}`,
+          to: "/aloe-vera",
+        },
         { name: "EQ life foundation", to: "/eq-life" },
       ],
     },
     {
-      name: "Contact Us",
+      name: `${language === "EN" ? "Contact Us" : "ติดต่อเรา"}`,
       to: "/contact-us",
       subMenu: [
-        { name: "Where To Buy", to: "where-to-buy" },
-        { name: "Contact form for inquiries", to: "contact-form" },
-        { name: "FAQ", to: "faq" },
+        {
+          name: `${language === "EN" ? "Where To Buy" : "ช่องทางการสั่งซื้อ"}`,
+          to: "where-to-buy",
+        },
+        {
+          name: `${
+            language === "EN" ? "Contact form for inquiries" : "ติดต่อกับเรา"
+          }`,
+          to: "contact-form",
+        },
+        {
+          name: `${language === "EN" ? "FAQ" : "คำถามที่พบบ่อย"}`,
+          to: "faq",
+        },
       ],
     },
   ];
@@ -86,6 +131,11 @@ export default function MainContainer() {
 
   return (
     <div>
+      {isLoading && (
+        <div className="fixed h-[100vh] w-[100vw] flex justify-center items-center z-50">
+          <Loading />
+        </div>
+      )}
       {/* Topbar */}
       <div className="sticky top-0 z-10">
         <Topbar
