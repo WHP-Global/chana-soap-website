@@ -1,9 +1,8 @@
 import { useGoogleSheets } from "../services/googleSheetService";
-import Banner from "../components/banner";
+import Banner from "../components/Banner";
 import bannerImg from "/image1.png";
 import Img from "/image4.png";
 import bannerImg2 from "/banner13.png";
-import bannerImg3 from "/banner4.png";
 import bannerImg4 from "/banner3.png";
 import { BoldText } from "../services/BoldText";
 
@@ -23,23 +22,23 @@ export default function EqLifeProject() {
         />
       </div>
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="py-5 font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16">
+        <div className="py-[40px] font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-balance">
           {eqLifeProjectData[1]}
         </div>
-        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4">
+        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4 text-justify">
           <div>{eqLifeProjectData[2]}</div>
           <div>{eqLifeProjectData[3]}</div>
           <div className=" bg-secondary rounded-[20px] p-2 sm:p-4 text-balance md:text-wrap text-center flex flex-col gap-3">
             <BoldText text={eqLifeProjectData[4]} />
             <BoldText text={eqLifeProjectData[5]} />
           </div>
-          <div>{eqLifeProjectData[6]}</div>
+          <div className="text-justify">{eqLifeProjectData[6]}</div>
         </div>
       </div>
         <Banner img={bannerImg} />
 
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 ">
+        <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 text-justify">
           {/* Our Commitment to Social Impact */}
           <div className="font-subtitle">
             {eqLifeProjectData[7]}
@@ -65,7 +64,7 @@ export default function EqLifeProject() {
             {/* Be Part of the Change */}
             <div className="font-subtitle">
               {eqLifeProjectData[13]}
-              <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+              <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
                 {eqLifeProjectData[14]}
               </div>
             </div>

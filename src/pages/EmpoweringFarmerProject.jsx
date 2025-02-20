@@ -23,12 +23,12 @@ export default function EmpoweringFarmerProject() {
       </div>
       {/* Introduction to African Nightcrawler Vermicomposting */}
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="py-5 font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16">
+        <div className="py-[40px] font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-balance">
           {empoweringProjectData[1]}
         </div>
-        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4">
+        <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4  text-justify">
           <div>{empoweringProjectData[2]}</div>
-          <div className="font-subtitle text-center indent-0  sm:-mb-4">
+          <div className="py-5 font-subtitle text-center indent-0  sm:-mb-4">
             {empoweringProjectData[3]}
           </div>
           <div className="md:text-nowrap">{empoweringProjectData[4]}</div>
@@ -41,10 +41,10 @@ export default function EmpoweringFarmerProject() {
 
       {/* Steps to Making Vermicompost */}
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="text-center font-subtitle py-3 ">
+        <div className="text-center font-subtitle py-5">
           {empoweringProjectData[7]}
         </div>
-        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3">
+        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 text-justify">
           {/* Material Preparation */}
           <div>
             {empoweringProjectData[8]}
@@ -77,15 +77,15 @@ export default function EmpoweringFarmerProject() {
         <Banner img={bannerImg2} />
 
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 ">
+        <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3">
           {/* Results in Mangosteen Orchards and Aloe Vera Farms */}
           <div className="font-subtitle">
             {empoweringProjectData[17]}
-            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
               {empoweringProjectData[18]}
             </div>
           </div>
-          <div className="text-center indent-0">
+          <div className="text-center indent-0 text-balance">
             {empoweringProjectData[19]}
           </div>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[30px]">
@@ -108,26 +108,26 @@ export default function EmpoweringFarmerProject() {
           {/* Value Addition through Soap Production */}
           <div className="font-subtitle">
             {empoweringProjectData[20]}
-            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
               {empoweringProjectData[21]}
             </div>
           </div>
-          <div className="text-center indent-0">
+          <div className="text-center indent-0 text-balance">
             {empoweringProjectData[22]}
           </div>
 
           {/* Value Addition through Soap Production */}
           <div className="font-subtitle">
             {empoweringProjectData[23]}
-            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
               {empoweringProjectData[24]}
             </div>
           </div>
-          <div className="text-center indent-0">
+          <div className="text-center indent-0 text-balance">
             {empoweringProjectData[25]}
           </div>
 
-          <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+          <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
             {empoweringProjectData[26]}
           </div>
         </div>

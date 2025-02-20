@@ -1,5 +1,5 @@
 import { useGoogleSheets } from "../services/googleSheetService";
-import Banner from "../components/banner";
+import Banner from "../components/Banner";
 import bannerImg from "/image1.png";
 import Img from "/image4.png";
 import bannerImg2 from "/banner13.png";
@@ -23,17 +23,17 @@ export default function AloeveraProject() {
         />
       </div>
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="py-5 font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-balance">
+        <div className="py-[40px] font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-balance">
           {aloeVeraProjectData[1]}
         </div>
-        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4">
+        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4 text-justify">
           <div>{aloeVeraProjectData[2]}</div>
         </div>
       </div>
       <Banner img={bannerImg} />
 
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 ">
+        <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 text-justify">
           {/* Satiyasai School: Transforming Learning into Opportunity */}
           <div className="font-subtitle">
             {aloeVeraProjectData[3]}
@@ -98,7 +98,7 @@ export default function AloeveraProject() {
           {/* We Believe in the Power of Giving Back */}
           <div className="font-subtitle">
             {aloeVeraProjectData[20]}
-            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
               {aloeVeraProjectData[21]}
             </div>
           </div>

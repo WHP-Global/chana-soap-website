@@ -40,8 +40,8 @@ export default function ContactUs() {
       </div>
       {/* content */}
       <div className="font-color-primary">
-        <div className="py-5 font-header text-center">{contactUsData[1]}</div>
-        <div className="pb-5 mx-2 font-title text-center">
+        <div className="py-[40px] font-header text-center">{contactUsData[1]}</div>
+        <div className="py-5 mx-2 font-title text-center">
           {contactUsData[2]}
         </div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5">
@@ -107,7 +107,7 @@ export default function ContactUs() {
           {/* input form */}
           <InputFormToSendEmail />
         </div>
-        <div className=" my-8 font-title text-center">{contactUsData[13]}</div>
+        <div className="my-10 sm:my-12 font-title text-center">{contactUsData[13]}</div>
         <div className="flex gap-2 sm:gap-10 font-subtitle sm:mx-8 md:mx-10 lg:mx-16 justify-center items-center">
           <div className="flex flex-col gap-3 sm:gap-8">
             {/* email */}

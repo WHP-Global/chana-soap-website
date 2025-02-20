@@ -6,7 +6,7 @@ import bannerImg from "/banner6.png";
 import bannerImg2 from "/banner7.png";
 import bannerImg3 from "/banner1.png";
 import bannerImg4 from "/banner9.png";
-import bannerImg5 from "/banner12.png";
+import bannerImg5 from "/forest.gif";
 import productImg from "/image3.png";
 import Banner from "../components/Banner";
 export default function AboutUs() {
@@ -50,9 +50,9 @@ export default function AboutUs() {
       </div>
       {/* content */}
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="py-5 font-header text-center">{aboutUsData[5]}</div>
-        <div className="pb-5 mx-2 font-title text-center">{aboutUsData[6]}</div>
-        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8">
+        <div className="py-[40px] font-header text-center">{aboutUsData[5]}</div>
+        <div className="py-5 mx-2 font-title text-center">{aboutUsData[6]}</div>
+        <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 text-justify">
           <div>{aboutUsData[7]}</div>
           <div>{aboutUsData[8]}</div>
           <div>{aboutUsData[9]}</div>
@@ -106,7 +106,7 @@ export default function AboutUs() {
       {/* content */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-title text-center">{aboutUsData[16]}</div>
-        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16">
+        <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-justify">
           <div className="font-subtitle">
             {aboutUsData[17]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
@@ -142,13 +142,13 @@ export default function AboutUs() {
             {aboutUsData[26]}
           </div>
 
-          <div className="text-center">{aboutUsData[27]}</div>
+          <div className="text-center text-balance">{aboutUsData[27]}</div>
         </div>
       </div>
       {/* banner */}
       <Banner img={bannerImg2} />
       <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 " >
-        <div className="text-center font-caption my-[20px] sm:my-[30px] indent-0 max-w-6xl mx-auto">
+        <div className="text-center font-caption my-[20px] sm:my-[30px] indent-0 max-w-6xl mx-auto text-balance">
           {aboutUsData[28]}
         </div>
       </div>
@@ -174,7 +174,7 @@ export default function AboutUs() {
       {/* content */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-title text-center">{aboutUsData[29]}</div>
-        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8">
+        <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 text-justify">
           <div>{aboutUsData[30]}</div>
           <div>{aboutUsData[31]}</div>
 
@@ -188,7 +188,7 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="text-center font-caption indent-0">
+          <div className="text-center font-caption indent-0 text-balance">
             {aboutUsData[32]}
           </div>
 
@@ -209,7 +209,7 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="text-center font-caption mb-8 indent-0">
+          <div className="text-center font-caption mb-8 indent-0 text-balance">
             {aboutUsData[33]}
           </div>
         </div>
