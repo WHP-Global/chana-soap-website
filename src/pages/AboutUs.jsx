@@ -104,7 +104,7 @@ export default function AboutUs() {
       {/*2. sourcing and impact */}
       <div id="sourcing-and-impact"></div>
       {/* banner */}
-      <Banner img={bannerImg} />
+      <Banner src={bannerImg} />
       {/* content */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-title text-center">{aboutUsData[16]}</div>
@@ -148,7 +148,7 @@ export default function AboutUs() {
         </div>
       </div>
       {/* banner */}
-      <Banner img={bannerImg2} />
+      <Banner src={bannerImg2} />
       <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 ">
         <div className="text-center font-caption my-[20px] sm:my-[30px] indent-0 max-w-6xl mx-auto text-balance">
           {aboutUsData[28]}
@@ -194,7 +194,7 @@ export default function AboutUs() {
             {aboutUsData[32]}
           </div>
 
-          <div className="flex flex-col justify-center items-center gap-[40px]  h-auto py-[20px] sm:py-[30px]">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
                 src={bannerImg3}
@@ -217,7 +217,7 @@ export default function AboutUs() {
         </div>
       </div>
       {/* banner */}
-      <Banner img={bannerImg4} />
+      <Banner src={bannerImg4} />
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>

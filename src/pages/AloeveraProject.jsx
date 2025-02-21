@@ -16,7 +16,7 @@ export default function AloeveraProject() {
     <div>
       {/* banner */}
       <div className="w-full h-[487px] sm:h-[587] md:h-[687px] bg-gray-400 flex justify-center items-center">
-      <img
+        <img
           src={bannerImg4}
           alt="bannerImg4"
           className="h-full w-full object-cover"
@@ -30,7 +30,7 @@ export default function AloeveraProject() {
           <div>{aloeVeraProjectData[2]}</div>
         </div>
       </div>
-      <Banner img={bannerImg} />
+      <Banner src={bannerImg} />
 
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 text-justify">
@@ -51,7 +51,7 @@ export default function AloeveraProject() {
         </div>
       </div>
 
-      <Banner img={bannerImg2} />
+      <Banner src={bannerImg2} />
 
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3">
@@ -78,7 +78,7 @@ export default function AloeveraProject() {
             <BoldText text={aloeVeraProjectData[19]} />
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[30px]">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[60px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
                 src={Img}
@@ -105,7 +105,7 @@ export default function AloeveraProject() {
         </div>
       </div>
 
-      <Banner img={bannerImg3} />
+      <Banner src={bannerImg3} />
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>

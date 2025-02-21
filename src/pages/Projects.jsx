@@ -1,10 +1,10 @@
-import { useEffect } from "react";
 import { useGoogleSheets } from "../services/googleSheetService";
 import banner2 from "/banner2.png";
 import banner8 from "/banner8.png";
 import banner4 from "/banner4.png";
 import banner10 from "/banner10.png";
 import beach from "/beach.jpeg";
+import AFImg from "/EmpoweringFarmerProject/AF-5.png";
 import { Link } from "react-router-dom";
 
 export default function Projects() {
@@ -94,7 +94,7 @@ export default function Projects() {
               title: `${projectsData[9] || "Loading..."}`,
               description:
                 "Non blandit pretium, lorem urna mollis tortor, eu congue tortor libero elementum diam. Integer volutpat ex nec lacus maximus, et sagittis odio tristique. Pellentesque fringilla ut arcu eu imperdiet.",
-              image: banner4,
+              image: AFImg,
               link: "/empowering-farmer",
             },
             {
@@ -118,12 +118,14 @@ export default function Projects() {
               className="block bg-[#DDE4D9] rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105"
               onClick={() => window.scroll(0, 0)}
             >
-              <div className="flex flex-col sm:flex-row items-center sm:items-start sm:p-6 space-y-4 sm:space-y-0 sm:space-x-6">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full sm:w-40 h-40 object-cover rounded-b-none sm:rounded-b-lg rounded-lg"
-                />
+              <div className="flex flex-col sm:flex-row items-center sm:items-start sm:p-6 space-y-4 sm:space-y-0 sm:space-x-6 ">
+                <div className="w-full sm:w-lg h-52 sm:h-40">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover rounded-b-none sm:rounded-b-lg rounded-lg"
+                  />
+                </div>
                 <div className="text-center sm:text-left p-2 sm:p-0">
                   <div className="font-body-bold text-lg sm:text-xl">
                     {project.title}

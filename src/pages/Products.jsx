@@ -75,9 +75,7 @@ export default function Products() {
       {/* Gentle Glow  */}
       <div className="max-w-5xl mx-auto text-center py-8 sm:py-12 px-6 mt-6 sm:mt-10">
         <div className="font-subtitle ">{productsData[2]}</div>
-        <div className="mt-3 text-balance font-body">
-          {productsData[3]}
-        </div>
+        <div className="mt-3 text-balance font-body">{productsData[3]}</div>
       </div>
       {/* Ingredients */}
       <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
@@ -129,13 +127,10 @@ export default function Products() {
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>
 
-
       {/* Active Refresh */}
       <div className="max-w-5xl mx-auto text-center pb-8 sm:py-12 px-6">
         <div className="font-subtitle ">{productsData[5]}</div>
-        <div className="mt-3 text-balance font-body">
-          {productsData[6]}
-        </div>
+        <div className="mt-3 text-balance font-body">{productsData[6]}</div>
       </div>
       {/* Ingredients */}
       <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
@@ -192,12 +187,11 @@ export default function Products() {
         </div>
 
         <div className="flex justify-center py-15">
-        <hr className="w-[250px] h-[1px] bg-primary border-none" />
-      </div>
-
+          <hr className="w-[250px] h-[1px] bg-primary border-none" />
+        </div>
       </div>
       <div id="why-chana"></div>
-      <Banner img={banner5} />
+      <Banner src={banner5} />
 
       {/* Why Chana */}
       <div className="max-w-4xl mx-auto text-center py-12 px-6 -mt-6">
@@ -283,7 +277,7 @@ export default function Products() {
         <div className=" max-w-4xl w-full flex sm:h-[720px]">
           <div className="bg-gray-50 p-4 lg:p-8 rounded-r-lg md:rounded-l-lg md:rounded-r-none shadow-md">
             <div className="font-title  mb-6 text-center">
-            {productsData[20]}
+              {productsData[20]}
             </div>
             <ul className="space-y-6">
               {[
@@ -350,7 +344,6 @@ export default function Products() {
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>
-
 
       {/* Reviews Section */}
       <div className="max-w-7xl mx-auto text-center px-6 -mt-4">
