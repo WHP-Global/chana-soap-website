@@ -7,6 +7,8 @@ import lineImg from "/line.png";
 import InputFormToSendEmail from "../components/InputFormToSendEmail";
 import FAQ from "../components/FAQ";
 import banner1 from "/banner4.png";
+import Logo from "../components/Logo";
+import { BoldTextBySlash } from "../services/BoldText";
 
 export default function ContactUs() {
   const location = useLocation();
@@ -31,7 +33,7 @@ export default function ContactUs() {
       {/*1. where to buy */}
       {/* banner */}
       <div className="w-full h-[487px] sm:h-[587] md:h-[687px] bg-gray-400 flex justify-center items-center">
-      <img
+        <img
           src={banner1}
           alt="Banner"
           className="w-full h-full object-cover"
@@ -40,7 +42,9 @@ export default function ContactUs() {
       </div>
       {/* content */}
       <div className="font-color-primary">
-        <div className="py-[40px] font-header text-center">{contactUsData[1]}</div>
+        <div className="py-[40px] font-header text-center">
+          {contactUsData[1]}
+        </div>
         <div className="py-5 mx-2 font-title text-center">
           {contactUsData[2]}
         </div>
@@ -95,7 +99,12 @@ export default function ContactUs() {
         <div className="font-title text-center mb-8">{contactUsData[3]}</div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body sm:mx-8 md:mx-10 lg:mx-16 justify-center items-center">
           {/* Logo and Name product */}
-          <div className="flex-1 my-2 sm:my-4 font-header">CHANA</div>
+          <div className="flex flex-col items-center gap-1">
+            <div className="flex-1 my-2 sm:my-4 font-header">CHANA</div>
+            <div className="w-[170px]">
+              <Logo />
+            </div>
+          </div>
           <div className="font-subtitle text-center text-balance">
             {contactUsData[4]} <br />
             {contactUsData[5]}
@@ -107,7 +116,9 @@ export default function ContactUs() {
           {/* input form */}
           <InputFormToSendEmail />
         </div>
-        <div className="my-10 sm:my-12 font-title text-center">{contactUsData[13]}</div>
+        <div className="my-10 sm:my-12 font-title text-center">
+          {contactUsData[13]}
+        </div>
         <div className="flex gap-2 sm:gap-10 font-subtitle sm:mx-8 md:mx-10 lg:mx-16 justify-center items-center">
           <div className="flex flex-col gap-3 sm:gap-8">
             {/* email */}
@@ -234,7 +245,7 @@ export default function ContactUs() {
               {contactUsData[18]}
             </a>
             {/* line  */}
-            <a
+            {/* <a
               href="https://lin.ee/@chanasoapthailand"
               target="_blank"
               rel="noopener noreferrer"
@@ -260,7 +271,7 @@ export default function ContactUs() {
                 </defs>
               </svg>
               {contactUsData[19]}
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
@@ -279,6 +290,9 @@ export default function ContactUs() {
         <FAQ question={contactUsData[29]} answer={contactUsData[30]} />
         <FAQ question={contactUsData[31]} answer={contactUsData[32]} />
         <FAQ question={contactUsData[33]} answer={contactUsData[34]} />
+        <div className="sm:mt-4">
+          <BoldTextBySlash text={contactUsData[35]} />
+        </div>
       </div>
     </div>
   );

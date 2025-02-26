@@ -9,6 +9,8 @@ import bannerImg4 from "/banner9.png";
 import bannerImg5 from "/forest.gif";
 import productImg from "/image3.png";
 import Banner from "../components/Banner";
+import { BoldText, BoldTextBySlash } from "../services/BoldText";
+
 export default function AboutUs() {
   const location = useLocation();
   const { getLocalizedData } = useGoogleSheets();
@@ -53,11 +55,13 @@ export default function AboutUs() {
         <div className="py-[40px] font-header text-center">
           {aboutUsData[5]}
         </div>
-        <div className="py-5 mx-2 font-title text-center">{aboutUsData[6]}</div>
+        <div className="py-5 mx-2 font-title text-center text-balance">
+          {aboutUsData[6]}
+        </div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 text-justify">
-          <div>{aboutUsData[7]}</div>
-          <div>{aboutUsData[8]}</div>
-          <div>{aboutUsData[9]}</div>
+          <BoldTextBySlash text={aboutUsData[7]} />
+          <BoldTextBySlash text={aboutUsData[8]} />
+          <BoldTextBySlash text={aboutUsData[9]} />
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
@@ -76,8 +80,8 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div>{aboutUsData[10]}</div>
-          <div>{aboutUsData[11]}</div>
+          <BoldTextBySlash text={aboutUsData[10]} />
+          <BoldTextBySlash text={aboutUsData[11]} />
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px]  h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
@@ -89,11 +93,11 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div>{aboutUsData[12]}</div>
-          <div>{aboutUsData[13]}</div>
+          <BoldTextBySlash text={aboutUsData[12]} />
+          <BoldTextBySlash text={aboutUsData[13]} />
 
           <div className="text-center font-caption indent-0">
-            {aboutUsData[14]} <br />
+            <BoldTextBySlash text={aboutUsData[14]} />
             {aboutUsData[15]}
           </div>
         </div>
@@ -112,51 +116,56 @@ export default function AboutUs() {
           <div className="font-subtitle">
             {aboutUsData[17]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
-              {aboutUsData[18]}
+              <BoldTextBySlash text={aboutUsData[18]} />
             </div>
           </div>
 
           <div className="font-subtitle">
             {aboutUsData[19]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
-              {aboutUsData[20]}
+              <BoldTextBySlash text={aboutUsData[20]} />
             </div>
           </div>
 
           <div className="font-subtitle">
             {aboutUsData[21]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
-              {aboutUsData[22]}
+              <BoldTextBySlash text={aboutUsData[22]} />
+            </div>
+            <div className="font-body mt-2 sm:mt-10 indent-5 sm:indent-8">
+              <BoldTextBySlash text={aboutUsData[23]} />
             </div>
           </div>
 
           <div className="font-subtitle">
-            {aboutUsData[23]}
+            {aboutUsData[24]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
-              {aboutUsData[24]}
+              <BoldTextBySlash text={aboutUsData[25]} />
             </div>
-            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
-              {aboutUsData[25]}
+            <div className="font-body mt-2 sm:mt-10 indent-5 sm:indent-8">
+              <BoldTextBySlash text={aboutUsData[26]} />
             </div>
           </div>
 
-          <div className="text-center font-caption my-2 sm:my-4 indent-0 ">
-            {aboutUsData[26]}
+          <div className="text-center font-caption my-2 sm:my-3 indent-0 ">
+            {aboutUsData[27]}
           </div>
 
-          <div className="text-center text-balance">{aboutUsData[27]}</div>
+          <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+            <BoldTextBySlash text={aboutUsData[28]} />
+          </div>
         </div>
       </div>
       {/* banner */}
       <Banner src={bannerImg2} />
-      <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 ">
-        <div className="text-center font-caption my-[20px] sm:my-[30px] indent-0 max-w-6xl mx-auto text-balance">
-          {aboutUsData[28]}
+      <div className="flex flex-col font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 font-color-primary py-[20px] sm:py-[30px]">
+        <div className="text-center font-caption indent-0 max-w-6xl mx-auto text-balance">
+          {aboutUsData[29]}
         </div>
       </div>
 
       {/*3. commitment */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-6 h-auto py-[20px] sm:py-[30px] mx-5 sm:mx-8 md:mx-10 lg:mx-16">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-6 h-auto py-[20px] sm:py-[60px] mx-5 sm:mx-8 md:mx-10 lg:mx-16">
         <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
           <img
             src={productImg}
@@ -175,10 +184,18 @@ export default function AboutUs() {
       </div>
       {/* content */}
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="py-5 font-title text-center">{aboutUsData[29]}</div>
+        <div className="py-5 font-title text-center">{aboutUsData[30]}</div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 text-justify">
-          <div>{aboutUsData[30]}</div>
-          <div>{aboutUsData[31]}</div>
+          <BoldTextBySlash text={aboutUsData[31]} />
+          <BoldTextBySlash text={aboutUsData[32]} />
+          <BoldTextBySlash text={aboutUsData[33]} />
+
+          <div className=" bg-secondary rounded-[20px] p-2 sm:p-4 text-balance md:text-wrap text-center flex flex-col gap-3 indent-0">
+            <BoldText text={aboutUsData[34]} />
+            <BoldText text={aboutUsData[35]} />
+          </div>
+
+          <BoldTextBySlash text={aboutUsData[36]} />
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px]  h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
@@ -190,8 +207,18 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="text-center font-caption indent-0 text-balance">
-            {aboutUsData[32]}
+          <div className="font-subtitle indent-0">
+            {aboutUsData[37]}
+            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+              <BoldTextBySlash text={aboutUsData[38]} />
+            </div>
+          </div>
+
+          <div className="indent-0 text-wrap">
+            <div className="font-subtitle mb-2 sm:mb-3">{aboutUsData[39]}</div>
+            <BoldText text={aboutUsData[40]} />
+            <BoldText text={aboutUsData[41]} />
+            <BoldText text={aboutUsData[42]} />
           </div>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[30px]">
@@ -211,8 +238,18 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="text-center font-caption mb-8 indent-0 text-balance">
-            {aboutUsData[33]}
+          <div className="font-subtitle indent-0">
+            {aboutUsData[43]}
+            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+              <BoldTextBySlash text={aboutUsData[44]} />
+            </div>
+            <div className="font-body mt-2 sm:mt-10 indent-5 sm:indent-8">
+              <BoldTextBySlash text={aboutUsData[45]} />
+            </div>
+          </div>
+
+          <div className="text-center font-caption my-2 sm:my-3 indent-0 text-balance">
+            {aboutUsData[46]}
           </div>
         </div>
       </div>

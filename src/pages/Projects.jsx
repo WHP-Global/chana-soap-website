@@ -6,6 +6,7 @@ import banner10 from "/banner10.png";
 import beach from "/beach.jpeg";
 import AFImg from "/EmpoweringFarmerProject/AF-5.png";
 import { Link } from "react-router-dom";
+import { BoldTextBySlash } from "../services/BoldText";
 
 export default function Projects() {
   const { getLocalizedData } = useGoogleSheets();
@@ -23,20 +24,21 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto text-center py-16 px-6 font-color-primary">
-        <h1 className="font-header">{projectsData[1] || "Project"}</h1>
+      <div className=" z-0 max-w-6xl mx-auto pt-5 px-6 text-center font-color-primary">
+        <div className="font-header">{projectsData[1] || "Project"}</div>
 
-        <div className="my-6 border-t bg-fourth  w-1/3 mx-auto mt-15 mb-8"></div>
+        <div className="max-w-3xl mx-auto mt-6 ">
+          <div className="border-t bg-fourth  w-1/3 mx-auto mt-5 mb-10"></div>
 
-        <div className="font-title text-balance">
-          {projectsData[2] ||
-            "Creating a Sustainable Ecosystem: The Journey of Chana Soap"}
+          <div className="font-title text-balance">
+            {projectsData[2] ||
+              "Creating a Sustainable Ecosystem: The Journey of Chana Soap"}
+          </div>
+
+          <div className="border-b bg-fourth  w-1/3 mx-auto mt-10"></div>
         </div>
-
-        <div className="my-6 border-t bg-fourth w-1/3 mx-auto mb-15 mt-8"></div>
-
-        <div className="font-body leading-relaxed mt-6 text-justify indent-5 sm:indent-8">
-          {projectsData[3]}
+        <div className="font-body leading-relaxed my-12 text-justify indent-5 sm:indent-8">
+          <BoldTextBySlash text={projectsData[3]} />
         </div>
       </div>
       <div className="w-full">
@@ -51,22 +53,22 @@ export default function Projects() {
       <div className="w-full px-6 md:px-20 py-12 font-color-primary">
         <div className="max-w-5xl mx-auto ">
           <p className="font-body  leading-relaxed  indent-5 sm:indent-8">
-            {projectsData[4] || "Loading..."}
+            <BoldTextBySlash text={projectsData[4]} />
           </p>
 
           <p className="font-body  leading-relaxed  mt-6 indent-5 sm:indent-8">
-            {projectsData[5] || "Loading..."}
+            <BoldTextBySlash text={projectsData[5]} />
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-12  items-center lg:items-start mt-10 indent-5 sm:indent-8 ">
           <div className="flex-1">
             <p className="font-body  leading-relaxed ">
-              {projectsData[6] || "Loading..."}
+              <BoldTextBySlash text={projectsData[6]} />
             </p>
 
             <p className="font-body  leading-relaxed  mt-6">
-              {projectsData[7] || "Loading..."}
+              <BoldTextBySlash text={projectsData[7]} />
             </p>
           </div>
 
@@ -84,30 +86,27 @@ export default function Projects() {
       <div className="w-full bg-[#fdf8f2] py-12 px-4 sm:px-6 lg:px-20 -mt-4">
         {/* Section Title */}
         <h2 className="text-center font-title font-color-primary text-2xl sm:text-3xl lg:text-4xl mb-8 sm:mb-10">
-          {projectsData[8] || "Let's Explore Our Project"}
+          <BoldTextBySlash text={projectsData[8]} />
         </h2>
 
         {/* Project List */}
         <div className="max-w-4xl mx-auto space-y-6 font-color-primary">
           {[
             {
-              title: `${projectsData[9] || "Loading..."}`,
-              description:
-                "Non blandit pretium, lorem urna mollis tortor, eu congue tortor libero elementum diam. Integer volutpat ex nec lacus maximus, et sagittis odio tristique. Pellentesque fringilla ut arcu eu imperdiet.",
+              title: <BoldTextBySlash text={projectsData[9]} />,
+              description: <BoldTextBySlash text={projectsData[10]} />,
               image: AFImg,
               link: "/empowering-farmer",
             },
             {
-              title: `${projectsData[10] || "Loading..."}`,
-              description:
-                "Non blandit pretium, lorem urna mollis tortor, eu congue tortor libero elementum diam. Integer volutpat ex nec lacus maximus, et sagittis odio tristique. Pellentesque fringilla ut arcu eu imperdiet.",
+              title: <BoldTextBySlash text={projectsData[11]} />,
+              description: <BoldTextBySlash text={projectsData[12]} />,
               image: banner4,
               link: "/aloe-vera",
             },
             {
-              title: `${projectsData[11] || "Loading..."}`,
-              description:
-                "Non blandit pretium, lorem urna mollis tortor, eu congue tortor libero elementum diam. Integer volutpat ex nec lacus maximus, et sagittis odio tristique. Pellentesque fringilla ut arcu eu imperdiet.",
+              title: <BoldTextBySlash text={projectsData[13]} />,
+              description: <BoldTextBySlash text={projectsData[14]} />,
               image: banner4,
               link: "/eq-life",
             },
@@ -119,18 +118,18 @@ export default function Projects() {
               onClick={() => window.scroll(0, 0)}
             >
               <div className="flex flex-col sm:flex-row items-center sm:items-start sm:p-6 space-y-4 sm:space-y-0 sm:space-x-6 ">
-                <div className="w-full sm:w-lg h-52 sm:h-40">
+                <div className="w-full sm:w-[40%] md:w-[30%] h-52 sm:h-40">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover rounded-b-none sm:rounded-b-lg rounded-lg"
                   />
                 </div>
-                <div className="text-center sm:text-left p-2 sm:p-0">
-                  <div className="font-body-bold text-lg sm:text-xl">
+                <div className="text-center sm:text-left p-2 sm:p-0 sm:w-[80%]">
+                  <div className="font-body-bold text-balance">
                     {project.title}
                   </div>
-                  <div className="font-body mt-2 text-sm sm:text-base">
+                  <div className="font-body mt-2 sm:text-base">
                     {project.description}
                   </div>
                 </div>

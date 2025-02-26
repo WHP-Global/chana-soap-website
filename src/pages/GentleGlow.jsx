@@ -4,6 +4,7 @@ import banner1 from "/banner1.png";
 import chana from "/image2.png";
 import soapmock from "/image3.png";
 import banner5 from "/banner5.png";
+import { BoldTextBySlash } from "../services/BoldText";
 
 export default function GentleGlow() {
   const { getLocalizedData } = useGoogleSheets();
@@ -23,7 +24,7 @@ export default function GentleGlow() {
       </div>
 
       {/* Section Title */}
-      <div className="text-center py-6 sm:py-12">
+      <div className="max-w-6xl mx-auto pt-7 px-6 text-center">
         <h2 className="font-header ">{gentleGlowData[1] || "Gentle Glow"}</h2>
       </div>
 
@@ -77,35 +78,57 @@ export default function GentleGlow() {
                 {gentleGlowData[4] || "Loading..."}
               </li>
               <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
-                <li>{gentleGlowData[5] || "Loading..."}</li>
-                <li>{gentleGlowData[6] || "Loading..."}</li>
-                <li>{gentleGlowData[7] || "Loading..."}</li>
-                <li>{gentleGlowData[8] || "Loading..."}</li>
+                <li>
+                  <BoldTextBySlash text={gentleGlowData[5]} isHaveList />
+                </li>
+                <li>
+                  <BoldTextBySlash text={gentleGlowData[6]} isHaveList />
+                </li>
+                <li>
+                  <BoldTextBySlash text={gentleGlowData[7]} isHaveList />
+                </li>
+                <li>
+                  <BoldTextBySlash text={gentleGlowData[8]} isHaveList />
+                </li>
               </ul>
 
               <li className="font-body-bold">
                 {gentleGlowData[9] || "Loading..."}
               </li>
               <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
-                <li>{gentleGlowData[10] || "Loading..."}</li>
-                <li>{gentleGlowData[11] || "Loading..."}</li>
+                <li>
+                  <BoldTextBySlash text={gentleGlowData[10]} isHaveList />
+                </li>
+                <li>
+                  <BoldTextBySlash text={gentleGlowData[11]} isHaveList />
+                </li>
               </ul>
 
               <li className="font-body-bold">
                 {gentleGlowData[12] || "Loading..."}
               </li>
               <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
-                <li>{gentleGlowData[13] || "Loading..."}</li>
-                <li>{gentleGlowData[14] || "Loading..."}</li>
+                <li>
+                  <BoldTextBySlash text={gentleGlowData[13]} isHaveList />
+                </li>
+                <li>
+                  <BoldTextBySlash text={gentleGlowData[14]} isHaveList />
+                </li>
               </ul>
 
               <li className="font-body-bold">
                 {gentleGlowData[15] || "Loading..."}
               </li>
               <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
-                <li>{gentleGlowData[16] || "Loading..."}</li>
-                <li>{gentleGlowData[17] || "Loading..."}</li>
-                <li>{gentleGlowData[18] || "Loading..."}</li>
+                <li>
+                  <BoldTextBySlash text={gentleGlowData[16]} isHaveList />
+                </li>
+                <li>
+                  <BoldTextBySlash text={gentleGlowData[17]} isHaveList />
+                </li>
+                <li>
+                  <BoldTextBySlash text={gentleGlowData[18]} isHaveList />
+                </li>
               </ul>
             </ul>
 
@@ -147,7 +170,7 @@ export default function GentleGlow() {
 
       <div className="max-w-6xl mx-auto px-6 py-6 sm:py-12">
         {/* Section Title */}
-        <h2 className="font-title text-center italic mb-10">
+        <h2 className="font-title text-center mb-10 text-balance">
           {gentleGlowData[20] || "Loading..."}
         </h2>
 
@@ -155,59 +178,85 @@ export default function GentleGlow() {
         <div className="space-y-10">
           {/* 1. Soothes and Relieves Skin Irritation */}
           <div>
-            <h3 className="font-subtitle ">
-              1. {gentleGlowData[21] || "Loading..."}
+            <h3 className="font-subtitle">
+              {gentleGlowData[21] || "Loading..."}
             </h3>
-            <ul className="mt-3 font-body space-y-2">
-              <li>• {gentleGlowData[22] || "Loading..."}</li>
-              <li>• {gentleGlowData[23] || "Loading..."}</li>
-              <li>• {gentleGlowData[24] || "Loading..."}</li>
+            <ul className="mt-3 font-body space-y-2 list-disc ml-4">
+              <li>
+                <BoldTextBySlash text={gentleGlowData[22]} isHaveList />
+              </li>
+              <li>
+                <BoldTextBySlash text={gentleGlowData[23]} isHaveList />
+              </li>
+              <li>
+                <BoldTextBySlash text={gentleGlowData[24]} isHaveList />
+              </li>
             </ul>
           </div>
 
           {/* 2. Provides Deep Moisturization and Barrier Protection */}
           <div>
             <h3 className="font-subtitle ">
-              2. {gentleGlowData[25] || "Loading..."}
+              {gentleGlowData[25] || "Loading..."}
             </h3>
-            <ul className="mt-3 font-body space-y-2">
-              <li>• {gentleGlowData[26] || "Loading..."}</li>
-              <li>• {gentleGlowData[27] || "Loading..."}</li>
+            <ul className="mt-3 font-body space-y-2  list-disc ml-4">
+              <li>
+                <BoldTextBySlash text={gentleGlowData[26]} isHaveList />
+              </li>
+              <li>
+                <BoldTextBySlash text={gentleGlowData[27]} isHaveList />
+              </li>
             </ul>
           </div>
 
           {/* 3. Anti-Allergen & Anti-Pollution Shield */}
           <div>
             <h3 className="font-subtitle ">
-              3. {gentleGlowData[28] || "Loading..."}
+              {gentleGlowData[28] || "Loading..."}
             </h3>
-            <ul className="mt-3 font-body space-y-2">
-              <li>• {gentleGlowData[29] || "Loading..."}</li>
-              <li>• {gentleGlowData[30] || "Loading..."}</li>
+            <ul className="mt-3 font-body space-y-2  list-disc ml-4">
+              <li>
+                <BoldTextBySlash text={gentleGlowData[29]} isHaveList />
+              </li>
+              <li>
+                <BoldTextBySlash text={gentleGlowData[30]} isHaveList />
+              </li>
             </ul>
           </div>
 
           {/* 4. Hypoallergenic & Chemical-Free Formulation */}
           <div>
             <h3 className="font-subtitle ">
-              4. {gentleGlowData[31] || "Loading..."}
+              {gentleGlowData[31] || "Loading..."}
             </h3>
-            <ul className="mt-3 font-body space-y-2">
-              <li>• {gentleGlowData[32] || "Loading..."}</li>
-              <li>• {gentleGlowData[33] || "Loading..."}</li>
-              <li>• {gentleGlowData[34] || "Loading..."}</li>
+            <ul className="mt-3 font-body space-y-2  list-disc ml-4">
+              <li>
+                <BoldTextBySlash text={gentleGlowData[32]} isHaveList />
+              </li>
+              <li>
+                <BoldTextBySlash text={gentleGlowData[33]} isHaveList />
+              </li>
+              <li>
+                <BoldTextBySlash text={gentleGlowData[34]} isHaveList />
+              </li>
             </ul>
           </div>
 
           {/* 5. Ideal for Sensitive & Allergy-Prone Skin */}
           <div>
             <h3 className="font-subtitle ">
-              5. {gentleGlowData[35] || "Loading..."}
+              {gentleGlowData[35] || "Loading..."}
             </h3>
-            <ul className="mt-3 font-body space-y-2">
-              <li>• {gentleGlowData[36] || "Loading..."}</li>
-              <li>• {gentleGlowData[37] || "Loading..."}</li>
-              <li>• {gentleGlowData[38] || "Loading..."}</li>
+            <ul className="mt-3 font-body space-y-2  list-disc ml-4">
+              <li>
+                <BoldTextBySlash text={gentleGlowData[36]} isHaveList />
+              </li>
+              <li>
+                <BoldTextBySlash text={gentleGlowData[37]} isHaveList />
+              </li>
+              <li>
+                <BoldTextBySlash text={gentleGlowData[38]} isHaveList />
+              </li>
             </ul>
           </div>
         </div>
@@ -252,7 +301,9 @@ export default function GentleGlow() {
                   </g>
                 </svg>
               </span>
-              <p className="text-left flex-1">{item || "Loading..."}</p>
+              <p className="text-left flex-1">
+                <BoldTextBySlash text={item} />
+              </p>
             </li>
           ))}
         </ul>

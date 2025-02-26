@@ -5,7 +5,7 @@ import Img from "/image4.png";
 import bannerImg2 from "/banner13.png";
 import bannerImg3 from "/banner4.png";
 import bannerImg4 from "/banner3.png";
-import { BoldText } from "../services/BoldText";
+import { BoldText, BoldTextBySlash } from "../services/BoldText";
 
 export default function AloeveraProject() {
   const { getLocalizedData } = useGoogleSheets();
@@ -27,7 +27,9 @@ export default function AloeveraProject() {
           {aloeVeraProjectData[1]}
         </div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4 text-justify">
-          <div>{aloeVeraProjectData[2]}</div>
+          <div>
+            <BoldTextBySlash text={aloeVeraProjectData[2]} />
+          </div>
         </div>
       </div>
       <Banner src={bannerImg} />
@@ -38,14 +40,14 @@ export default function AloeveraProject() {
           <div className="font-subtitle">
             {aloeVeraProjectData[3]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
-              {aloeVeraProjectData[4]}
+              <BoldTextBySlash text={aloeVeraProjectData[4]} />
             </div>
           </div>
           {/* The Children's Foundation: Empowering the Future */}
           <div className="font-subtitle">
             {aloeVeraProjectData[5]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
-              {aloeVeraProjectData[6]}
+              <BoldTextBySlash text={aloeVeraProjectData[6]} />
             </div>
           </div>
         </div>
@@ -99,7 +101,7 @@ export default function AloeveraProject() {
           <div className="font-subtitle">
             {aloeVeraProjectData[20]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
-              {aloeVeraProjectData[21]}
+              <BoldTextBySlash text={aloeVeraProjectData[21]} />
             </div>
           </div>
         </div>

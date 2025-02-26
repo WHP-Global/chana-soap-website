@@ -20,7 +20,7 @@ export default function Sidebar({
       <div className="flex-1 font-color-secondary font-header flex items-center justify-center bg-primary py-2 rounded-t-lg">
         CHANA
       </div>
-      <div className="p-[25px] font-color-primary font-menu h-[93%] bg-fourth overflow-y-auto custom-scrollbar rounded-b-lg">
+      <div className="py-[25px] px-[15px] font-color-primary font-menu h-[93%] bg-fourth overflow-y-auto custom-scrollbar rounded-b-lg">
         {menus.map((menu, index) => (
           <li key={index} className="block">
             <RouterLink
@@ -47,6 +47,7 @@ export default function Sidebar({
                       onClick={() => {
                         onToggleSidebar();
                         findAndSetOpenMenu(menus, sub.name, setOpenMenu);
+                        window.scroll(0, 0);
                       }}
                     >
                       {sub.name}

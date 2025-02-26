@@ -47,7 +47,9 @@ export default function MainContainer() {
         { name: "Active Refresh", to: "active-refresh" },
         {
           name: `${
-            language === "EN" ? "Why Chana?" : "ทำไมต้องเลือกสบู่ Chana?"
+            language === "EN"
+              ? "Why Choose Chana Gentle Glow?"
+              : "ทำไมต้องเลือกสบู่ชนะ Gentle Glow?"
           }`,
           to: "why-chana",
         },
@@ -66,16 +68,23 @@ export default function MainContainer() {
         {
           name: `${
             language === "EN"
-              ? "Empowering Farmers in Prachinburi"
+              ? "Empowering Farmers in Prachinburi with AF"
               : "สอนชาวบ้านปราจีนบุรีทำปุ๋ยไส้เดือน AF"
           }`,
           to: "/empowering-farmer",
         },
         {
-          name: `${language === "EN" ? "Aloe vera" : "การปลูกว่านหางจระเข้"}`,
+          name: `${
+            language === "EN" ? "Growing Aloe Vera" : "การปลูกว่านหางจระเข้"
+          }`,
           to: "/aloe-vera",
         },
-        { name: "EQ life foundation", to: "/eq-life" },
+        {
+          name: `${
+            language === "EN" ? "EQ Life Foundation" : "EQ Life Foundation"
+          }`,
+          to: "/eq-life",
+        },
       ],
     },
     {

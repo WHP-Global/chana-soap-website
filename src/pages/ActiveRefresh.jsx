@@ -4,6 +4,7 @@ import banner1 from "/banner9.png";
 import banner5 from "/banner5.png";
 import chana from "/image2.png";
 import soapmock from "/image3.png";
+import { BoldTextBySlash } from "../services/BoldText";
 
 export default function ActiveRefresh() {
   const { getLocalizedData } = useGoogleSheets();
@@ -23,9 +24,9 @@ export default function ActiveRefresh() {
 
         <div className="absolute text-center sm:text-start py-6 sm:py-12 ml-[5%]">
           <h2 className="font-header font-color-primary  drop-shadow-2xl shadow-amber-950">
-            {"Active refresh"}
+            {"Active Refresh"}
             <br />
-            Comming soon...
+            Coming soon...
           </h2>
         </div>
       </div>
@@ -33,9 +34,9 @@ export default function ActiveRefresh() {
       {isHaveData && (
         <div>
           {/* Section Title */}
-          <div className="text-center py-6 sm:py-12">
+          <div className="max-w-6xl mx-auto pt-7 px-6 text-center">
             <h2 className="font-header ">
-              {activeRefreshData[1] || "Active Refresh"}
+              {activeRefreshData[1] || "Gentle Glow"}
             </h2>
           </div>
 
@@ -89,35 +90,78 @@ export default function ActiveRefresh() {
                     {activeRefreshData[4] || "Loading..."}
                   </li>
                   <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
-                    <li>{activeRefreshData[5] || "Loading..."}</li>
-                    <li>{activeRefreshData[6] || "Loading..."}</li>
-                    <li>{activeRefreshData[7] || "Loading..."}</li>
-                    <li>{activeRefreshData[8] || "Loading..."}</li>
+                    <li>
+                      <BoldTextBySlash text={activeRefreshData[5]} isHaveList />
+                    </li>
+                    <li>
+                      <BoldTextBySlash text={activeRefreshData[6]} isHaveList />
+                    </li>
+                    <li>
+                      <BoldTextBySlash text={activeRefreshData[7]} isHaveList />
+                    </li>
+                    <li>
+                      <BoldTextBySlash text={activeRefreshData[8]} isHaveList />
+                    </li>
                   </ul>
 
                   <li className="font-body-bold">
                     {activeRefreshData[9] || "Loading..."}
                   </li>
                   <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
-                    <li>{activeRefreshData[10] || "Loading..."}</li>
-                    <li>{activeRefreshData[11] || "Loading..."}</li>
+                    <li>
+                      <BoldTextBySlash
+                        text={activeRefreshData[10]}
+                        isHaveList
+                      />
+                    </li>
+                    <li>
+                      <BoldTextBySlash
+                        text={activeRefreshData[11]}
+                        isHaveList
+                      />
+                    </li>
                   </ul>
 
                   <li className="font-body-bold">
                     {activeRefreshData[12] || "Loading..."}
                   </li>
                   <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
-                    <li>{activeRefreshData[13] || "Loading..."}</li>
-                    <li>{activeRefreshData[14] || "Loading..."}</li>
+                    <li>
+                      <BoldTextBySlash
+                        text={activeRefreshData[13]}
+                        isHaveList
+                      />
+                    </li>
+                    <li>
+                      <BoldTextBySlash
+                        text={activeRefreshData[14]}
+                        isHaveList
+                      />
+                    </li>
                   </ul>
 
                   <li className="font-body-bold">
                     {activeRefreshData[15] || "Loading..."}
                   </li>
                   <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
-                    <li>{activeRefreshData[16] || "Loading..."}</li>
-                    <li>{activeRefreshData[17] || "Loading..."}</li>
-                    <li>{activeRefreshData[18] || "Loading..."}</li>
+                    <li>
+                      <BoldTextBySlash
+                        text={activeRefreshData[16]}
+                        isHaveList
+                      />
+                    </li>
+                    <li>
+                      <BoldTextBySlash
+                        text={activeRefreshData[17]}
+                        isHaveList
+                      />
+                    </li>
+                    <li>
+                      <BoldTextBySlash
+                        text={activeRefreshData[18]}
+                        isHaveList
+                      />
+                    </li>
                   </ul>
                 </ul>
 
@@ -159,7 +203,7 @@ export default function ActiveRefresh() {
 
           <div className="max-w-6xl mx-auto px-6 py-6 sm:py-12">
             {/* Section Title */}
-            <h2 className="font-title text-center italic mb-10">
+            <h2 className="font-title text-center mb-10 text-balance">
               {activeRefreshData[20] || "Loading..."}
             </h2>
 
@@ -167,59 +211,85 @@ export default function ActiveRefresh() {
             <div className="space-y-10">
               {/* 1. Soothes and Relieves Skin Irritation */}
               <div>
-                <h3 className="font-subtitle ">
-                  1. {activeRefreshData[21] || "Loading..."}
+                <h3 className="font-subtitle">
+                  {activeRefreshData[21] || "Loading..."}
                 </h3>
-                <ul className="mt-3 font-body space-y-2">
-                  <li>• {activeRefreshData[22] || "Loading..."}</li>
-                  <li>• {activeRefreshData[23] || "Loading..."}</li>
-                  <li>• {activeRefreshData[24] || "Loading..."}</li>
+                <ul className="mt-3 font-body space-y-2 list-disc ml-4">
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[22]} isHaveList />
+                  </li>
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[23]} isHaveList />
+                  </li>
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[24]} isHaveList />
+                  </li>
                 </ul>
               </div>
 
               {/* 2. Provides Deep Moisturization and Barrier Protection */}
               <div>
                 <h3 className="font-subtitle ">
-                  2. {activeRefreshData[25] || "Loading..."}
+                  {activeRefreshData[25] || "Loading..."}
                 </h3>
-                <ul className="mt-3 font-body space-y-2">
-                  <li>• {activeRefreshData[26] || "Loading..."}</li>
-                  <li>• {activeRefreshData[27] || "Loading..."}</li>
+                <ul className="mt-3 font-body space-y-2  list-disc ml-4">
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[26]} isHaveList />
+                  </li>
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[27]} isHaveList />
+                  </li>
                 </ul>
               </div>
 
               {/* 3. Anti-Allergen & Anti-Pollution Shield */}
               <div>
                 <h3 className="font-subtitle ">
-                  3. {activeRefreshData[28] || "Loading..."}
+                  {activeRefreshData[28] || "Loading..."}
                 </h3>
-                <ul className="mt-3 font-body space-y-2">
-                  <li>• {activeRefreshData[29] || "Loading..."}</li>
-                  <li>• {activeRefreshData[30] || "Loading..."}</li>
+                <ul className="mt-3 font-body space-y-2  list-disc ml-4">
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[29]} isHaveList />
+                  </li>
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[30]} isHaveList />
+                  </li>
                 </ul>
               </div>
 
               {/* 4. Hypoallergenic & Chemical-Free Formulation */}
               <div>
                 <h3 className="font-subtitle ">
-                  4. {activeRefreshData[31] || "Loading..."}
+                  {activeRefreshData[31] || "Loading..."}
                 </h3>
-                <ul className="mt-3 font-body space-y-2">
-                  <li>• {activeRefreshData[32] || "Loading..."}</li>
-                  <li>• {activeRefreshData[33] || "Loading..."}</li>
-                  <li>• {activeRefreshData[34] || "Loading..."}</li>
+                <ul className="mt-3 font-body space-y-2  list-disc ml-4">
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[32]} isHaveList />
+                  </li>
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[33]} isHaveList />
+                  </li>
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[34]} isHaveList />
+                  </li>
                 </ul>
               </div>
 
               {/* 5. Ideal for Sensitive & Allergy-Prone Skin */}
               <div>
                 <h3 className="font-subtitle ">
-                  5. {activeRefreshData[35] || "Loading..."}
+                  {activeRefreshData[35] || "Loading..."}
                 </h3>
-                <ul className="mt-3 font-body space-y-2">
-                  <li>• {activeRefreshData[36] || "Loading..."}</li>
-                  <li>• {activeRefreshData[37] || "Loading..."}</li>
-                  <li>• {activeRefreshData[38] || "Loading..."}</li>
+                <ul className="mt-3 font-body space-y-2  list-disc ml-4">
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[36]} isHaveList />
+                  </li>
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[37]} isHaveList />
+                  </li>
+                  <li>
+                    <BoldTextBySlash text={activeRefreshData[38]} isHaveList />
+                  </li>
                 </ul>
               </div>
             </div>
@@ -240,7 +310,7 @@ export default function ActiveRefresh() {
             </h3>
 
             {/* List of Use  */}
-            <ul className="space-y-6 flex flex-col items-start">
+            <ul className="space-y-6 flex flex-col items-start sm:ml-[18%]">
               {[
                 activeRefreshData[40],
                 activeRefreshData[41],
@@ -264,7 +334,9 @@ export default function ActiveRefresh() {
                       </g>
                     </svg>
                   </span>
-                  <p className="text-left flex-1">{item || "Loading..."}</p>
+                  <p className="text-left flex-1">
+                    <BoldTextBySlash text={item} />
+                  </p>
                 </li>
               ))}
             </ul>

@@ -12,6 +12,7 @@ import earth from "/earth.png";
 import skin from "/skin.png";
 import leaf from "/leaf.png";
 import Banner from "../components/Banner";
+import { BoldTextBySlash } from "../services/BoldText";
 
 export default function Products() {
   const location = useLocation();
@@ -65,7 +66,7 @@ export default function Products() {
         <div className="font-title">
           {language === "EN" ? "Two types of soaps" : "ผลิตภัณฑ์สบู่สองชนิด"}
         </div>
-        <div className="mt-3  font-body">
+        <div className="mt-3  font-body text-balance">
           {language === "EN"
             ? "Our thoughtfully crafted soap collection offers two distinct experiences designed to cater to your skin’s needs and your lifestyle."
             : "สบู่ชนะที่รังสรรค์อย่างพิถีพิถันของเรา มอบสองประสบการณ์อันโดดเด่น เพื่อตอบสนองความต้องการของผิวคุณและสอดคล้องกับไลฟ์สไตล์ของคุณอย่างลงตัว"}
@@ -75,24 +76,28 @@ export default function Products() {
       {/* Gentle Glow  */}
       <div className="max-w-5xl mx-auto text-center py-8 sm:py-12 px-6 mt-6 sm:mt-10">
         <div className="font-subtitle ">{productsData[2]}</div>
-        <div className="mt-3 text-balance font-body">{productsData[3]}</div>
+        <div className="mt-3 text-balance font-body">
+          <BoldTextBySlash text={productsData[3]} />
+        </div>
       </div>
       {/* Ingredients */}
       <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
         <img
           src={chana}
           alt="Chana Soap"
-          className="w-full max-w-sm rounded-lg shadow-lg"
+          className="w-full max-w-xs rounded-lg shadow-lg"
         />
-        <div className=" bg-secondary p-4 sm:p-6  rounded-lg shadow-md w-full sm:max-w-[65%] lg:max-w-[580px] text-balance sm:text-wrap">
+        <div className=" bg-secondary p-4 sm:p-6  rounded-lg shadow-md w-full sm:max-w-[65%] lg:max-w-[45%] text-balance sm:text-wrap">
           <div className="font-subtitle text-center  mb-6">
             {language === "EN" ? "Natural Ingredients" : "ส่วนผสมของสบู่"}
           </div>
           <ul className="list-disc list-inside  mt-3 font-sub-menu">
             {productsData[4]
-              ? productsData[4]
-                  .split("\n")
-                  .map((item, index) => <li key={index}>{item}</li>)
+              ? productsData[4].split("\n").map((item, index) => (
+                  <li key={index}>
+                    <BoldTextBySlash text={item} isHaveList />
+                  </li>
+                ))
               : "Loading..."}
           </ul>
 
@@ -130,26 +135,30 @@ export default function Products() {
       {/* Active Refresh */}
       <div className="max-w-5xl mx-auto text-center pb-8 sm:py-12 px-6">
         <div className="font-subtitle ">{productsData[5]}</div>
-        <div className="mt-3 text-balance font-body">{productsData[6]}</div>
+        <div className="mt-3 text-balance font-body">
+          <BoldTextBySlash text={productsData[6]} />
+        </div>
       </div>
       {/* Ingredients */}
       <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
         <img
           src={chana}
           alt="Active Refresh Soap"
-          className="w-full max-w-sm rounded-lg shadow-lg"
+          className="w-full max-w-xs rounded-lg shadow-lg"
         />
 
         {/* Ingredients List */}
-        <div className=" bg-secondary p-4 sm:p-6 rounded-lg shadow-md w-full sm:max-w-[65%] lg:max-w-[580px] text-balance sm:text-wrap">
+        <div className=" bg-secondary p-4 sm:p-6 rounded-lg shadow-md w-full sm:max-w-[65%] lg:max-w-[45%] text-balance sm:text-wrap">
           <div className="font-subtitle text-center  mb-6">
             {language === "EN" ? "Natural Ingredients" : "ส่วนผสมของสบู่"}
           </div>
           <ul className="list-disc list-inside  mt-3 font-sub-menu">
             {productsData[7]
-              ? productsData[7]
-                  .split("\n")
-                  .map((item, index) => <li key={index}>{item}</li>)
+              ? productsData[7].split("\n").map((item, index) => (
+                  <li key={index}>
+                    <BoldTextBySlash text={item} isHaveList />
+                  </li>
+                ))
               : "Loading..."}
           </ul>
           <button
@@ -207,7 +216,7 @@ export default function Products() {
                 </th>
                 <th className="border-l border-gray-500"></th>
                 <th className="py-4 px-6 text-center w-1/2">
-                  {language === "EN" ? "Chana Soap" : "สบู่ชนะ"}
+                  {language === "EN" ? "Gentle Glow" : "Gentle Glow"}
                 </th>
               </tr>
             </thead>

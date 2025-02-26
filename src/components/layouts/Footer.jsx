@@ -1,25 +1,38 @@
 /* eslint-disable react/prop-types */
 import { Link as RouterLink } from "react-router-dom";
+import Logo from "../Logo";
+import { useGoogleSheets } from "../../services/googleSheetService";
 export default function Footer({
   menus,
   openMenu,
   setOpenMenu,
   findAndSetOpenMenu,
 }) {
+  const { language } = useGoogleSheets();
   return (
     <div className="min-h-[350px] bg-primary py-[40px] font-color-secondary flex flex-col gap-[40px] items-center">
       <div className="grid grid-cols-4 lg:grid-cols-5 w-full px-[40px] gap-2 lg:px-0 lg:max-w-[85%] lg:w-auto ">
         {/* ข้อมูลติดต่อ (แสดงข้างบนเมื่อจอเล็ก) */}
         <div className="order-first lg:order-last col-span-5 lg:col-span-1">
-          <div className="font-menu mb-2">We’re Here to Connect</div>
+          <div className="font-menu mb-2">
+            {language === "EN"
+              ? "We’re Here to Connect"
+              : "เราพร้อมที่จะติดต่อกลับ"}
+          </div>
           <div className="font-sub-menu">
             <a href="mailto:info@chanasoapofficial.com">
-              <div className="text-wrap">Email: info@chanasoapofficial.com</div>
+              <div className="text-wrap">
+                {language === "EN" ? "Email" : "อีเมล์"}:
+                info@chanasoapofficial.com
+              </div>
             </a>
-            <div>Phone: +66 (123) 456-7890</div>
+            <div>
+              {language === "EN" ? "Phone" : "เบอร์โทรศัพท์"}: +66 (123)
+              456-7890
+            </div>
           </div>
           <hr className="my-2" />
-          <div className="flex gap-3 mb-4 lg:gap-2 lg:justify-between lg:px-1">
+          <div className="flex gap-3 mb-4 lg:gap-5 lg:justify-start lg:px-1">
             {/* facebook icon */}
             <a
               href="https://www.facebook.com/share/15qZMQRGLa/"
@@ -40,7 +53,7 @@ export default function Footer({
               </svg>
             </a>
             {/* line icon */}
-            <a
+            {/* <a
               href="https://lin.ee/@chanasoapthailand"
               target="_blank"
               rel="noopener noreferrer"
@@ -57,7 +70,7 @@ export default function Footer({
                   fill="white"
                 />
               </svg>
-            </a>
+            </a> */}
             {/* instragram icon */}
             <a
               href=" https://www.instagram.com/chana_skincare"
@@ -143,6 +156,7 @@ export default function Footer({
                       className="block"
                       onClick={() => {
                         findAndSetOpenMenu(menus, sub.name, setOpenMenu);
+                        window.scroll(0, 0);
                       }}
                     >
                       {sub.name}
@@ -167,8 +181,14 @@ export default function Footer({
         ))}
       </div>
 
-      <div className="flex-1 font-color-secondary font-header flex items-center justify-center">
-        CHANA
+      <div className="flex-1 font-color-secondary font-header flex flex-col items-center justify-center">
+        <RouterLink
+          to="/"
+          onClick={() => window.scroll(0, 0)}
+          className="w-[140px] sm:w-[170px]"
+        >
+          <Logo />
+        </RouterLink>
       </div>
     </div>
   );

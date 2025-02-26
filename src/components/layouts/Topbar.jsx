@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { useGoogleSheets } from "../../services/googleSheetService";
 
@@ -65,7 +64,7 @@ export default function Navbar({
               </div>
             </li>
 
-            {(openMenu === index && openMenu !== -1 ) && (
+            {openMenu === index && openMenu !== -1 && (
               <div className="bg-primary w-full z-20 absolute mt-[200px] h-[150px] shadow-lg hidden sm:block">
                 <ul
                   className={`w-full font-color-secondary relative z-30 font-sub-menu`}
@@ -77,18 +76,20 @@ export default function Navbar({
                       className={`py-1 hover:opacity-50 rounded-md cursor-pointer`}
                     >
                       {sub.to.includes("/") ? (
-                        <RouterLink to={sub.to} className="">
+                        <RouterLink
+                          to={sub.to}
+                          onClick={() => window.scroll(0, 0)}
+                        >
                           {sub.name}
                         </RouterLink>
                       ) : (
                         <RouterLink
-                      to={`${menu.to}#${sub.to}`}
-                      smooth={String(true)}
-                      duration={500}
-                      className=""
-                    >
-                      {sub.name}
-                    </RouterLink>
+                          to={`${menu.to}#${sub.to}`}
+                          smooth={String(true)}
+                          duration={500}
+                        >
+                          {sub.name}
+                        </RouterLink>
                       )}
                     </li>
                   ))}
@@ -100,9 +101,13 @@ export default function Navbar({
       </ul>
 
       {/* Logo and Name product */}
-      <div className="flex-1 font-color-secondary font-header flex items-center justify-center xl:justify-start">
+      <RouterLink
+        className="flex-1 font-color-secondary font-header flex items-center justify-center xl:justify-start"
+        to="/"
+        onClick={() => window.scroll(0, 0)}
+      >
         CHANA
-      </div>
+      </RouterLink>
 
       {/* Show Language */}
       <div className="relative">

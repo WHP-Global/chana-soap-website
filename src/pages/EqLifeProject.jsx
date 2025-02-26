@@ -4,7 +4,7 @@ import bannerImg from "/image1.png";
 import Img from "/image4.png";
 import bannerImg2 from "/banner13.png";
 import bannerImg4 from "/banner3.png";
-import { BoldText } from "../services/BoldText";
+import { BoldText, BoldTextBySlash } from "../services/BoldText";
 
 export default function EqLifeProject() {
   const { getLocalizedData } = useGoogleSheets();
@@ -26,13 +26,15 @@ export default function EqLifeProject() {
           {eqLifeProjectData[1]}
         </div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4 text-justify">
-          <div>{eqLifeProjectData[2]}</div>
-          <div>{eqLifeProjectData[3]}</div>
+          <BoldTextBySlash text={eqLifeProjectData[2]} />
+          <BoldTextBySlash text={eqLifeProjectData[3]} />
           <div className=" bg-secondary rounded-[20px] p-2 sm:p-4 text-balance md:text-wrap text-center flex flex-col gap-3">
             <BoldText text={eqLifeProjectData[4]} />
             <BoldText text={eqLifeProjectData[5]} />
           </div>
-          <div className="text-justify">{eqLifeProjectData[6]}</div>
+          <div className="text-justify">
+            <BoldTextBySlash text={eqLifeProjectData[6]} />
+          </div>
         </div>
       </div>
       <Banner src={bannerImg} />
@@ -43,7 +45,7 @@ export default function EqLifeProject() {
           <div className="font-subtitle">
             {eqLifeProjectData[7]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
-              {eqLifeProjectData[8]}
+              <BoldTextBySlash text={eqLifeProjectData[8]} />
             </div>
           </div>
         </div>
@@ -65,7 +67,7 @@ export default function EqLifeProject() {
           <div className="font-subtitle">
             {eqLifeProjectData[13]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
-              {eqLifeProjectData[14]}
+              <BoldTextBySlash text={eqLifeProjectData[14]} />
             </div>
           </div>
 

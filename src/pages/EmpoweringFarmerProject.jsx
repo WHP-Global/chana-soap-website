@@ -8,6 +8,7 @@ import bannerImg from "/EmpoweringFarmerProject/AF-3.webp";
 import bannerImg2 from "/EmpoweringFarmerProject/AF-1.jpg";
 
 import { useRef } from "react";
+import { BoldTextBySlash } from "../services/BoldText";
 
 export default function EmpoweringFarmerProject() {
   const { getLocalizedData } = useGoogleSheets();
@@ -41,13 +42,17 @@ export default function EmpoweringFarmerProject() {
           {empoweringProjectData[1]}
         </div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4  text-justify">
-          <div>{empoweringProjectData[2]}</div>
+          <div>
+            <BoldTextBySlash text={empoweringProjectData[2]} />
+          </div>
           <div className="py-5 font-subtitle text-center indent-0  sm:-mb-4">
             {empoweringProjectData[3]}
           </div>
-          <div className="md:text-nowrap">{empoweringProjectData[4]}</div>
-          <div>{empoweringProjectData[5]}</div>
-          <div>{empoweringProjectData[6]}</div>
+          <div className="md:text-nowrap">
+            <BoldTextBySlash text={empoweringProjectData[4]} />
+          </div>
+          <BoldTextBySlash text={empoweringProjectData[5]} />
+          <BoldTextBySlash text={empoweringProjectData[6]} />
         </div>
       </div>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[60px]">
@@ -78,25 +83,33 @@ export default function EmpoweringFarmerProject() {
             <div className="font-body-bold pt-2">
               {empoweringProjectData[9]}
             </div>
-            <div className="ml-3 mt-1">{empoweringProjectData[10]}</div>
+            <div className="ml-3 mt-1">
+              <BoldTextBySlash text={empoweringProjectData[10]} />
+            </div>
           </div>
 
           {/* Creating the Worm Habitat */}
           <div>
             <div className="font-body-bold">{empoweringProjectData[11]}</div>
-            <div className="ml-3 mt-1">{empoweringProjectData[12]}</div>
+            <div className="ml-3 mt-1">
+              <BoldTextBySlash text={empoweringProjectData[12]} />
+            </div>
           </div>
 
           {/* Feeding the Worms */}
           <div>
             <div className="font-body-bold">{empoweringProjectData[13]}</div>
-            <div className="ml-3 mt-1">{empoweringProjectData[14]}</div>
+            <div className="ml-3 mt-1">
+              <BoldTextBySlash text={empoweringProjectData[14]} />
+            </div>
           </div>
 
           {/* Harvesting Vermicompost */}
           <div>
             <div className="font-body-bold">{empoweringProjectData[15]}</div>
-            <div className="ml-3 mt-1">{empoweringProjectData[16]}</div>
+            <div className="ml-3 mt-1">
+              <BoldTextBySlash text={empoweringProjectData[16]} />
+            </div>
           </div>
         </div>
       </div>
@@ -134,37 +147,37 @@ export default function EmpoweringFarmerProject() {
           <div className="font-subtitle">
             {empoweringProjectData[17]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
-              {empoweringProjectData[18]}
+              <BoldTextBySlash text={empoweringProjectData[18]} />
             </div>
           </div>
           <div className="text-center indent-0 text-balance">
-            {empoweringProjectData[19]}
+            <BoldTextBySlash text={empoweringProjectData[19]} />
           </div>
 
           {/* Value Addition through Soap Production */}
           <div className="font-subtitle">
             {empoweringProjectData[20]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
-              {empoweringProjectData[21]}
+              <BoldTextBySlash text={empoweringProjectData[21]} />
             </div>
           </div>
           <div className="text-center indent-0 text-balance">
-            {empoweringProjectData[22]}
+            <BoldTextBySlash text={empoweringProjectData[22]} />
           </div>
 
           {/* Value Addition through Soap Production */}
           <div className="font-subtitle">
             {empoweringProjectData[23]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
-              {empoweringProjectData[24]}
+              <BoldTextBySlash text={empoweringProjectData[24]} />
             </div>
           </div>
           <div className="text-center indent-0 text-balance">
-            {empoweringProjectData[25]}
+            <BoldTextBySlash text={empoweringProjectData[25]} />
           </div>
 
           <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
-            {empoweringProjectData[26]}
+            <BoldTextBySlash text={empoweringProjectData[26]} />
           </div>
         </div>
       </div>
