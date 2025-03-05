@@ -1,6 +1,6 @@
 export const sendEmail = async (dataFromInput, subject) => {
   try {
-    await fetch("http://localhost:8888/send-email", {
+    await fetch("http://45.144.164.55:8888/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ dataFromInput, subject }),
