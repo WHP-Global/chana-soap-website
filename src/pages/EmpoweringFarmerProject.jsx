@@ -1,4 +1,3 @@
-import Banner from "../components/banner";
 import { useGoogleSheets } from "../services/googleSheetService";
 import AFClip1 from "/EmpoweringFarmerProject/AF-clip-1.mp4";
 import AFClip2 from "/EmpoweringFarmerProject/AF-clip-2.mp4";
@@ -6,6 +5,7 @@ import AFImg1 from "/EmpoweringFarmerProject/AF-2.jpg";
 import AFImg2 from "/EmpoweringFarmerProject/AF-4.png";
 import bannerImg from "/EmpoweringFarmerProject/AF-3.webp";
 import bannerImg2 from "/EmpoweringFarmerProject/AF-1.jpg";
+import Banner from "../components/banner";
 
 import { useRef } from "react";
 import { BoldTextBySlash } from "../services/BoldText";
