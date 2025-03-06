@@ -11,6 +11,7 @@ export default function InputFormToSendEmail() {
     message: "",
   });
   const [isSuccess, setIsSuccess] = useState("true");
+  const [isLoading, setIsLoading] = useState(false);
   const { getLocalizedData } = useGoogleSheets();
 
   // ดึงข้อมูลจากชีต "contact us"
@@ -30,8 +31,9 @@ export default function InputFormToSendEmail() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     await sendEmail(formData, "สอบถามข้อมูลสินค้าและบริการ : Chana Soap");
-
+    setIsLoading(false);
     setIsSuccess("true");
     setFormData({
       name: "",
@@ -99,6 +101,16 @@ export default function InputFormToSendEmail() {
           {contactUsData[12]}
         </button>
       </form>
+      {isLoading && (
+        <div className="fixed inset-0 z-10">
+          <div className="w-full flex justify-center items-center h-full">
+            <div className="bg-black opacity-10 w-full h-full"></div>
+            <div className="fixed">
+              <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-white border-opacity-75"></div>
+            </div>
+          </div>
+        </div>
+      )}
       {isSuccess !== "" && (
         <div className="fixed inset-0 z-10">
           <div className="w-full flex justify-center items-center h-full">
