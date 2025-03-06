@@ -35,6 +35,7 @@ export default function InputFormToSendEmail() {
       "สอบถามข้อมูลสินค้าและบริการ : Chana Soap"
     );
 
+    console.log("result", result);
     if (result.ok === true) {
       setIsSuccess("true");
       setFormData({
