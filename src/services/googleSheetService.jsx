@@ -32,7 +32,7 @@ export const GoogleSheetsProvider = ({ children }) => {
           // )}&format=json`;
           const url = `https://script.google.com/macros/s/AKfycbwpnjGSv8x0QZNKENgemVlAGVTmVdcq7ZJO6hUQdS43ZJelC9-jLdCjFtz68UTeWH1m/exec?sheet=${encodeURIComponent(
             sheetName
-          )}&format=json`;
+          )}`;
 
           const response = await fetch(url, { redirect: "follow" });
 
