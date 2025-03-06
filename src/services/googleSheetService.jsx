@@ -27,8 +27,15 @@ export const GoogleSheetsProvider = ({ children }) => {
     try {
       const data = await Promise.all(
         sheetNames.map(async (sheetName) => {
-          const url = `${API_URL}?sheet=${encodeURIComponent(sheetName)}`;
-          const response = await fetch(url);
+          const url = `${API_URL}?sheet=${encodeURIComponent(
+            sheetName
+          )}&format=json`;
+          const response = await fetch(url, { redirect: "follow" });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+
           const result = await response.json();
           return { sheetName, values: result };
         })
