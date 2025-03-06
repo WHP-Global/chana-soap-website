@@ -30,21 +30,15 @@ export default function InputFormToSendEmail() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await sendEmail(
-      formData,
-      "สอบถามข้อมูลสินค้าและบริการ : Chana Soap"
-    );
+    await sendEmail(formData, "สอบถามข้อมูลสินค้าและบริการ : Chana Soap");
 
-    console.log("result", result);
-    if (result.ok === true) {
-      setIsSuccess("true");
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        message: "",
-      });
-    } else setIsSuccess("false");
+    setIsSuccess("true");
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
