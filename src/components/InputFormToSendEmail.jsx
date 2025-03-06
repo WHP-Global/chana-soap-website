@@ -28,8 +28,15 @@ export default function InputFormToSendEmail() {
       formData,
       "สอบถามข้อมูลสินค้าและบริการ : Chana Soap"
     );
-    if (result.success) alert("Email sent successfully!");
-    else alert("Failed to send email");
+    if (result.success) {
+      alert("Email sent successfully!");
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
+    } else alert("Failed to send email");
   };
 
   return (
