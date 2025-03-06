@@ -1,26 +1,25 @@
 import { useState } from "react";
 import { useGoogleSheets } from "../services/googleSheetService";
-import banner1 from "/banner1.png";
-import chana from "/image2.png";
-import soapmock from "/image3.png";
-import banner5 from "/banner5.png";
+import hero from "/Products/hero.jpg";
+import gentleGlow1 from "/GentleGlow/gentleGlow1.jfif";
+import gentleGlow2 from "/GentleGlow/gentleGlow2.jfif";
+import gentleGlow3 from "/GentleGlow/gentleGlow3.jfif";
+import gentleGlow4 from "/GentleGlow/gentleGlow4.jfif";
+import ingredients from "/GentleGlow/ingredients.jpg";
+import banner1 from "/GentleGlow/banner1.jpg";
 import { BoldTextBySlash } from "../services/BoldText";
 
 export default function GentleGlow() {
   const { getLocalizedData } = useGoogleSheets();
   const gentleGlowData = getLocalizedData("gentle glow");
 
-  const [selectedImage, setSelectedImage] = useState(chana);
+  const [selectedImage, setSelectedImage] = useState(gentleGlow4);
 
   return (
     <div className="w-full bg-[#fdf8f2] font-color-primary">
       {/* Banner */}
       <div className="w-full h-[678px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
-        <img
-          src={banner1}
-          alt="Banner"
-          className="w-full h-full object-cover"
-        />
+        <img src={hero} alt={hero} className="w-full h-full object-cover" />
       </div>
 
       {/* Section Title */}
@@ -39,7 +38,7 @@ export default function GentleGlow() {
 
       {/* Small Image Grid */}
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 px-6 py-8">
-        {[soapmock, chana, soapmock].map((image, index) => (
+        {[gentleGlow1, gentleGlow2, gentleGlow3].map((image, index) => (
           <div key={index} className="flex justify-center">
             <button
               onClick={() => setSelectedImage(image)}
@@ -59,11 +58,11 @@ export default function GentleGlow() {
       <div className="w-full py-6 sm:py-12 px-6">
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
           {/* Product Image */}
-          <div className="w-2xl max-w-md">
+          <div className="max-w-md">
             <img
-              src={soapmock}
-              alt="Natural Ingredients"
-              className="w-full h-auto rounded-lg shadow-lg"
+              src={ingredients}
+              alt={ingredients}
+              className="w-full rounded-lg shadow-lg h-auto"
             />
           </div>
 
@@ -264,8 +263,8 @@ export default function GentleGlow() {
       <div className="w-full">
         <div className="w-full h-[400px]">
           <img
-            src={banner5}
-            alt="Everdrop Natural Care"
+            src={banner1}
+            alt={banner1}
             className="w-full h-full object-cover"
           />
         </div>

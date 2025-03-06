@@ -1,10 +1,12 @@
 import { useGoogleSheets } from "../services/googleSheetService";
+import hero from "/AloeVera/hero.jpeg";
+import banner1 from "/AloeVera/banner1.jpg";
+import banner2 from "/AloeVera/banner2.jpg";
+import community from "/AloeVera/community.jpg";
+import empoweringYouth from "/AloeVera/empoweringYouth.jpg";
+import banner3 from "/AloeVera/banner3.jpg";
 import Banner from "../components/Banner";
-import bannerImg from "/image1.png";
-import Img from "/image4.png";
-import bannerImg2 from "/banner13.png";
-import bannerImg3 from "/banner4.png";
-import bannerImg4 from "/banner3.png";
+
 import { BoldText, BoldTextBySlash } from "../services/BoldText";
 
 export default function AloeveraProject() {
@@ -16,11 +18,7 @@ export default function AloeveraProject() {
     <div>
       {/* banner */}
       <div className="w-full h-[487px] sm:h-[587] md:h-[687px] bg-gray-400 flex justify-center items-center">
-        <img
-          src={bannerImg4}
-          alt="bannerImg4"
-          className="h-full w-full object-cover"
-        />
+        <img src={hero} alt={hero} className="h-full w-full object-cover" />
       </div>
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-[40px] font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-balance">
@@ -32,7 +30,7 @@ export default function AloeveraProject() {
           </div>
         </div>
       </div>
-      <Banner src={bannerImg} />
+      <Banner src={banner1} />
 
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 text-justify">
@@ -53,7 +51,7 @@ export default function AloeveraProject() {
         </div>
       </div>
 
-      <Banner src={bannerImg2} />
+      <Banner src={banner2} />
 
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3">
@@ -83,15 +81,15 @@ export default function AloeveraProject() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[60px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
-                src={Img}
-                alt=" Img"
+                src={community}
+                alt={community}
                 className="h-full w-auto object-cover rounded-2xl"
               />
             </div>
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
-                src={Img}
-                alt=" Img"
+                src={empoweringYouth}
+                alt={empoweringYouth}
                 className="h-full w-auto object-cover rounded-2xl"
               />
             </div>
@@ -107,7 +105,7 @@ export default function AloeveraProject() {
         </div>
       </div>
 
-      <Banner src={bannerImg3} />
+      <Banner src={banner3} />
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>

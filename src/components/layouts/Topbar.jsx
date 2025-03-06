@@ -106,7 +106,7 @@ export default function Navbar({
         to="/"
         onClick={() => window.scroll(0, 0)}
       >
-        CHANA
+        {language === "EN" ? "CHANA" : "ชนะ"}
       </RouterLink>
 
       {/* Show Language */}

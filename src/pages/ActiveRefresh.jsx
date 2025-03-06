@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { useGoogleSheets } from "../services/googleSheetService";
-import banner1 from "/banner9.png";
-import banner5 from "/banner5.png";
-import chana from "/image2.png";
-import soapmock from "/image3.png";
+import banner1 from "/ActiveRefresh/banner1.jpeg";
 import { BoldTextBySlash } from "../services/BoldText";
 
 export default function ActiveRefresh() {
   const { getLocalizedData } = useGoogleSheets();
   const activeRefreshData = getLocalizedData("active refresh");
   const [isHaveData, setIsHaveData] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(chana);
+  // const [selectedImage, setSelectedImage] = useState(chana);
 
   return (
     <div className="w-full bg-[#fdf8f2] font-color-primary">
@@ -18,13 +15,13 @@ export default function ActiveRefresh() {
       <div className="relative w-full h-[678px] sm:h-[500px] lg:h-[678px] flex justify-center sm:justify-start items-center">
         <img
           src={banner1}
-          alt="Banner"
-          className="w-full h-full object-cover"
+          alt={banner1}
+          className="w-full h-full object-center"
         />
 
         <div className="absolute text-center sm:text-start py-6 sm:py-12 ml-[5%]">
-          <h2 className="font-header font-color-primary  drop-shadow-2xl shadow-amber-950">
-            {"Active Refresh"}
+          <h2 className="font-header text-white  drop-shadow-2xl shadow-amber-950">
+            Active Refresh
             <br />
             Coming soon...
           </h2>

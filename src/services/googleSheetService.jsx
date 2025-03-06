@@ -30,7 +30,7 @@ export const GoogleSheetsProvider = ({ children }) => {
           // const url = `${API_URL}?sheet=${encodeURIComponent(
           //   sheetName
           // )}&format=json`;
-          const url = `https://script.google.com/macros/s/AKfycbyR3YbTxSY4bJ6uL5HCMXSWq17C7jvclHINdj4o4gRd7lWDt4UDt395m-zA7s6aqhjS/exec?sheet=${encodeURIComponent(
+          const url = `https://script.google.com/macros/s/AKfycbwNoQEMAS9pn6N27m583KKGtHVT9Xgo-v5nY5duaaWNBP7BvREpSnS2QXu--wmdJKY2/exec?sheet=${encodeURIComponent(
             sheetName
           )}`;
 

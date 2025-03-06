@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useGoogleSheets } from "../services/googleSheetService";
-import shopeeImg from "/shopee.png";
-import lazadaImg from "/lazada.png";
-import lineImg from "/line.png";
+import hero from "/ContactUs/hero.jpg";
+import shopeeImg from "/ContactUs/shopee.png";
+import lazadaImg from "/ContactUs/lazada.png";
+import lineImg from "/ContactUs/line.png";
 import InputFormToSendEmail from "../components/InputFormToSendEmail";
 import FAQ from "../components/FAQ";
-import banner1 from "/banner4.png";
 import Logo from "../components/Logo";
 import { BoldTextBySlash } from "../services/BoldText";
 
@@ -33,11 +33,7 @@ export default function ContactUs() {
       {/*1. where to buy */}
       {/* banner */}
       <div className="w-full h-[487px] sm:h-[587] md:h-[687px] bg-gray-400 flex justify-center items-center">
-        <img
-          src={banner1}
-          alt="Banner"
-          className="w-full h-full object-cover"
-        />
+        <img src={hero} alt={hero} className="w-full h-full object-cover" />
         <div id="where-to-buy"></div>
       </div>
       {/* content */}

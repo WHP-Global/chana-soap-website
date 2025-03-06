@@ -1,10 +1,11 @@
 import { useGoogleSheets } from "../services/googleSheetService";
-import banner2 from "/banner2.png";
-import banner8 from "/banner8.png";
-import banner4 from "/banner4.png";
-import banner10 from "/banner10.png";
-import beach from "/beach.jpeg";
-import AFImg from "/EmpoweringFarmerProject/AF-5.png";
+import hero from "/Projects/hero.png";
+import banner1 from "/Projects/banner1.jpeg";
+import earthworms from "/Projects/earthworms.jpg";
+import AFImg from "/Projects/AF.png";
+import aloeVera from "/Projects/aloeVera.jpg";
+import eqLife from "/Projects/eqLife.jpg";
+import banner2 from "/Projects/banner2.jpg";
 import { Link } from "react-router-dom";
 import { BoldTextBySlash } from "../services/BoldText";
 
@@ -16,11 +17,7 @@ export default function Projects() {
     <div>
       <div className="w-full">
         <div className="w-full h-[678px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
-          <img
-            src={banner2}
-            alt="Banner"
-            className="w-full h-full object-cover"
-          />
+          <img src={hero} alt={hero} className="w-full h-full object-cover" />
         </div>
       </div>
 
@@ -44,8 +41,8 @@ export default function Projects() {
       <div className="w-full">
         <div className="w-full h-[400px]">
           <img
-            src={banner8}
-            alt="Everdrop Natural Care"
+            src={banner1}
+            alt={banner1}
             className="w-full h-full object-cover"
           />
         </div>
@@ -75,8 +72,8 @@ export default function Projects() {
           {/* Image in the right */}
           <div className="flex-shrink-0">
             <img
-              src={beach}
-              alt="Project Image"
+              src={earthworms}
+              alt={earthworms}
               className="w-[350px] h-[450px] object-cover rounded-lg shadow-md"
             />
           </div>
@@ -101,13 +98,13 @@ export default function Projects() {
             {
               title: <BoldTextBySlash text={projectsData[11]} />,
               description: <BoldTextBySlash text={projectsData[12]} />,
-              image: banner4,
+              image: aloeVera,
               link: "/aloe-vera",
             },
             {
               title: <BoldTextBySlash text={projectsData[13]} />,
               description: <BoldTextBySlash text={projectsData[14]} />,
-              image: banner4,
+              image: eqLife,
               link: "/eq-life",
             },
           ].map((project, index) => (
@@ -142,8 +139,8 @@ export default function Projects() {
       <div className="w-full">
         <div className="w-full h-[500px]">
           <img
-            src={banner10}
-            alt="Everdrop Natural Care"
+            src={banner2}
+            alt={banner2}
             className="w-full h-full object-cover"
           />
         </div>

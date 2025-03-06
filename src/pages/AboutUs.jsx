@@ -1,13 +1,18 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useGoogleSheets } from "../services/googleSheetService";
-import inspirationImg from "/image1.png";
-import bannerImg from "/banner6.png";
-import bannerImg2 from "/banner7.png";
-import bannerImg3 from "/banner1.png";
-import bannerImg4 from "/banner9.png";
-import bannerImg5 from "/forest.gif";
-import productImg from "/image3.png";
+import washingHands from "/AboutUs/washing-hands.jpg";
+import tennis from "/AboutUs/tennis.jpg";
+import swimming from "/AboutUs/swimming.jpg";
+import activeRefresh from "/AboutUs/activeRefresh.jpg";
+import gentleGlow from "/AboutUs/gentleGlow.jpg";
+import initiatives from "/AboutUs/initiatives.jpg";
+import fundingPrograms from "/AboutUs/fundingPrograms.jpg";
+import Inclusives2 from "/AboutUs/Inclusives2.jfif";
+import banner1 from "/AboutUs/banner1.png";
+import banner2 from "/AboutUs/banner2.png";
+import banner3 from "/AboutUs/banner3.png";
+import bannerGif from "/AboutUs/forest.gif";
 import Banner from "../components/Banner";
 import { BoldText, BoldTextBySlash } from "../services/BoldText";
 
@@ -36,8 +41,8 @@ export default function AboutUs() {
       {/* banner */}
       <div className="relative w-full h-[487px] sm:h-[587] md:h-[687px] flex justify-center items-center">
         <img
-          src={bannerImg5}
-          alt="bannerImg5"
+          src={bannerGif}
+          alt={bannerGif}
           className="h-full w-full object-cover"
         />
         <div className="absolute bottom-4 left-4 font-color-secondary">
@@ -66,15 +71,15 @@ export default function AboutUs() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
               <img
-                src={inspirationImg}
-                alt="inspirationImg"
+                src={swimming}
+                alt={swimming}
                 className="h-full w-auto object-cover rounded-2xl"
               />
             </div>
             <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
               <img
-                src={inspirationImg}
-                alt="inspirationImg"
+                src={tennis}
+                alt={tennis}
                 className="h-full w-auto object-cover rounded-2xl"
               />
             </div>
@@ -86,8 +91,8 @@ export default function AboutUs() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px]  h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
-                src={inspirationImg}
-                alt="inspirationImg"
+                src={washingHands}
+                alt={washingHands}
                 className="h-full w-auto object-cover rounded-2xl"
               />
             </div>
@@ -108,7 +113,7 @@ export default function AboutUs() {
       {/*2. sourcing and impact */}
       <div id="sourcing-and-impact"></div>
       {/* banner */}
-      <Banner src={bannerImg} />
+      <Banner src={banner1} />
       {/* content */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-title text-center">{aboutUsData[16]}</div>
@@ -157,7 +162,7 @@ export default function AboutUs() {
         </div>
       </div>
       {/* banner */}
-      <Banner src={bannerImg2} />
+      <Banner src={banner2} />
       <div className="flex flex-col font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 font-color-primary py-[20px] sm:py-[30px]">
         <div className="text-center font-caption indent-0 max-w-6xl mx-auto text-balance">
           {aboutUsData[29]}
@@ -168,16 +173,16 @@ export default function AboutUs() {
       <div className="flex flex-col sm:flex-row justify-center items-center gap-6 h-auto py-[20px] sm:py-[60px] mx-5 sm:mx-8 md:mx-10 lg:mx-16">
         <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
           <img
-            src={productImg}
-            alt="productImg"
+            src={activeRefresh}
+            alt={activeRefresh}
             className="h-full w-auto object-cover rounded-2xl"
           />
         </div>
         <div id="commitment"></div>
         <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
           <img
-            src={productImg}
-            alt="productImg"
+            src={gentleGlow}
+            alt={gentleGlow}
             className="h-full w-auto object-cover rounded-2xl"
           />
         </div>
@@ -200,8 +205,8 @@ export default function AboutUs() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px]  h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
-                src={bannerImg3}
-                alt="inspirationImg"
+                src={initiatives}
+                alt={initiatives}
                 className="h-full w-auto object-cover rounded-2xl"
               />
             </div>
@@ -224,15 +229,15 @@ export default function AboutUs() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[30px]">
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
-                src={bannerImg3}
-                alt="bannerImg3"
+                src={fundingPrograms}
+                alt={fundingPrograms}
                 className="h-full w-auto object-cover rounded-2xl"
               />
             </div>
             <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
               <img
-                src={bannerImg3}
-                alt="bannerImg3"
+                src={Inclusives2}
+                alt={Inclusives2}
                 className="h-full w-auto object-cover rounded-2xl"
               />
             </div>
@@ -254,7 +259,7 @@ export default function AboutUs() {
         </div>
       </div>
       {/* banner */}
-      <Banner src={bannerImg4} />
+      <Banner src={banner3} />
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>

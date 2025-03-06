@@ -1,16 +1,24 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useGoogleSheets } from "../services/googleSheetService";
-import banner1 from "/banner1.png";
-import chana from "/image2.png";
-import soapmock from "/image3.png";
-import banner5 from "/banner5.png";
-import banner11 from "/banner11.png";
-import notoxic from "/no-toxic.png";
-import oil from "/oil.png";
-import earth from "/earth.png";
-import skin from "/skin.png";
-import leaf from "/leaf.png";
+import hero from "/Products/hero.jpg";
+import gentleGlow1 from "/Products/gentleGlow1.jfif";
+import gentleGlow2 from "/Products/gentleGlow2.jfif";
+import gentleGlow3 from "/Products/gentleGlow3.jfif";
+import gentleGlow4 from "/Products/gentleGlow4.jfif";
+import activeRefresh1 from "/Products/activeRefresh1.jfif";
+import activeRefresh2 from "/Products/activeRefresh2.jfif";
+import activeRefresh3 from "/Products/activeRefresh3.jfif";
+import activeRefresh4 from "/Products/activeRefresh4.jfif";
+import banner1 from "/Products/banner1.jpg";
+import banner2 from "/Products/banner2.jpg";
+import before from "/Products/before.jfif";
+import after from "/Products/after.jfif";
+import notoxic from "/Products/no-toxic.png";
+import oil from "/Products/oil.png";
+import earth from "/Products/earth.png";
+import skin from "/Products/skin.png";
+import leaf from "/Products/leaf.png";
 import Banner from "../components/Banner";
 import { BoldTextBySlash } from "../services/BoldText";
 
@@ -35,11 +43,7 @@ export default function Products() {
   return (
     <div className="w-full text-primary">
       <div className="w-full h-[678px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
-        <img
-          src={banner1}
-          alt="Banner"
-          className="w-full h-full object-cover"
-        />
+        <img src={hero} alt={hero} className="w-full h-full object-cover" />
       </div>
 
       {/* Products Section */}
@@ -83,9 +87,9 @@ export default function Products() {
       {/* Ingredients */}
       <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
         <img
-          src={chana}
-          alt="Chana Soap"
-          className="w-full max-w-xs rounded-lg shadow-lg"
+          src={gentleGlow4}
+          alt={gentleGlow4}
+          className="w-full max-w-xs rounded-lg shadow-lg max-h-[440px]"
         />
         <div className=" bg-secondary p-4 sm:p-6  rounded-lg shadow-md w-full sm:max-w-[65%] lg:max-w-[45%] text-balance sm:text-wrap">
           <div className="font-subtitle text-center  mb-6">
@@ -112,18 +116,18 @@ export default function Products() {
       {/* Gentle Glow image */}
       <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center sm:py-12 rounded-lg -mt-4 ">
         <img
-          src={soapmock}
-          alt="Product 1"
+          src={gentleGlow1}
+          alt={gentleGlow1}
           className="w-1/3 max-w-xs rounded-lg"
         />
         <img
-          src={soapmock}
-          alt="Product 2"
+          src={gentleGlow2}
+          alt={gentleGlow2}
           className="w-1/3 max-w-xs rounded-lg"
         />
         <img
-          src={soapmock}
-          alt="Product 3"
+          src={gentleGlow3}
+          alt={gentleGlow3}
           className="w-1/3 max-w-xs rounded-lg"
         />
       </div>
@@ -142,9 +146,9 @@ export default function Products() {
       {/* Ingredients */}
       <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
         <img
-          src={chana}
-          alt="Active Refresh Soap"
-          className="w-full max-w-xs rounded-lg shadow-lg"
+          src={activeRefresh1}
+          alt={activeRefresh1}
+          className="w-full max-w-xs rounded-lg shadow-lg max-h-[440px]"
         />
 
         {/* Ingredients List */}
@@ -172,18 +176,18 @@ export default function Products() {
       {/* Active Refresh image*/}
       <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center py-12 -mt-4">
         <img
-          src={soapmock}
-          alt="Product 1"
+          src={activeRefresh2}
+          alt={activeRefresh2}
           className="w-1/3 max-w-xs rounded-lg "
         />
         <img
-          src={soapmock}
-          alt="Product 2"
+          src={activeRefresh3}
+          alt={activeRefresh3}
           className="w-1/3 max-w-xs rounded-lg "
         />
         <img
-          src={soapmock}
-          alt="Product 3"
+          src={activeRefresh4}
+          alt={activeRefresh4}
           className="w-1/3 max-w-xs rounded-lg "
         />
       </div>
@@ -200,7 +204,7 @@ export default function Products() {
         </div>
       </div>
       <div id="why-chana"></div>
-      <Banner src={banner5} />
+      <Banner src={banner1} />
 
       {/* Why Chana */}
       <div className="max-w-4xl mx-auto text-center py-12 px-6 -mt-6">
@@ -341,8 +345,8 @@ export default function Products() {
           {/* Right side image */}
           <div className="h-full hidden sm:block w-[100%]">
             <img
-              src={banner11}
-              alt="Chana Soap Product"
+              src={banner2}
+              alt={banner2}
               className="w-full h-full object-center shadow-md rounded-l-lg md:rounded-r-lg md:rounded-l-none"
             />
           </div>
@@ -396,11 +400,11 @@ export default function Products() {
         {/* Images Grid */}
         <div className="grid grid-cols-2 gap-8">
           {/* Before Image */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center max-h-[680px]">
             <img
-              src={soapmock}
-              alt="Before"
-              className="w-full max-w-md rounded-lg "
+              src={before}
+              alt={before}
+              className="w-full max-w-sm rounded-lg h-full"
             />
             <p className="mt-4 font-title font-medium font-color-primary">
               {language === "EN" ? "Before" : "ก่อน"}
@@ -408,11 +412,11 @@ export default function Products() {
           </div>
 
           {/* After Image */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center max-h-[680px]">
             <img
-              src={soapmock}
-              alt="After"
-              className="w-full max-w-md rounded-lg "
+              src={after}
+              alt={after}
+              className="w-full max-w-sm rounded-lg h-full"
             />
             <p className="mt-4 font-title font-medium font-color-primary">
               {language === "EN" ? "After" : "หลัง"}
