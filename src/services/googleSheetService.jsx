@@ -7,7 +7,7 @@ export const GoogleSheetsProvider = ({ children }) => {
   const [language, setLanguage] = useState("EN");
   const [isLoading, setIsLoading] = useState(true); // เพิ่มสถานะกำลังโหลด
 
-  const API_URL = import.meta.env.VITE_SHEET_API_URL;
+  // const API_URL = import.meta.env.VITE_SHEET_API_URL;
   const sheetNames = [
     "about us",
     "inspiration",
@@ -27,9 +27,13 @@ export const GoogleSheetsProvider = ({ children }) => {
     try {
       const data = await Promise.all(
         sheetNames.map(async (sheetName) => {
-          const url = `${API_URL}?sheet=${encodeURIComponent(
+          // const url = `${API_URL}?sheet=${encodeURIComponent(
+          //   sheetName
+          // )}&format=json`;
+          const url = `/google-sheets-api?sheet=${encodeURIComponent(
             sheetName
           )}&format=json`;
+
           const response = await fetch(url, { redirect: "follow" });
 
           if (!response.ok) {
