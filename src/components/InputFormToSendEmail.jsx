@@ -10,7 +10,7 @@ export default function InputFormToSendEmail() {
     email: "",
     message: "",
   });
-  const [isSuccess, setIsSuccess] = useState("true");
+  const [isSuccess, setIsSuccess] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { getLocalizedData } = useGoogleSheets();
 
