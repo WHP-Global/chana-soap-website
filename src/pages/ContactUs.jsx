@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useGoogleSheets } from "../services/googleSheetService";
 import hero from "/ContactUs/hero.jpg";
 import shopeeImg from "/ContactUs/shopee.png";
@@ -78,9 +78,13 @@ export default function ContactUs() {
                   className="h-full w-auto object-cover rounded-2xl"
                 />
               </div>
-              <button className="bg-[#4b664e] font-color-secondary font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
+              <Link
+                to="https://lin.ee/fOhW8xt"
+                target="_bank"
+                className="bg-[#4b664e] font-color-secondary text-center font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
+              >
                 Line Official
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -241,8 +245,8 @@ export default function ContactUs() {
               {contactUsData[18]}
             </a>
             {/* line  */}
-            {/* <a
-              href="https://lin.ee/@chanasoapthailand"
+            <a
+              href="https://lin.ee/fOhW8xt"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-5 hover:opacity-60"
@@ -267,7 +271,7 @@ export default function ContactUs() {
                 </defs>
               </svg>
               {contactUsData[19]}
-            </a> */}
+            </a>
           </div>
         </div>
       </div>

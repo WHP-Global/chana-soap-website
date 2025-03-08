@@ -53,8 +53,8 @@ export default function Footer({
               </svg>
             </a>
             {/* line icon */}
-            {/* <a
-              href="https://lin.ee/@chanasoapthailand"
+            <a
+              href="https://lin.ee/fOhW8xt"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -70,7 +70,7 @@ export default function Footer({
                   fill="white"
                 />
               </svg>
-            </a> */}
+            </a>
             {/* instragram icon */}
             <a
               href=" https://www.instagram.com/chana_skincare"
