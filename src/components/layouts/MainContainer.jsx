@@ -84,7 +84,7 @@ export default function MainContainer() {
       ],
     },
     {
-      name: `${language === "EN" ? "Contact us" : "ติดต่อเรา"}`,
+      name: `${language === "EN" ? "Contact Us" : "ติดต่อเรา"}`,
       to: "/contact-us",
       subMenu: [
         {
