@@ -3,7 +3,6 @@ import AFImg1 from "/EmpoweringFarmerProject/AF-2.png";
 import AFImg2 from "/EmpoweringFarmerProject/AF-4.png";
 import AFImg3 from "/EmpoweringFarmerProject/AF-6.png";
 import AFImg4 from "/EmpoweringFarmerProject/AF-7.png";
-import bannerImg from "/EmpoweringFarmerProject/AF-3.webp";
 import imgSlide1 from "/EmpoweringFarmerProject/imgSlide-1.png";
 import imgSlide2 from "/EmpoweringFarmerProject/imgSlide-2.png";
 import imgSlide3 from "/EmpoweringFarmerProject/imgSlide-3.png";
@@ -37,18 +36,18 @@ export default function EmpoweringFarmerProject() {
   return (
     <div>
       {/* banner */}
-      <div className="w-full h-[487px] sm:h-[587] md:h-[687px] bg-gray-400 flex justify-center items-center">
+      <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img
-          src={bannerImg}
-          alt={bannerImg}
+          src={imgSlide1}
+          alt={imgSlide1}
           className="h-full w-full object-cover"
         />
       </div>
       {/* Introduction to African Nightcrawler Vermicomposting */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-[40px] font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-balance">
-          {empoweringProjectData[0]}
-          <div className="font-title mt-5">{empoweringProjectData[1]}</div>
+          {empoweringProjectData[1]}
+          {/* <div className="font-title mt-5">{empoweringProjectData[1]}</div> */}
         </div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4  text-justify">
           <BoldTextBySlash text={empoweringProjectData[2]} />
@@ -61,20 +60,22 @@ export default function EmpoweringFarmerProject() {
         </div>
       </div>
       {/* imgae */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[60px] max-w-6xl mx-5 sm:mx-[4%] md:mx-[8%] lg:mx-[12%]">
-        <div className="md:h-[600px] sm:h-[500px] h-full w-auto">
-          <img
-            src={AFImg2}
-            alt={AFImg2}
-            className="h-full w-auto rounded-2xl"
-          />
-        </div>
-        <div className="md:h-[600px] sm:h-[500px] h-full w-auto">
-          <img
-            src={AFImg1}
-            alt={AFImg1}
-            className="h-full w-auto rounded-2xl"
-          />
+      <div className="w-full flex justify-center ">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-[20px] md:gap-[40] h-auto py-[20px] sm:py-[60px] max-w-6xl  mx-5 sm:mx-8 md:mx-10 lg:mx-16">
+          <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
+            <img
+              src={AFImg2}
+              alt={AFImg2}
+              className="h-full w-auto rounded-2xl"
+            />
+          </div>
+          <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
+            <img
+              src={AFImg1}
+              alt={AFImg1}
+              className="h-full w-auto rounded-2xl"
+            />
+          </div>
         </div>
       </div>
       {/* 4 Steps to Make AF Earthworm Compost */}
@@ -88,20 +89,22 @@ export default function EmpoweringFarmerProject() {
         </div>
       </div>
       {/* imgae */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[60px] max-w-6xl mx-5 sm:mx-[4%] md:mx-[12%]">
-        <div className="md:h-[600px] sm:h-[500px] h-full w-auto">
-          <img
-            src={AFImg3}
-            alt={AFImg3}
-            className="h-full w-auto rounded-2xl"
-          />
-        </div>
-        <div className="md:h-[600px] sm:h-[500px] h-full w-auto">
-          <img
-            src={AFImg4}
-            alt={AFImg4}
-            className="h-full w-auto rounded-2xl"
-          />
+      <div className="w-full flex justify-center ">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-[20px] md:gap-[40] h-auto py-[20px] sm:py-[60px] max-w-6xl  mx-5 sm:mx-8 md:mx-10 lg:mx-16">
+          <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
+            <img
+              src={AFImg3}
+              alt={AFImg3}
+              className="h-full w-auto rounded-2xl"
+            />
+          </div>
+          <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
+            <img
+              src={AFImg4}
+              alt={AFImg4}
+              className="h-full w-auto rounded-2xl"
+            />
+          </div>
         </div>
       </div>
       {/* Project Outcomes of the AF Earthworm Project */}
@@ -185,7 +188,7 @@ export default function EmpoweringFarmerProject() {
         </div>
       </div>
       {/* image slide */}
-      <div className="max-w-full mx-5 sm:mx-8 flex justify-center py-[20px] sm:py-[60px]">
+      <div className="max-w-full mx-5 sm:mx-[4%] md:mx-[8%] lg:mx-[15%] flex justify-center py-[20px] sm:py-[60px]">
         <ImageSlider imgGroup={imgSlider} />
       </div>
       <div className="flex justify-center py-15">

@@ -18,7 +18,7 @@ export default function GentleGlow() {
   return (
     <div className="w-full bg-[#fdf8f2] font-color-primary">
       {/* Banner */}
-      <div className="w-full h-[678px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
+      <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img src={hero} alt={hero} className="w-full h-full object-cover" />
       </div>
 
@@ -279,7 +279,7 @@ export default function GentleGlow() {
           />
         </div>
       </div>
-      <div className="max-w-xl mx-auto text-center py-6 sm:py-12 px-6 items-center mt-4">
+      <div className="max-w-4xl mx-auto text-center py-6 sm:py-12 px-6 items-center mt-4">
         {/* Who Can Use It? */}
         <h3 className="font-title italic mb-6 text-balance">
           {gentleGlowData[39]}

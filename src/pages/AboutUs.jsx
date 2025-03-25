@@ -84,7 +84,8 @@ export default function AboutUs() {
       {/*1. our story */}
       <div id="our-story"></div>
       {/* banner */}
-      <div className="relative w-full h-[487px] sm:h-[587] md:h-[687px] flex justify-center items-center">
+
+      <div className="relative w-full h-[450px] sm:h-[587] md:h-[678px] flex justify-center items-center">
         <img
           src={bannerGif}
           alt={bannerGif}
@@ -114,14 +115,14 @@ export default function AboutUs() {
           <BoldTextBySlash text={aboutUsData[9]} />
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[30px]">
-            <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
+            <div className="md:h-[500px] sm:h-[400px] h-[350px] w-auto">
               <img
                 src={swimming}
                 alt={swimming}
                 className="h-full w-auto object-cover rounded-2xl"
               />
             </div>
-            <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
+            <div className="md:h-[500px] sm:h-[400px] h-[350px] w-auto">
               <img
                 src={tennis}
                 alt={tennis}
@@ -134,7 +135,7 @@ export default function AboutUs() {
           <BoldTextBySlash text={aboutUsData[11]} />
 
           {/* image slide */}
-          <div className="max-w-full mx-5 sm:mx-8 flex justify-center py-[20px] sm:py-[60px]">
+          <div className="max-w-full flex justify-center py-[20px] sm:py-[60px]">
             <ImageSlider imgGroup={imgSlider} />
           </div>
 
@@ -142,7 +143,7 @@ export default function AboutUs() {
           <BoldTextBySlash text={aboutUsData[13]} />
 
           <div className="text-center font-caption indent-0">
-            <div className=" md:h-[700px] sm:h-[500px] h-[350px] w-auto flex justify-center mb-5">
+            <div className=" md:h-[500px] sm:h-[400px] h-[350px] w-auto flex justify-center mb-5">
               <img
                 src={founder}
                 alt={founder}
@@ -221,7 +222,7 @@ export default function AboutUs() {
 
       {/*3. commitment */}
       {/* <div className="flex flex-col sm:flex-row justify-center items-center gap-6 h-auto py-[20px] sm:py-[60px] mx-5 sm:mx-8 md:mx-10 lg:mx-16">
-        <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
+        <div className="md:h-[500px] sm:h-[400px] h-[350px] w-auto">
           <img
             src={activeRefresh}
             alt={activeRefresh}
@@ -229,7 +230,7 @@ export default function AboutUs() {
           />
         </div>
         <div id="commitment"></div>
-        <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
+        <div className="md:h-[500px] sm:h-[400px] h-[350px] w-auto">
           <img
             src={gentleGlow}
             alt={gentleGlow}

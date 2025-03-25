@@ -25,7 +25,7 @@ export default function AloeveraProject() {
   return (
     <div>
       {/* banner */}
-      <div className="w-full h-[487px] sm:h-[587] md:h-[687px] bg-gray-400 flex justify-center items-center">
+      <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img src={hero} alt={hero} className="h-full w-full object-cover" />
       </div>
       <div className="font-color-primary max-w-6xl mx-auto">
@@ -36,20 +36,22 @@ export default function AloeveraProject() {
           <BoldTextBySlash text={aloeVeraProjectData[2]} />
           <BoldTextBySlash text={aloeVeraProjectData[3]} />
           {/* imgae */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto max-w-6xl mx-5 sm:mx-[4%] md:mx-[8%] lg:mx-[12%]">
-            <div className="md:h-[600px] sm:h-[500px] h-full w-auto">
-              <img
-                src={child1}
-                alt={child1}
-                className="h-full w-auto rounded-2xl"
-              />
-            </div>
-            <div className="md:h-[600px] sm:h-[500px] h-full w-auto">
-              <img
-                src={child2}
-                alt={child2}
-                className="h-full w-auto rounded-2xl"
-              />
+          <div className="w-full flex justify-center ">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-[20px] md:gap-[40] h-auto py-[20px] sm:py-[60px] max-w-6xl  mx-5 sm:mx-8 md:mx-10 lg:mx-16">
+              <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
+                <img
+                  src={child1}
+                  alt={child1}
+                  className="h-full w-auto rounded-2xl"
+                />
+              </div>
+              <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
+                <img
+                  src={child2}
+                  alt={child2}
+                  className="h-full w-auto rounded-2xl"
+                />
+              </div>
             </div>
           </div>
           <BoldTextBySlash text={aloeVeraProjectData[4]} />
@@ -74,8 +76,8 @@ export default function AloeveraProject() {
       </div>
 
       {/* imgae */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] py-[20px] sm:py-[60px] h-auto max-w-6xl mx-5 sm:mx-[4%] md:mx-[8%] lg:mx-[12%]">
-        <div className="md:h-[600px] sm:h-[500px] h-full w-auto">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] py-[20px] sm:py-[60px] h-auto mx-5 sm:mx-[4%] md:mx-[8%] lg:mx-[12%]">
+        <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
           <img
             src={banner2}
             alt={banner2}
@@ -96,7 +98,7 @@ export default function AloeveraProject() {
       </div>
 
       {/* image slide */}
-      <div className="max-w-full mx-5 sm:mx-8 flex justify-center py-[20px] sm:py-[60px]">
+      <div className="max-w-full mx-5 sm:mx-[4%] md:mx-[8%] lg:mx-[15%] flex justify-center py-[20px] sm:py-[60px]">
         <ImageSlider imgGroup={imgSlider} />
       </div>
 

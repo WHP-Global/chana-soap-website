@@ -32,7 +32,7 @@ export default function ContactUs() {
     <div>
       {/*1. where to buy */}
       {/* banner */}
-      <div className="w-full h-[487px] sm:h-[587] md:h-[687px] bg-gray-400 flex justify-center items-center">
+      <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img src={hero} alt={hero} className="w-full h-full object-cover" />
         <div id="where-to-buy"></div>
       </div>
@@ -172,7 +172,7 @@ export default function ContactUs() {
                   fill="#293B2B"
                 />
               </svg>
-              +{contactUsData[15]}
+              {contactUsData[15]}
             </a>
             {/* facebook */}
             <a

@@ -27,8 +27,7 @@ export default function Footer({
               </div>
             </a>
             <div>
-              {language === "EN" ? "Phone" : "เบอร์โทรศัพท์"}: +66 (123)
-              456-7890
+              {language === "EN" ? "Phone" : "เบอร์โทรศัพท์"}: 080-992-4299
             </div>
           </div>
           <hr className="my-2" />

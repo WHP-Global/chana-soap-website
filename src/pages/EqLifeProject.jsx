@@ -15,7 +15,7 @@ export default function EqLifeProject() {
   return (
     <div>
       {/* banner */}
-      <div className="w-full h-[487px] sm:h-[587] md:h-[687px] bg-gray-400 flex justify-center items-center">
+      <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img src={hero} alt={hero} className="h-full w-full object-cover" />
       </div>
       <div className="font-color-primary max-w-6xl mx-auto">

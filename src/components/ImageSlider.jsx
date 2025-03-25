@@ -26,17 +26,17 @@ const ImageSlider = ({ imgGroup = [] }) => (
           <img
             src={img}
             alt={`Slide ${index}`}
-            className="w-full h-[320px] sm:h-[600px] rounded-2xl"
+            className="w-full h-[320px] sm:h-[500px] rounded-2xl"
           />
         </SwiperSlide>
       ))}
     </Swiper>
 
     {/* Custom Navigation Buttons */}
-    <button className="custom-prev absolute  left-0 top-1/2 -translate-y-1/2 font-color-secondary bg-[#293b2b] text-md md:text-xl z-10  rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex justify-center items-center hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
+    <button className="custom-prev absolute  left-0 top-1/2 -translate-y-1/2 font-color-secondary bg-[#293b2b] text-md md:text-xl z-1  rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex justify-center items-center hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
       ❮
     </button>
-    <button className="custom-next absolute right-0 top-1/2 -translate-y-1/2 font-color-secondary bg-[#293b2b] text-md md:text-xl z-10  rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex justify-center items-center hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
+    <button className="custom-next absolute right-0 top-1/2 -translate-y-1/2 font-color-secondary bg-[#293b2b] text-md md:text-xl z-1  rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex justify-center items-center hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
       ❯
     </button>
   </div>

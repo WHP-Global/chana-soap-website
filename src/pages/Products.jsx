@@ -7,13 +7,13 @@ import gentleGlow2 from "/Products/gentleGlow2.jfif";
 import gentleGlow3 from "/Products/gentleGlow3.jfif";
 import gentleGlow4 from "/Products/gentleGlow4.jfif";
 import activeRefresh1 from "/Products/activeRefresh1.jfif";
-import activeRefresh2 from "/Products/activeRefresh2.jfif";
-import activeRefresh3 from "/Products/activeRefresh3.jfif";
-import activeRefresh4 from "/Products/activeRefresh4.jfif";
+// import activeRefresh2 from "/Products/activeRefresh2.jfif";
+// import activeRefresh3 from "/Products/activeRefresh3.jfif";
+// import activeRefresh4 from "/Products/activeRefresh4.jfif";
 import banner1 from "/Products/banner1.jpg";
 import banner2 from "/Products/banner2.jpg";
-import before from "/Products/before.jfif";
-import after from "/Products/after.jfif";
+// import before from "/Products/before.jfif";
+// import after from "/Products/after.jfif";
 import notoxic from "/Products/no-toxic.png";
 import oil from "/Products/oil.png";
 import earth from "/Products/earth.png";
@@ -43,7 +43,7 @@ export default function Products() {
 
   return (
     <div className="w-full text-primary">
-      <div className="w-full h-[678px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
+      <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img src={hero} alt={hero} className="w-full h-full object-cover" />
       </div>
 
