@@ -24,72 +24,54 @@ export default function EqLifeProject() {
         </div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4 text-justify">
           <BoldTextBySlash text={eqLifeProjectData[2]} />
-          <BoldTextBySlash text={eqLifeProjectData[3]} />
-          <div className=" bg-secondary rounded-[20px] p-2 sm:p-4 text-balance md:text-wrap text-center flex flex-col gap-3">
-            <BoldText text={eqLifeProjectData[4]} />
-            <BoldText text={eqLifeProjectData[5]} />
-          </div>
-          <div className="text-justify">
-            <BoldTextBySlash text={eqLifeProjectData[6]} />
-          </div>
         </div>
       </div>
-      <Banner src={banner1} />
 
-      <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 text-justify">
-          {/* Our Commitment to Social Impact */}
-          <div className="font-subtitle">
-            {eqLifeProjectData[7]}
-            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+      {/* How We Support the Community */}
+      <div className="font-color-primary max-w-6xl mx-auto py-[20px] sm:py-[30px]">
+        <div className="flex flex-col gap-5 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3">
+          <div className="font-subtitle">{eqLifeProjectData[3]}</div>
+          <div>
+            <BoldText text={eqLifeProjectData[4]} />
+            <div>
+              <BoldTextBySlash text={eqLifeProjectData[5]} />
+              <BoldTextBySlash text={eqLifeProjectData[6]} />
+            </div>
+          </div>
+          <div>
+            <BoldText text={eqLifeProjectData[7]} />
+            <div>
               <BoldTextBySlash text={eqLifeProjectData[8]} />
             </div>
           </div>
-        </div>
-      </div>
-
-      <Banner src={banner2} />
-
-      <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3">
-          {/*How Soap Chana Contributes */}
           <div>
-            <div className="font-subtitle py-2">{eqLifeProjectData[9]}</div>
-            <BoldText text={eqLifeProjectData[10]} />
-            <BoldText text={eqLifeProjectData[11]} />
+            <BoldText text={eqLifeProjectData[9]} />
+            <div>
+              <BoldTextBySlash text={eqLifeProjectData[10]} />
+              <BoldTextBySlash text={eqLifeProjectData[11]} />
+            </div>
+          </div>
+          <div>
             <BoldText text={eqLifeProjectData[12]} />
-          </div>
-
-          {/* Be Part of the Change */}
-          <div className="font-subtitle">
-            {eqLifeProjectData[13]}
-            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
-              <BoldTextBySlash text={eqLifeProjectData[14]} />
+            <div>
+              <BoldTextBySlash text={eqLifeProjectData[13]} />
             </div>
           </div>
-
-          <div className="text-center font-caption my-2 sm:my-4 indent-0">
-            {eqLifeProjectData[15]}
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] h-auto py-[20px] sm:py-[60px]">
-            <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
-              <img
-                src={change}
-                alt={change}
-                className="h-full w-auto object-cover rounded-2xl"
-              />
-            </div>
-            <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
-              <img
-                src={walkTogether}
-                alt={walkTogether}
-                className="h-full w-auto object-cover rounded-2xl"
-              />
+          <div>
+            <BoldText text={eqLifeProjectData[14]} />
+            <div>
+              <BoldTextBySlash text={eqLifeProjectData[15]} />
+              <BoldTextBySlash text={eqLifeProjectData[16]} />
             </div>
           </div>
         </div>
       </div>
+
+      <div className="text-center font-caption my-10 indent-0 text-balance font-color-primary">
+        <BoldTextBySlash text={eqLifeProjectData[17]} />
+      </div>
+
+      <Banner src={banner1} />
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>

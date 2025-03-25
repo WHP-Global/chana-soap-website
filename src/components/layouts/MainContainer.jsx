@@ -14,7 +14,7 @@ export default function MainContainer() {
 
   const menus = [
     {
-      name: `${language === "EN" ? "About Us" : "เกี่ยวกับ"}`,
+      name: `${language === "EN" ? "About US" : "เกี่ยวกับ"}`,
       to: "/",
       subMenu: [
         {
@@ -24,19 +24,19 @@ export default function MainContainer() {
         {
           name: `${
             language === "EN"
-              ? "Sourcing And Impact"
+              ? "Sourcing Ingredients"
               : "การจัดหาวัตถุดิบและผลกระทบต่อชุมชน"
           }`,
           to: "sourcing-and-impact",
         },
-        {
-          name: `${
-            language === "EN"
-              ? "Beyond Skincare: Chana Soap's Commitment"
-              : "เกินกว่าการดูแลผิว: ความมุ่งมั่นของสบู่ชนะ"
-          }`,
-          to: "commitment",
-        },
+        // {
+        //   name: `${
+        //     language === "EN"
+        //       ? "Beyond Skincare: Chana Soap's Commitment"
+        //       : "เกินกว่าการดูแลผิว: ความมุ่งมั่นของสบู่ชนะ"
+        //   }`,
+        //   to: "commitment",
+        // },
       ],
     },
     {
@@ -44,12 +44,10 @@ export default function MainContainer() {
       to: "/products",
       subMenu: [
         { name: "Gentle Glow", to: "gentle-glow" },
-        { name: "Active Refresh", to: "active-refresh" },
+        { name: "Active Fresh", to: "active-fresh" },
         {
           name: `${
-            language === "EN"
-              ? "Why Choose Chana Gentle Glow?"
-              : "ทำไมต้องเลือกสบู่ชนะ Gentle Glow?"
+            language === "EN" ? "Why Chana Soap" : "ทำไมต้องเลือกสบู่ชนะ"
           }`,
           to: "why-chana",
         },
@@ -67,11 +65,9 @@ export default function MainContainer() {
       subMenu: [
         {
           name: `${
-            language === "EN"
-              ? "Empowering Farmers in Prachinburi with AF"
-              : "สอนชาวบ้านปราจีนบุรีทำปุ๋ยไส้เดือน AF"
+            language === "EN" ? "Happy Worm Farm" : "โครงการไส้เดือน AF"
           }`,
-          to: "/empowering-farmer",
+          to: "/Happy-Worm-Farm",
         },
         {
           name: `${
@@ -88,21 +84,19 @@ export default function MainContainer() {
       ],
     },
     {
-      name: `${language === "EN" ? "Contact Us" : "ติดต่อเรา"}`,
+      name: `${language === "EN" ? "Contact us" : "ติดต่อเรา"}`,
       to: "/contact-us",
       subMenu: [
         {
-          name: `${language === "EN" ? "Where To Buy" : "ช่องทางการสั่งซื้อ"}`,
+          name: `${language === "EN" ? "Where to Buy" : "ช่องทางการสั่งซื้อ"}`,
           to: "where-to-buy",
         },
         {
-          name: `${
-            language === "EN" ? "Contact form for inquiries" : "ติดต่อกับเรา"
-          }`,
+          name: `${language === "EN" ? "Say Hello" : "ติดต่อกับเรา"}`,
           to: "contact-form",
         },
         {
-          name: `${language === "EN" ? "FAQ" : "คำถามที่พบบ่อย"}`,
+          name: `${language === "EN" ? "FAQs" : "คำถามที่พบบ่อย"}`,
           to: "faq",
         },
       ],
@@ -161,7 +155,7 @@ export default function MainContainer() {
           <div className="popup-overlay">
             <div
               ref={sidebarRef}
-              className="fixed left-0 max-w-[485px] m-3 sm:m-6 h-[93%] fadeInLeft"
+              className="fixed left-0 min-w-[345px] max-w-[485px] m-3 sm:m-6 h-[93%] fadeInLeft"
             >
               <div className="h-full">
                 <Sidebar

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link as RouterLink } from "react-router-dom";
-import Logo from "../Logo";
+import { LogoLayout } from "../Logo";
 import { useGoogleSheets } from "../../services/googleSheetService";
 export default function Footer({
   menus,
@@ -185,9 +185,9 @@ export default function Footer({
         <RouterLink
           to="/"
           onClick={() => window.scroll(0, 0)}
-          className="w-[140px] sm:w-[170px]"
+          className="w-[200px] h-auto"
         >
-          <Logo />
+          <LogoLayout />
         </RouterLink>
       </div>
     </div>

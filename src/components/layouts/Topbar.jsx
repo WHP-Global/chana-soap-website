@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { useGoogleSheets } from "../../services/googleSheetService";
+import { LogoTopBar } from "../Logo";
 
 export default function Navbar({
   onToggleSidebar,
@@ -106,7 +107,10 @@ export default function Navbar({
         to="/"
         onClick={() => window.scroll(0, 0)}
       >
-        {language === "EN" ? "CHANA" : "ชนะ"}
+        {/* {language === "EN" ? "CHANA" : "ชนะ"} */}
+        <div className="w-[200px] h-auto">
+          <LogoTopBar />
+        </div>
       </RouterLink>
 
       {/* Show Language */}

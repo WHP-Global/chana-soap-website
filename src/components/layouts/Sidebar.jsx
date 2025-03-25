@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Link as RouterLink } from "react-router-dom";
 import { useGoogleSheets } from "../../services/googleSheetService";
+import { LogoTopBar } from "../Logo";
 
 export default function Sidebar({
   onToggleSidebar,
@@ -19,8 +20,11 @@ export default function Sidebar({
       >
         x
       </div>
-      <div className="flex-1 font-color-secondary font-header flex items-center justify-center bg-primary py-2 rounded-t-lg">
-        {language === "EN" ? "CHANA" : "ชนะ"}
+      <div className="flex-1 font-color-secondary font-header flex items-center justify-center bg-primary py-3 rounded-t-lg">
+        {/* {language === "EN" ? "CHANA" : "ชนะ"} */}
+        <div className="w-[200px] h-auto">
+          <LogoTopBar />
+        </div>
       </div>
       <div className="py-[25px] px-[15px] font-color-primary font-menu h-[93%] bg-fourth overflow-y-auto custom-scrollbar rounded-b-lg">
         {menus.map((menu, index) => (

@@ -18,11 +18,12 @@
 }
 
 .font-color-primary {
-  color: #293b2b;
+  color: #53300a;
 }
 
 .font-color-secondary {
-  color: #fff8f0;
+  /* color: #fff8f0; */
+  color: #fcf6ea;
 }
 
 .popup-overlay {
@@ -36,63 +37,6 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-}
-
-.font-header {
-  font-size: 48px;
-  font-weight: 700;
-  font-family: "Inknut Antiqua", serif;
-}
-
-.font-title {
-  font-size: 36px;
-  font-weight: 500;
-  font-family: "Inknut Antiqua", serif;
-}
-
-.font-button {
-  font-size: 24px;
-  font-weight: 500;
-  font-family: "Inria Serif", serif;
-}
-
-.font-subtitle {
-  font-size: 24px;
-  font-weight: 700;
-  font-style: italic;
-  font-family: "Inria Serif", serif;
-}
-
-.font-caption {
-  font-size: 24px;
-  font-weight: 400;
-  font-style: italic;
-  font-family: "Inria Serif", serif;
-}
-
-.font-body {
-  font-size: 20px;
-  font-weight: 400;
-  font-style: normal !important;
-  font-family: "Inria Serif", serif;
-}
-
-.font-body-bold {
-  font-size: 20px;
-  font-weight: 700;
-  font-family: "Inria Serif", serif;
-}
-
-.font-menu {
-  font-size: 20px;
-  font-weight: 400;
-  font-family: "Inria Serif", serif;
-}
-
-.font-sub-menu {
-  font-size: 16px;
-  font-weight: 400;
-  font-family: "Inria Serif", serif;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -153,24 +97,18 @@
   }
 }
 
-/* ถ้าหน้าจอเล็กกว่า 640px (sm) ให้เป็น 14px */
-@media (max-width: 639px) {
-  .font-body,
-  .font-body-bold,
-  .font-sub-menu {
-    font-size: 14px;
-  }
-  .font-header {
-    font-size: 36px;
-  }
-  .font-title {
-    font-size: 24px;
-  }
-  .font-subtitle,
-  .font-caption {
-    font-size: 18px;
-  }
-  .font-button {
-    font-size: 20px;
-  }
+/* ImageSlider.css */
+.swiper-button-next,
+.swiper-button-prev {
+  color: bg-primary; /* เปลี่ยนสีลูกศรเป็นสีเขียว */
+  top: 50%; /* ตำแหน่งตรงกลางรูป */
+  transform: translateY(-50%);
+}
+
+.swiper-button-next {
+  right: -40px; /* ขยับออกจากรูป */
+}
+
+.swiper-button-prev {
+  left: -40px; /* ขยับออกจากรูป */
 }

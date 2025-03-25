@@ -23,8 +23,18 @@ export default function GentleGlow() {
       </div>
 
       {/* Section Title */}
-      <div className="max-w-6xl mx-auto pt-7 px-6 text-center">
-        <h2 className="font-header ">{gentleGlowData[1] || "Gentle Glow"}</h2>
+      <div className="font-color-primary max-w-6xl mx-auto">
+        <div className="py-[40px] font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-balance">
+          {gentleGlowData[0]}
+          <div className="font-title mt-5">{gentleGlowData[1]}</div>
+        </div>
+        <div className="max-w-3xl mx-auto mt-6">
+          <div className="border-t bg-fourth  w-1/3 mx-auto mt-5 mb-10"></div>
+          <div className="font-body-bold text-balance leading-[2rem] text-center">
+            {gentleGlowData[2]}
+          </div>
+          <div className="border-b bg-fourth  w-1/3 mx-auto mt-10"></div>
+        </div>
       </div>
 
       {/* Main Product Image*/}
@@ -133,7 +143,7 @@ export default function GentleGlow() {
 
             {/* Price */}
             <p className="font-body-bold italic text-gray-700 mt-6 text-right">
-              {gentleGlowData[19] || "Loading..."}.-
+              {gentleGlowData[19]}
             </p>
           </div>
         </div>
@@ -142,7 +152,7 @@ export default function GentleGlow() {
       {/* shopee lazada line button */}
       <div className=" flex justify-center space-x-1 sm:space-x-6 mb-10 mx-5">
         <a
-          href="https://shopee.com"
+          href="https://th.shp.ee/7zH4EQ3"
           target="_blank"
           rel="noopener noreferrer"
           className="w-[275px] h-[60px] flex items-center justify-center bg-[#4b664e] font-button font-color-secondary rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
@@ -150,15 +160,15 @@ export default function GentleGlow() {
           Shopee
         </a>
         <a
-          href="https://www.lazada.com"
-          target="_blank"
+          // href="https://www.lazada.com"
+          // target="_blank"
           rel="noopener noreferrer"
           className="w-[275px] h-[60px] flex items-center justify-center bg-[#4b664e] font-button font-color-secondary rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
         >
           Lazada
         </a>
         <a
-          href="https://line.me/ti/p/~official"
+          href="https://lin.ee/fOhW8xt"
           target="_blank"
           rel="noopener noreferrer"
           className="text-nowrap w-[275px] h-[60px] flex items-center justify-center bg-[#4b664e] font-button font-color-secondary rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
@@ -271,8 +281,8 @@ export default function GentleGlow() {
       </div>
       <div className="max-w-xl mx-auto text-center py-6 sm:py-12 px-6 items-center mt-4">
         {/* Who Can Use It? */}
-        <h3 className="font-title italic mb-6">
-          {gentleGlowData[39] || "Who Can Use It?"}
+        <h3 className="font-title italic mb-6 text-balance">
+          {gentleGlowData[39]}
         </h3>
 
         {/* List of Use  */}
@@ -285,7 +295,7 @@ export default function GentleGlow() {
           ].map((item, index) => (
             <li
               key={index}
-              className="flex items-center font-body w-full max-w-2xl text-wrap sm:whitespace-nowrap"
+              className="flex items-center font-body w-full max-w-2xl"
             >
               <span className="w-8 h-8 flex items-center justify-center mr-5">
                 <svg
@@ -300,7 +310,7 @@ export default function GentleGlow() {
                   </g>
                 </svg>
               </span>
-              <p className="text-left flex-1">
+              <p className="text-left flex-1 text-wrap">
                 <BoldTextBySlash text={item} />
               </p>
             </li>

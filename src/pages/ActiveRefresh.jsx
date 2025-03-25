@@ -5,7 +5,7 @@ import { BoldTextBySlash } from "../services/BoldText";
 
 export default function ActiveRefresh() {
   const { getLocalizedData } = useGoogleSheets();
-  const activeRefreshData = getLocalizedData("active refresh");
+  const activeRefreshData = getLocalizedData("active fresh");
   const [isHaveData, setIsHaveData] = useState(false);
   // const [selectedImage, setSelectedImage] = useState(chana);
 
@@ -21,9 +21,9 @@ export default function ActiveRefresh() {
 
         <div className="absolute text-center sm:text-start py-6 sm:py-12 ml-[5%]">
           <h2 className="font-header text-white  drop-shadow-2xl shadow-amber-950">
-            Active Refresh
+            Active Fresh
             <br />
-            Coming soon...
+            Coming Soon...
           </h2>
         </div>
       </div>

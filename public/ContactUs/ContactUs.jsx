@@ -7,7 +7,7 @@ import lazadaImg from "/ContactUs/lazada.png";
 import lineImg from "/ContactUs/line.png";
 import InputFormToSendEmail from "../components/InputFormToSendEmail";
 import FAQ from "../components/FAQ";
-import Logo from "../components/Logo";
+import { Logo } from "../components/Logo";
 import { BoldTextBySlash } from "../services/BoldText";
 
 export default function ContactUs() {

@@ -1,24 +1,69 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useGoogleSheets } from "../services/googleSheetService";
-import washingHands from "/AboutUs/washing-hands.jpg";
 import tennis from "/AboutUs/tennis.jpg";
 import swimming from "/AboutUs/swimming.jpg";
-import activeRefresh from "/AboutUs/activeRefresh.jpg";
-import gentleGlow from "/AboutUs/gentleGlow.jpg";
-import initiatives from "/AboutUs/initiatives.jpg";
-import fundingPrograms from "/AboutUs/fundingPrograms.jpg";
-import Inclusives2 from "/AboutUs/Inclusives2.jfif";
-import banner1 from "/AboutUs/banner1.png";
-import banner2 from "/AboutUs/banner2.png";
-import banner3 from "/AboutUs/banner3.png";
+// import activeRefresh from "/AboutUs/activeRefresh.jpg";
+// import gentleGlow from "/AboutUs/gentleGlow.jpg";
+// import initiatives from "/AboutUs/initiatives.jpg";
+// import fundingPrograms from "/AboutUs/fundingPrograms.jpg";
+// import Inclusives2 from "/AboutUs/Inclusives2.jfif";
+import banner1 from "/AboutUs/banner1.jpg";
+import banner2 from "/AboutUs/banner2.jpg";
 import bannerGif from "/AboutUs/forest.gif";
+import founder from "/AboutUs/founder.jpg";
 import Banner from "../components/Banner";
 import { BoldText, BoldTextBySlash } from "../services/BoldText";
+import ImageSlider from "../components/ImageSlider";
+import imgSlide1 from "/AboutUs/imgSlide-1.jpg";
+import imgSlide2 from "/AboutUs/imgSlide-2.jpg";
+import imgSlide3 from "/AboutUs/imgSlide-3.jpg";
+import imgSlide4 from "/AboutUs/imgSlide-4.jpg";
+import imgSlide5 from "/AboutUs/imgSlide-5.jpg";
+import imgSlide6 from "/AboutUs/imgSlide-6.jpg";
+import imgSlide7 from "/AboutUs/imgSlide-7.jpg";
+import imgSlide8 from "/AboutUs/imgSlide-8.jpg";
+import imgSlide9 from "/AboutUs/imgSlide-9.jpg";
+import imgSlide1SI from "/AboutUs/SourcingIngredients/imgSlide-1.jpg";
+import imgSlide2SI from "/AboutUs/SourcingIngredients/imgSlide-2.jpg";
+import imgSlide3SI from "/AboutUs/SourcingIngredients/imgSlide-3.jpg";
+import imgSlide4SI from "/AboutUs/SourcingIngredients/imgSlide-4.jpg";
+import imgSlide5SI from "/AboutUs/SourcingIngredients/imgSlide-5.jpg";
+import imgSlide6SI from "/AboutUs/SourcingIngredients/imgSlide-6.jpg";
+import imgSlide7SI from "/AboutUs/SourcingIngredients/imgSlide-7.jpg";
+import imgSlide8SI from "/AboutUs/SourcingIngredients/imgSlide-8.jpg";
+import imgSlide9SI from "/AboutUs/SourcingIngredients/imgSlide-9.jpg";
+import imgSlide10SI from "/AboutUs/SourcingIngredients/imgSlide-10.jpg";
+import imgSlide11SI from "/AboutUs/SourcingIngredients/imgSlide-11.jpg";
 
 export default function AboutUs() {
   const location = useLocation();
   const { getLocalizedData } = useGoogleSheets();
+  const imgSlider = [
+    imgSlide1,
+    imgSlide2,
+    imgSlide3,
+    imgSlide4,
+    imgSlide5,
+    imgSlide6,
+    imgSlide7,
+    imgSlide8,
+    imgSlide9,
+  ];
+
+  const imgSliderSoucingIngredients = [
+    imgSlide1SI,
+    imgSlide2SI,
+    imgSlide3SI,
+    imgSlide4SI,
+    imgSlide5SI,
+    imgSlide6SI,
+    imgSlide7SI,
+    imgSlide8SI,
+    imgSlide9SI,
+    imgSlide10SI,
+    imgSlide11SI,
+  ];
 
   // ดึงข้อมูลจากชีต "about us"
   const aboutUsData = getLocalizedData("about us");
@@ -88,20 +133,22 @@ export default function AboutUs() {
           <BoldTextBySlash text={aboutUsData[10]} />
           <BoldTextBySlash text={aboutUsData[11]} />
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px]  h-auto py-[20px] sm:py-[30px]">
-            <div className="md:h-[600px] sm:h-[500px] h-[350px] w-auto">
-              <img
-                src={washingHands}
-                alt={washingHands}
-                className="h-full w-auto object-cover rounded-2xl"
-              />
-            </div>
+          {/* image slide */}
+          <div className="max-w-full mx-5 sm:mx-8 flex justify-center py-[20px] sm:py-[60px]">
+            <ImageSlider imgGroup={imgSlider} />
           </div>
 
           <BoldTextBySlash text={aboutUsData[12]} />
           <BoldTextBySlash text={aboutUsData[13]} />
 
           <div className="text-center font-caption indent-0">
+            <div className=" md:h-[700px] sm:h-[500px] h-[350px] w-auto flex justify-center mb-5">
+              <img
+                src={founder}
+                alt={founder}
+                className="h-full w-auto object-cover rounded-2xl"
+              />
+            </div>
             <BoldTextBySlash text={aboutUsData[14]} />
             {aboutUsData[15]}
           </div>
@@ -137,12 +184,14 @@ export default function AboutUs() {
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
               <BoldTextBySlash text={aboutUsData[22]} />
             </div>
-            <div className="font-body mt-2 sm:mt-10 indent-5 sm:indent-8">
-              <BoldTextBySlash text={aboutUsData[23]} />
-            </div>
           </div>
 
-          <div className="font-subtitle">
+          {/* image slide */}
+          <div className="max-w-full mx-5 sm:mx-8 flex justify-center py-[20px] sm:py-[60px]">
+            <ImageSlider imgGroup={imgSliderSoucingIngredients} />
+          </div>
+
+          {/* <div className="font-subtitle">
             {aboutUsData[24]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
               <BoldTextBySlash text={aboutUsData[25]} />
@@ -150,27 +199,28 @@ export default function AboutUs() {
             <div className="font-body mt-2 sm:mt-10 indent-5 sm:indent-8">
               <BoldTextBySlash text={aboutUsData[26]} />
             </div>
+          </div> */}
+
+          <div className="text-center font-caption my-2 sm:my-3 indent-0 text-balance">
+            {aboutUsData[23]}
           </div>
 
-          <div className="text-center font-caption my-2 sm:my-3 indent-0 ">
-            {aboutUsData[27]}
-          </div>
-
-          <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+          {/* <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
             <BoldTextBySlash text={aboutUsData[28]} />
-          </div>
+          </div> */}
         </div>
       </div>
       {/* banner */}
       <Banner src={banner2} />
-      <div className="flex flex-col font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 font-color-primary py-[20px] sm:py-[30px]">
+
+      {/* <div className="flex flex-col font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 font-color-primary py-[20px] sm:py-[30px]">
         <div className="text-center font-caption indent-0 max-w-6xl mx-auto text-balance">
           {aboutUsData[29]}
         </div>
-      </div>
+      </div> */}
 
       {/*3. commitment */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-6 h-auto py-[20px] sm:py-[60px] mx-5 sm:mx-8 md:mx-10 lg:mx-16">
+      {/* <div className="flex flex-col sm:flex-row justify-center items-center gap-6 h-auto py-[20px] sm:py-[60px] mx-5 sm:mx-8 md:mx-10 lg:mx-16">
         <div className="md:h-[700px] sm:h-[500px] h-[350px] w-auto">
           <img
             src={activeRefresh}
@@ -186,9 +236,9 @@ export default function AboutUs() {
             className="h-full w-auto object-cover rounded-2xl"
           />
         </div>
-      </div>
+      </div> */}
       {/* content */}
-      <div className="font-color-primary max-w-6xl mx-auto">
+      {/* <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-title text-center">{aboutUsData[30]}</div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 text-justify">
           <BoldTextBySlash text={aboutUsData[31]} />
@@ -257,9 +307,7 @@ export default function AboutUs() {
             {aboutUsData[46]}
           </div>
         </div>
-      </div>
-      {/* banner */}
-      <Banner src={banner3} />
+      </div> */}
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>

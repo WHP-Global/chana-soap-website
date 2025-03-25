@@ -21,6 +21,7 @@ import skin from "/Products/skin.png";
 import leaf from "/Products/leaf.png";
 import Banner from "../components/Banner";
 import { BoldTextBySlash } from "../services/BoldText";
+import StarReview from "../components/StarReview";
 
 export default function Products() {
   const location = useLocation();
@@ -47,8 +48,8 @@ export default function Products() {
       </div>
 
       {/* Products Section */}
-      <div className=" z-0 max-w-6xl mx-auto pt-5 px-6 text-center">
-        <div className="font-header font-color-primary">
+      <div className=" z-0 max-w-6xl mx-auto pt-5 px-6 text-center font-color-primary">
+        <div className="font-header">
           {language === "EN" ? "Our Products" : "สินค้าของเรา"}
         </div>
         <div className="max-w-3xl mx-auto mt-6">
@@ -66,7 +67,7 @@ export default function Products() {
       </div>
       <div id="gentle-glow"></div>
       {/* Two Types of Soaps Section */}
-      <div className="max-w-5xl mx-auto text-center pt-12 px-6">
+      <div className="max-w-5xl mx-auto text-center pt-12 px-6 font-color-primary">
         <div className="font-title">
           {language === "EN" ? "Two types of soaps" : "ผลิตภัณฑ์สบู่สองชนิด"}
         </div>
@@ -78,7 +79,7 @@ export default function Products() {
       </div>
 
       {/* Gentle Glow  */}
-      <div className="max-w-5xl mx-auto text-center py-8 sm:py-12 px-6 mt-6 sm:mt-10">
+      <div className="max-w-5xl mx-auto text-center py-8 sm:py-12 px-6 mt-6 sm:mt-10 font-color-primary">
         <div className="font-subtitle ">{productsData[2]}</div>
         <div className="mt-3 text-balance font-body">
           <BoldTextBySlash text={productsData[3]} />
@@ -131,27 +132,43 @@ export default function Products() {
           className="w-1/3 max-w-xs rounded-lg"
         />
       </div>
-      <div id="active-refresh"></div>
+      <div id="active-fresh"></div>
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>
 
-      {/* Active Refresh */}
-      <div className="max-w-5xl mx-auto text-center pb-8 sm:py-12 px-6">
+      {/* Active Fresh */}
+      <div className="max-w-5xl mx-auto text-center pb-8 sm:py-12 px-6 font-color-primary">
         <div className="font-subtitle ">{productsData[5]}</div>
-        <div className="mt-3 text-balance font-body">
+        {/* <div className="mt-3 text-balance font-body">
           <BoldTextBySlash text={productsData[6]} />
+        </div> */}
+      </div>
+      {/* Coming soon */}
+      <div className="flex w-full justify-center">
+        <div className="relative w-xs max-h-[440px] flex justify-center  items-center">
+          <img
+            src={activeRefresh1}
+            alt={activeRefresh1}
+            className="w-full h-full object-center rounded-lg shadow-lg "
+          />
+
+          <div className="absolute text-center sm:text-start py-6 sm:py-12 top-0">
+            <h2 className="font-header text-white  drop-shadow-2xl shadow-amber-950">
+              Coming Soon
+            </h2>
+          </div>
         </div>
       </div>
+
       {/* Ingredients */}
-      <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
+      {/* <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
         <img
           src={activeRefresh1}
           alt={activeRefresh1}
           className="w-full max-w-xs rounded-lg shadow-lg max-h-[440px]"
         />
 
-        {/* Ingredients List */}
         <div className=" bg-secondary p-4 sm:p-6 rounded-lg shadow-md w-full sm:max-w-[65%] lg:max-w-[45%] text-balance sm:text-wrap">
           <div className="font-subtitle text-center  mb-6">
             {language === "EN" ? "Natural Ingredients" : "ส่วนผสมของสบู่"}
@@ -166,15 +183,15 @@ export default function Products() {
               : "Loading..."}
           </ul>
           <button
-            onClick={() => (navigate("/active-refresh"), window.scroll(0, 0))}
+            onClick={() => (navigate("/active-fresh"), window.scroll(0, 0))}
             className="mt-4 font-body bg-primary font-color-secondary px-6 py-2 rounded-lg shadow-md hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 ml-auto flex"
           >
             {language === "EN" ? "LEARN MORE" : "ดูเพิ่มเติม"}
           </button>
         </div>
-      </div>
-      {/* Active Refresh image*/}
-      <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center py-12 -mt-4">
+      </div> */}
+      {/* Active Fresh image*/}
+      {/* <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center py-12 -mt-4 font-color-primary">
         <img
           src={activeRefresh2}
           alt={activeRefresh2}
@@ -190,10 +207,10 @@ export default function Products() {
           alt={activeRefresh4}
           className="w-1/3 max-w-xs rounded-lg "
         />
-      </div>
+      </div> */}
 
-      <div className="max-w-5xl mx-auto text-center  px-6 sm:mt-6">
-        <div className="font-caption font-color-primary text-balance">
+      <div className="max-w-5xl mx-auto text-center  px-6 sm:mt-6 font-color-primary">
+        <div className="font-caption text-balance">
           {language === "EN"
             ? "Elevate your skincare routine with soaps that blend the finest natural ingredients for a luxurious, eco-conscious experience. Choose the care you deserve"
             : "ดูแลผิวของคุณให้ดียิ่งขึ้นด้วยสบู่ที่ผสานส่วนผสมจากธรรมชาติอย่างลงตัว มอบสัมผัสพอเศษและเป็นมิตรกับสิ่งแวดล้อม เพราะผิวของคุณสมควรได้รับการดูแลที่ดีที่สุด"}
@@ -207,20 +224,20 @@ export default function Products() {
       <Banner src={banner1} />
 
       {/* Why Chana */}
-      <div className="max-w-4xl mx-auto text-center py-12 px-6 -mt-6">
-        <div className="font-title">{productsData[8] || "Loading..."}</div>
+      <div className="max-w-4xl mx-auto text-center py-12 px-6 -mt-6 font-color-primary">
+        <div className="font-title">{productsData[8]}</div>
 
         {/* Table */}
         <div className="bg-[#EFF0E8] p-6 rounded-xl shadow-md mt-6 flex  justify-center">
           <table className="w-[900px] border-collapse overflow-hidden rounded-xl">
             <thead>
-              <tr className="font-body-bold border-b border-gray-400">
+              <tr className="font-body-bold border-b border-gray-400 ">
                 <th className="py-4 px-6 text-center w-1/2">
                   {language === "EN" ? "Property" : "คุณสมบัติ"}
                 </th>
                 <th className="border-l border-gray-500"></th>
                 <th className="py-4 px-6 text-center w-1/2">
-                  {language === "EN" ? "Gentle Glow" : "Gentle Glow"}
+                  {language === "EN" ? " Chana Soap" : "สบู่ชนะ"}
                 </th>
               </tr>
             </thead>
@@ -286,7 +303,7 @@ export default function Products() {
       </div>
 
       {/* Key Takeaway for Chana Soap */}
-      <div className="w-full flex justify-center items-center sm:py-12 px-6 ">
+      <div className="w-full flex justify-center items-center sm:py-12 px-6 font-color-primary">
         <div className=" max-w-4xl w-full flex sm:h-[720px]">
           <div className="bg-gray-50 p-4 lg:p-8 rounded-r-lg md:rounded-l-lg md:rounded-r-none shadow-md">
             <div className="font-title  mb-6 text-center">
@@ -359,7 +376,7 @@ export default function Products() {
       </div>
 
       {/* Reviews Section */}
-      <div className="max-w-7xl mx-auto text-center px-6 -mt-4">
+      <div className="max-w-7xl mx-auto text-center px-6 -mt-4 font-color-primary">
         <div className="font-title  mb-10">{productsData[26]}</div>
 
         {/* Review Grid */}
@@ -386,7 +403,21 @@ export default function Products() {
                 {/* <p className="text-sm font-semibold  mb-2">Wendy S.</p> */}
 
                 <div className="flex justify-end items-center">
-                  <span>⭐️⭐️⭐️⭐️⭐️</span>
+                  <span>
+                    <StarReview />
+                  </span>
+                  <span>
+                    <StarReview />
+                  </span>
+                  <span>
+                    <StarReview />
+                  </span>
+                  <span>
+                    <StarReview />
+                  </span>
+                  <span>
+                    <StarReview />
+                  </span>
                 </div>
               </div>
             </div>
@@ -394,12 +425,10 @@ export default function Products() {
         </div>
       </div>
       {/* Before and After Section */}
-      <div className="max-w-5xl mx-auto text-center sm:py-12 px-6">
+      {/* <div className="max-w-5xl mx-auto text-center sm:py-12 px-6">
         <div className="font-title  my-10">{productsData[33]}</div>
 
-        {/* Images Grid */}
         <div className="grid grid-cols-2 gap-8">
-          {/* Before Image */}
           <div className="flex flex-col items-center max-h-[680px]">
             <img
               src={before}
@@ -411,7 +440,6 @@ export default function Products() {
             </p>
           </div>
 
-          {/* After Image */}
           <div className="flex flex-col items-center max-h-[680px]">
             <img
               src={after}
@@ -423,7 +451,7 @@ export default function Products() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>

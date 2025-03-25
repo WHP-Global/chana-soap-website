@@ -7,7 +7,7 @@ import lazadaImg from "/ContactUs/lazada.png";
 import lineImg from "/ContactUs/line.png";
 import InputFormToSendEmail from "../components/InputFormToSendEmail";
 import FAQ from "../components/FAQ";
-import Logo from "../components/Logo";
+import { Logo } from "../components/Logo";
 import { BoldTextBySlash } from "../services/BoldText";
 
 export default function ContactUs() {
@@ -54,9 +54,13 @@ export default function ContactUs() {
                   className="h-full w-auto object-cover rounded-2xl"
                 />
               </div>
-              <button className="bg-[#4b664e] font-color-secondary font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
+              <Link
+                to="https://th.shp.ee/7zH4EQ3"
+                target="_bank"
+                className="bg-[#4b664e] font-color-secondary text-center font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
+              >
                 Shopee
-              </button>
+              </Link>
             </div>
             <div className="flex flex-col items-center">
               <div className="h-[123px] w-auto my-[25px]">
@@ -66,9 +70,13 @@ export default function ContactUs() {
                   className="h-full w-auto object-cover rounded-2xl"
                 />
               </div>
-              <button className="bg-[#4b664e] font-color-secondary font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
+              <Link
+                // to=""
+                // target="_bank"
+                className="bg-[#4b664e] font-color-secondary text-center font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
+              >
                 Lazada
-              </button>
+              </Link>
             </div>
             <div className="flex flex-col items-center">
               <div className="h-[170px] w-auto">
@@ -96,12 +104,11 @@ export default function ContactUs() {
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>
       <div className="font-color-primary">
-        <div className="font-title text-center mb-8">{contactUsData[3]}</div>
+        {/* <div className="font-title text-center mb-8">{contactUsData[3]}</div> */}
         <div className="flex flex-col gap-6 sm:gap-10 font-body sm:mx-8 md:mx-10 lg:mx-16 justify-center items-center">
           {/* Logo and Name product */}
           <div className="flex flex-col items-center gap-1">
-            <div className="flex-1 my-2 sm:my-4 font-header">CHANA</div>
-            <div className="w-[170px]">
+            <div className="w-[225px] h-auto">
               <Logo />
             </div>
           </div>

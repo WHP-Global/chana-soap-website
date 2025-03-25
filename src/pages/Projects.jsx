@@ -27,10 +27,7 @@ export default function Projects() {
         <div className="max-w-3xl mx-auto mt-6 ">
           <div className="border-t bg-fourth  w-1/3 mx-auto mt-5 mb-10"></div>
 
-          <div className="font-title text-balance">
-            {projectsData[2] ||
-              "Creating a Sustainable Ecosystem: The Journey of Chana Soap"}
-          </div>
+          <div className="font-title text-balance">{projectsData[2]}</div>
 
           <div className="border-b bg-fourth  w-1/3 mx-auto mt-10"></div>
         </div>
@@ -93,7 +90,7 @@ export default function Projects() {
               title: <BoldTextBySlash text={projectsData[9]} />,
               description: <BoldTextBySlash text={projectsData[10]} />,
               image: AFImg,
-              link: "/empowering-farmer",
+              link: "/Happy-Worm-Farm",
             },
             {
               title: <BoldTextBySlash text={projectsData[11]} />,

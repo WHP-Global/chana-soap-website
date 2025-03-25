@@ -1,0 +1,104 @@
+// src/styles/fonts.scss
+
+@font-face {
+  font-family: "Sweet Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/SweetSansProRegular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Sweet Sans Pro";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/fonts/SweetSansProItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Sweet Sans Pro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/SweetSansProBold.woff") format("woff");
+}
+
+// ตัวแปรสำหรับฟอนต์
+$font-primary: "Sweet Sans Pro", sans-serif;
+
+.font-header {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: $font-primary;
+}
+
+.font-title {
+  font-size: 36px;
+  font-weight: 500;
+  font-family: $font-primary;
+}
+
+.font-button {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: $font-primary;
+}
+
+.font-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+  font-family: $font-primary;
+}
+
+.font-caption {
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+  font-family: $font-primary;
+}
+
+.font-body {
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal !important;
+  font-family: $font-primary;
+}
+
+.font-body-bold {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: $font-primary;
+}
+
+.font-menu {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: $font-primary;
+}
+
+.font-sub-menu {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: $font-primary;
+}
+
+/* ถ้าหน้าจอเล็กกว่า 640px (sm) ให้เป็น 14px */
+@media (max-width: 639px) {
+  .font-body,
+  .font-body-bold,
+  .font-sub-menu {
+    font-size: 14px;
+  }
+  .font-header {
+    font-size: 36px;
+  }
+  .font-title {
+    font-size: 24px;
+  }
+  .font-subtitle,
+  .font-caption {
+    font-size: 18px;
+  }
+  .font-button {
+    font-size: 20px;
+  }
+}
