@@ -30,10 +30,9 @@ export const GoogleSheetsProvider = ({ children }) => {
           // const url = `${API_URL}?sheet=${encodeURIComponent(
           //   sheetName
           // )}&format=json`;
-          const url = `https://script.google.com/macros/s/AKfycbwNoQEMAS9pn6N27m583KKGtHVT9Xgo-v5nY5duaaWNBP7BvREpSnS2QXu--wmdJKY2/exec?sheet=${encodeURIComponent(
-            sheetName
-          )}`;
-
+          const url = `${
+            import.meta.env.VITE_SHEET_API_URL
+          }?sheet=${encodeURIComponent(sheetName)}`;
           const response = await fetch(url, { redirect: "follow" });
 
           if (!response.ok) {

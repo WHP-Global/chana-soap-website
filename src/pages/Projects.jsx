@@ -16,7 +16,7 @@ export default function Projects() {
   return (
     <div>
       <div className="w-full">
-        <div className="w-full h-[678px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
+        <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
           <img src={hero} alt={hero} className="w-full h-full object-cover" />
         </div>
       </div>
