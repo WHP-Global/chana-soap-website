@@ -33,6 +33,8 @@ export const GoogleSheetsProvider = ({ children }) => {
           const url = `${
             import.meta.env.VITE_SHEET_API_URL
           }?sheet=${encodeURIComponent(sheetName)}`;
+          console.log("first", import.meta.env.VITE_SHEET_API_URL);
+
           const response = await fetch(url, { redirect: "follow" });
 
           if (!response.ok) {
