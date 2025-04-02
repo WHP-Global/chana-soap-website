@@ -14,7 +14,7 @@ export default function MainContainer() {
 
   const menus = [
     {
-      name: `${language === "EN" ? "About US" : "เกี่ยวกับ"}`,
+      name: `${language === "EN" ? "About Us" : "เกี่ยวกับเรา"}`,
       to: "/",
       subMenu: [
         {
@@ -23,9 +23,7 @@ export default function MainContainer() {
         },
         {
           name: `${
-            language === "EN"
-              ? "Sourcing Ingredients"
-              : "การจัดหาวัตถุดิบและผลกระทบต่อชุมชน"
+            language === "EN" ? "Sourcing Ingredients" : "การจัดหาส่วนผสม"
           }`,
           to: "sourcing-and-impact",
         },
@@ -40,32 +38,40 @@ export default function MainContainer() {
       ],
     },
     {
-      name: `${language === "EN" ? "Products" : "สินค้า"}`,
+      name: `${language === "EN" ? "Products" : "ผลิตภัณฑ์"}`,
       to: "/products",
       subMenu: [
-        { name: "Gentle Glow", to: "gentle-glow" },
-        { name: "Active Fresh", to: "active-fresh" },
         {
           name: `${
-            language === "EN" ? "Why Chana Soap" : "ทำไมต้องเลือกสบู่ชนะ"
+            language === "EN" ? "Gentle Glow" : "เจนเทิล โกลว์ (Gentle Glow)"
           }`,
+          to: "gentle-glow",
+        },
+        {
+          name: `${
+            language === "EN" ? "Active Fresh" : "แอคทีฟ เฟรช (Active Fresh)"
+          }`,
+          to: "active-fresh",
+        },
+        {
+          name: `${language === "EN" ? "Why Chana Soap" : "ทำไมต้องสบู่ชนะ"}`,
           to: "why-chana",
         },
         {
           name: `${
-            language === "EN" ? "Testimonials" : "รีวิวจากลูกค้าของเรา"
+            language === "EN" ? "Testimonials" : "คำรับรองจากผู้ใช้จริง"
           }`,
           to: "testimonials",
         },
       ],
     },
     {
-      name: `${language === "EN" ? "Projects" : "โปรเจค"}`,
+      name: `${language === "EN" ? "Projects" : "โครงการ"}`,
       to: "/projects",
       subMenu: [
         {
           name: `${
-            language === "EN" ? "Happy Worm Farm" : "โครงการไส้เดือน AF"
+            language === "EN" ? "Happy Worm Farm" : "ฟาร์มหนอนแห่งความสุข"
           }`,
           to: "/Happy-Worm-Farm",
         },
@@ -77,22 +83,22 @@ export default function MainContainer() {
         },
         {
           name: `${
-            language === "EN" ? "EQ Life Foundation" : "EQ Life Foundation"
+            language === "EN" ? "EQ Life foundation" : "มูลนิธิ EQ Life"
           }`,
           to: "/eq-life",
         },
       ],
     },
     {
-      name: `${language === "EN" ? "Contact US" : "ติดต่อเรา"}`,
+      name: `${language === "EN" ? "Contact Us" : "ติดต่อเรา"}`,
       to: "/contact-us",
       subMenu: [
         {
-          name: `${language === "EN" ? "Where to Buy" : "ช่องทางการสั่งซื้อ"}`,
+          name: `${language === "EN" ? "Where to Buy" : "สถานที่จัดจำหน่าย"}`,
           to: "where-to-buy",
         },
         {
-          name: `${language === "EN" ? "Say Hello" : "ติดต่อกับเรา"}`,
+          name: `${language === "EN" ? "Say Hello" : "ทักทายเรา"}`,
           to: "contact-form",
         },
         {
