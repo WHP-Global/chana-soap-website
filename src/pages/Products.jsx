@@ -74,7 +74,7 @@ export default function Products() {
         <div className="mt-3  font-body text-balance">
           {language === "EN"
             ? "Our thoughtfully crafted soap collection offers two distinct experiences designed to cater to your skin’s needs and your lifestyle."
-            : "สบู่ชนะที่รังสรรค์อย่างพิถีพิถันของเรา มอบสองประสบการณ์อันโดดเด่น เพื่อตอบสนองความต้องการของผิวคุณและสอดคล้องกับไลฟ์สไตล์ของคุณอย่างลงตัว"}
+            : "สบู่อาชว์ แอนด์ อลิสที่รังสรรค์อย่างพิถีพิถันของเรา มอบสองประสบการณ์อันโดดเด่น เพื่อตอบสนองความต้องการของผิวคุณและสอดคล้องกับไลฟ์สไตล์ของคุณอย่างลงตัว"}
         </div>
       </div>
 
@@ -220,10 +220,10 @@ export default function Products() {
           <hr className="w-[250px] h-[1px] bg-primary border-none" />
         </div>
       </div>
-      <div id="why-chana"></div>
+      <div id="why-Art & Alice"></div>
       <Banner src={banner1} />
 
-      {/* Why Chana */}
+      {/* Why Art & Alice */}
       <div className="max-w-4xl mx-auto text-center py-12 px-6 -mt-6 font-color-primary">
         <div className="font-title">{productsData[8]}</div>
 
@@ -237,7 +237,9 @@ export default function Products() {
                 </th>
                 <th className="border-l border-gray-500"></th>
                 <th className="py-4 px-6 text-center w-1/2">
-                  {language === "EN" ? " Chana Soap" : "สบู่ชนะ"}
+                  {language === "EN"
+                    ? " Art & Alice Soap"
+                    : "สบู่อาชว์ แอนด์ อลิส"}
                 </th>
               </tr>
             </thead>
@@ -302,7 +304,7 @@ export default function Products() {
         </div>
       </div>
 
-      {/* Key Takeaway for Chana Soap */}
+      {/* Key Takeaway for Art & Alice Soap */}
       <div className="w-full flex justify-center items-center sm:py-12 px-6 font-color-primary">
         <div className=" max-w-4xl w-full flex sm:h-[720px]">
           <div className="bg-gray-50 p-4 lg:p-8 rounded-r-lg md:rounded-l-lg md:rounded-r-none shadow-md">

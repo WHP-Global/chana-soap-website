@@ -32,7 +32,7 @@ export default function InputFormToSendEmail() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    await sendEmail(formData, "สอบถามข้อมูลสินค้าและบริการ : Chana Soap");
+    await sendEmail(formData, "สอบถามข้อมูลสินค้าและบริการ : Art & Alice Soap");
     setIsLoading(false);
     setIsSuccess("true");
     setFormData({

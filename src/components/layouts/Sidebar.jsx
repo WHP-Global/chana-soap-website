@@ -21,7 +21,7 @@ export default function Sidebar({
         x
       </div>
       <div className="flex-1 font-color-secondary font-header flex items-center justify-center bg-primary py-3 rounded-t-lg">
-        {/* {language === "EN" ? "CHANA" : "ชนะ"} */}
+        {/* {language === "EN" ? "Art & Alice" : "อาชว์ แอนด์ อลิส"} */}
         <div className="w-[200px] h-auto">
           <LogoTopBar />
         </div>

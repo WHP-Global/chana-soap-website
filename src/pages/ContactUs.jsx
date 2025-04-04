@@ -108,7 +108,7 @@ export default function ContactUs() {
         <div className="flex flex-col gap-6 sm:gap-10 font-body sm:mx-8 md:mx-10 lg:mx-16 justify-center items-center">
           {/* Logo and Name product */}
           <div className="flex flex-col items-center gap-1">
-            <div className="w-[225px] h-auto">
+            <div className="w-[275px] h-auto">
               <Logo />
             </div>
           </div>

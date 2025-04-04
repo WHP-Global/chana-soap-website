@@ -107,7 +107,7 @@ export default function Navbar({
         to="/"
         onClick={() => window.scroll(0, 0)}
       >
-        {/* {language === "EN" ? "CHANA" : "ชนะ"} */}
+        {/* {language === "EN" ? "Art & Alice" : "อาชว์ แอนด์ อลิส"} */}
         <div className="w-[200px] h-auto">
           <LogoTopBar />
         </div>

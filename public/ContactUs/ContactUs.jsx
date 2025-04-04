@@ -96,7 +96,7 @@ export default function ContactUs() {
         <div className="flex flex-col gap-6 sm:gap-10 font-body sm:mx-8 md:mx-10 lg:mx-16 justify-center items-center">
           {/* Logo and Name product */}
           <div className="flex flex-col items-center gap-1">
-            <div className="flex-1 my-2 sm:my-4 font-header">CHANA</div>
+            <div className="flex-1 my-2 sm:my-4 font-header">Art & Alice</div>
             <div className="w-[170px]">
               <Logo />
             </div>

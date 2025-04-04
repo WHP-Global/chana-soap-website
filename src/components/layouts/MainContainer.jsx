@@ -30,8 +30,8 @@ export default function MainContainer() {
         // {
         //   name: `${
         //     language === "EN"
-        //       ? "Beyond Skincare: Chana Soap's Commitment"
-        //       : "เกินกว่าการดูแลผิว: ความมุ่งมั่นของสบู่ชนะ"
+        //       ? "Beyond Skincare: Art & Alice Soap's Commitment"
+        //       : "เกินกว่าการดูแลผิว: ความมุ่งมั่นของสบู่"
         //   }`,
         //   to: "commitment",
         // },
@@ -54,8 +54,12 @@ export default function MainContainer() {
           to: "active-fresh",
         },
         {
-          name: `${language === "EN" ? "Why Chana Soap" : "ทำไมต้องสบู่ชนะ"}`,
-          to: "why-chana",
+          name: `${
+            language === "EN"
+              ? "Why Art & Alice Soap"
+              : "ทำไมต้องสบู่อาชว์ แอนด์ อลิส"
+          }`,
+          to: "why-Art & Alice",
         },
         {
           name: `${
