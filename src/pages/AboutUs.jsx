@@ -57,12 +57,12 @@ export default function AboutUs() {
     imgSlide3SI,
     imgSlide4SI,
     imgSlide5SI,
+    imgSlide11SI,
     imgSlide6SI,
     imgSlide7SI,
     imgSlide8SI,
     imgSlide9SI,
     imgSlide10SI,
-    imgSlide11SI,
   ];
 
   // ดึงข้อมูลจากชีต "about us"
@@ -187,11 +187,6 @@ export default function AboutUs() {
             </div>
           </div>
 
-          {/* image slide */}
-          <div className="max-w-full mx-5 sm:mx-8 flex justify-center py-[20px] sm:py-[60px]">
-            <ImageSlider imgGroup={imgSliderSoucingIngredients} />
-          </div>
-
           {/* <div className="font-subtitle">
             {aboutUsData[24]}
             <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
@@ -202,14 +197,18 @@ export default function AboutUs() {
             </div>
           </div> */}
 
-          <div className="text-center font-caption my-2 sm:my-3 indent-0 text-balance">
-            {aboutUsData[23]}
-          </div>
-
           {/* <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
             <BoldTextBySlash text={aboutUsData[28]} />
           </div> */}
         </div>
+      </div>
+
+      {/* image slide */}
+      <div className="max-w-full mx-5 sm:mx-8 flex justify-center py-[20px] sm:py-[60px]">
+        <ImageSlider imgGroup={imgSliderSoucingIngredients} />
+      </div>
+      <div className="text-center font-caption my-2 sm:my-3 indent-0 text-balance">
+        {aboutUsData[23]}
       </div>
       {/* banner */}
       <Banner src={banner2} />
