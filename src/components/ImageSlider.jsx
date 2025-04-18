@@ -9,7 +9,16 @@ const ImageSlider = ({ imgGroup = [] }) => {
   const [imageOrientations, setImageOrientations] = useState([]);
   const [groupedSlides, setGroupedSlides] = useState([]);
   const [isLoopEnabled, setIsLoopEnabled] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0); // 🔹เพิ่ม state สำหรับ track index
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false); // 🔹 state สำหรับจับขนาดจอ
+
+  // ✅ จับขนาดหน้าจอ
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 600);
+    checkScreen(); // run ครั้งแรก
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   const handleImageLoad = (e, index) => {
     const { naturalWidth, naturalHeight } = e.target;
@@ -27,23 +36,35 @@ const ImageSlider = ({ imgGroup = [] }) => {
       const tempSlides = [];
       let i = 0;
 
-      while (i < imgGroup.length) {
-        if (imageOrientations[i] === "portrait" && i + 1 < imgGroup.length) {
-          tempSlides.push([imgGroup[i], imgGroup[i + 1]]);
-          i += 2;
-        } else {
-          tempSlides.push([imgGroup[i]]);
-          i += 1;
+      if (isMobile) {
+        // 🔹 มือถือ: แสดงทีละ 1 รูป
+        imgGroup.forEach((img) => tempSlides.push([img]));
+      } else {
+        // 🔹 Desktop: แสดงคู่ ถ้า portrait
+        while (i < imgGroup.length) {
+          if (imageOrientations[i] === "portrait" && i + 1 < imgGroup.length) {
+            tempSlides.push([imgGroup[i], imgGroup[i + 1]]);
+            i += 2;
+          } else {
+            tempSlides.push([imgGroup[i]]);
+            i += 1;
+          }
         }
       }
 
       setGroupedSlides(tempSlides);
       setIsLoopEnabled(tempSlides.length > 1);
     }
-  }, [imageOrientations, imgGroup]);
+  }, [imageOrientations, imgGroup, isMobile]);
+
+  useEffect(() => {
+    if (groupedSlides.length > 0) {
+      setActiveIndex(0);
+    }
+  }, [groupedSlides]);
 
   return (
-    <div className="relative w-full px-3 sm:px-18 xl:px-28">
+    <div className="relative w-full">
       {/* preload images */}
       <div className="hidden">
         {imgGroup.map((img, index) => (
@@ -56,51 +77,50 @@ const ImageSlider = ({ imgGroup = [] }) => {
         ))}
       </div>
 
-      <Swiper
-        loop={isLoopEnabled}
-        spaceBetween={20}
-        slidesPerView={1}
-        centeredSlides={true}
-        navigation={{
-          nextEl: ".custom-next",
-          prevEl: ".custom-prev",
-        }}
-        modules={[Navigation, EffectFade]}
-        effect="fade"
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // 🔹 อัปเดต activeIndex
-        className="w-full rounded-2xl"
-      >
-        {groupedSlides.map((group, index) => (
-          <SwiperSlide key={index}>
-            <div className="flex items-center justify-center space-x-2">
-              {index === activeIndex &&
-                group.map((img, idx) => (
+      {groupedSlides.length > 0 && (
+        <Swiper
+          loop={isLoopEnabled}
+          spaceBetween={20}
+          slidesPerView={1}
+          centeredSlides={true}
+          navigation={{
+            nextEl: ".custom-next",
+            prevEl: ".custom-prev",
+          }}
+          modules={[Navigation, EffectFade]}
+          effect="fade"
+          onSlideChange={(swiper) => {
+            const index = Number(swiper?.realIndex);
+            if (!isNaN(index)) setActiveIndex(index);
+          }}
+          preloadImages={true}
+          watchSlidesProgress={true}
+          className="w-full rounded-2xl"
+        >
+          {groupedSlides.map((group, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex items-center justify-center space-x-2 rounded-2xl">
+                {group.map((img, idx) => (
                   <img
                     key={idx}
                     src={img}
                     alt={`Slide ${index}-${idx}`}
-                    className="w-auto h-[320px] sm:h-[500px] rounded-2xl object-contain"
+                    className={`w-auto h-[320px] sm:h-[400px] lg:h-[500px] rounded-2xl sm:object-contain transition-opacity duration-500 ${
+                      index === activeIndex ? "opacity-100" : "opacity-0"
+                    }`}
                   />
-
-                  // <div className="flex justify-center items-center w-full h-[320px] sm:h-[500px] bg-gray-100">
-                  //   <img
-                  //     key={idx}
-                  //     src={img}
-                  //     alt={`Slide ${index}-${idx}`}
-                  //     className="object-contain max-h-full max-w-full"
-                  //   />
-                  // </div>
                 ))}
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
 
       {/* Custom Navigation Buttons */}
-      <button className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 font-color-secondary bg-[#293b2b] text-md md:text-xl z-1 rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex justify-center items-center hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
+      <button className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 font-color-secondary bg-[#293b2b] text-md md:text-xl z-1 rounded-full w-6 h-6 sm:w-10 sm:h-10 md:w-12 md:h-12 flex justify-center items-center hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
         ❮
       </button>
-      <button className="custom-next absolute right-0 top-1/2 -translate-y-1/2 font-color-secondary bg-[#293b2b] text-md md:text-xl z-1 rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex justify-center items-center hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
+      <button className="custom-next absolute right-0 top-1/2 -translate-y-1/2 font-color-secondary bg-[#293b2b] text-md md:text-xl z-1 rounded-full w-6 h-6 sm:w-10 sm:h-10 md:w-12 md:h-12 flex justify-center items-center hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
         ❯
       </button>
     </div>

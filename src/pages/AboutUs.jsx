@@ -200,13 +200,13 @@ export default function AboutUs() {
           {/* <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
             <BoldTextBySlash text={aboutUsData[28]} />
           </div> */}
+          {/* image slide */}
+          <div className="max-w-full flex justify-center py-[20px] sm:py-[60px]">
+            <ImageSlider imgGroup={imgSliderSoucingIngredients} />
+          </div>
         </div>
       </div>
 
-      {/* image slide */}
-      <div className="max-w-full mx-5 sm:mx-8 flex justify-center py-[20px] sm:py-[60px]">
-        <ImageSlider imgGroup={imgSliderSoucingIngredients} />
-      </div>
       <div className="text-center font-caption my-2 sm:my-3 indent-0 text-balance">
         {aboutUsData[23]}
       </div>
