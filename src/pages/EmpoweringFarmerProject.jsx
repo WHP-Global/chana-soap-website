@@ -1,4 +1,5 @@
 import { useGoogleSheets } from "../services/googleSheetService";
+import hero from "/EmpoweringFarmerProject/hero.jpg";
 import AFImg1 from "/EmpoweringFarmerProject/AF-2.png";
 import AFImg2 from "/EmpoweringFarmerProject/AF-4.png";
 import AFImg3 from "/EmpoweringFarmerProject/AF-6.png";
@@ -37,11 +38,7 @@ export default function EmpoweringFarmerProject() {
     <div>
       {/* banner */}
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
-        <img
-          src={imgSlide1}
-          alt={imgSlide1}
-          className="h-full w-full object-cover"
-        />
+        <img src={hero} alt={hero} className="h-full w-full object-cover" />
       </div>
       {/* Introduction to African Nightcrawler Vermicomposting */}
       <div className="font-color-primary max-w-6xl mx-auto">
