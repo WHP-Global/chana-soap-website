@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { Link as RouterLink } from "react-router-dom";
-import { useGoogleSheets } from "../../services/googleSheetService";
 import { LogoTopBar } from "../Logo";
 
 export default function Sidebar({
@@ -10,7 +9,6 @@ export default function Sidebar({
   setOpenMenu,
   findAndSetOpenMenu,
 }) {
-  const { language } = useGoogleSheets();
   return (
     <div className=" h-[93%] rounded-lg shadow-lg">
       <div
@@ -21,7 +19,6 @@ export default function Sidebar({
         x
       </div>
       <div className="flex-1 font-color-secondary font-header flex items-center justify-center bg-primary py-3 rounded-t-lg">
-        {/* {language === "EN" ? "Art & Alice" : "อาชว์ แอนด์ อลิส"} */}
         <div className="w-[200px] h-auto">
           <LogoTopBar />
         </div>

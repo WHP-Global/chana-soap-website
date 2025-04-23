@@ -9,6 +9,7 @@ export const GoogleSheetsProvider = ({ children }) => {
 
   // const API_URL = import.meta.env.VITE_SHEET_API_URL;
   const sheetNames = [
+    "menu bar",
     "about us",
     "inspiration",
     "contact",

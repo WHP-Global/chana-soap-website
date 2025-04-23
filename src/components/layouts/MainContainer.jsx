@@ -10,103 +10,81 @@ export default function MainContainer() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
   const sidebarRef = useRef(null);
-  const { isLoading, language } = useGoogleSheets();
+  const { isLoading } = useGoogleSheets();
+  const { getLocalizedData } = useGoogleSheets();
+
+  // ดึงข้อมูลจากชีต "contact us"
+  const menuName = getLocalizedData("menu bar");
 
   const menus = [
     {
-      name: `${language === "EN" ? "About Us" : "เกี่ยวกับเรา"}`,
+      name: menuName[1],
       to: "/",
       subMenu: [
         {
-          name: `${language === "EN" ? "Our Story" : "เรื่องราวของเรา"}`,
+          name: menuName[2],
           to: "our-story",
         },
         {
-          name: `${
-            language === "EN" ? "Sourcing Ingredients" : "การจัดหาส่วนผสม"
-          }`,
+          name: menuName[3],
           to: "sourcing-and-impact",
         },
-        // {
-        //   name: `${
-        //     language === "EN"
-        //       ? "Beyond Skincare: Art & Alice Soap's Commitment"
-        //       : "เกินกว่าการดูแลผิว: ความมุ่งมั่นของสบู่"
-        //   }`,
-        //   to: "commitment",
-        // },
       ],
     },
     {
-      name: `${language === "EN" ? "Products" : "ผลิตภัณฑ์"}`,
+      name: menuName[4],
       to: "/products",
       subMenu: [
         {
-          name: `${
-            language === "EN" ? "Gentle Glow" : "เจนเทิล โกลว์ (Gentle Glow)"
-          }`,
+          name: menuName[5],
           to: "gentle-glow",
         },
         {
-          name: `${
-            language === "EN" ? "Active Fresh" : "แอคทีฟ เฟรช (Active Fresh)"
-          }`,
+          name: menuName[6],
           to: "active-fresh",
         },
         {
-          name: `${
-            language === "EN"
-              ? "Why Art & Alice Soap"
-              : "ทำไมต้องสบู่อาชว์ แอนด์ อลิส"
-          }`,
+          name: menuName[7],
           to: "why-Art & Alice",
         },
         {
-          name: `${
-            language === "EN" ? "Testimonials" : "คำรับรองจากผู้ใช้จริง"
-          }`,
+          name: menuName[8],
           to: "testimonials",
         },
       ],
     },
     {
-      name: `${language === "EN" ? "Projects" : "โครงการ"}`,
+      name: menuName[9],
       to: "/projects",
       subMenu: [
         {
-          name: `${
-            language === "EN" ? "Happy Worm Farm" : "ฟาร์มหนอนแห่งความสุข"
-          }`,
+          name: menuName[10],
           to: "/Happy-Worm-Farm",
         },
         {
-          name: `${
-            language === "EN" ? "Growing Aloe Vera" : "การปลูกว่านหางจระเข้"
-          }`,
+          name: menuName[11],
           to: "/aloe-vera",
         },
         {
-          name: `${
-            language === "EN" ? "EQ Life foundation" : "มูลนิธิ EQ Life"
-          }`,
+          name: menuName[12],
           to: "/eq-life",
         },
       ],
     },
     {
-      name: `${language === "EN" ? "Contact Us" : "ติดต่อเรา"}`,
+      name: menuName[13],
       to: "/contact-us",
       subMenu: [
         {
-          name: `${language === "EN" ? "Where to Buy" : "สถานที่จัดจำหน่าย"}`,
+          name: menuName[14],
           to: "where-to-buy",
         },
         {
-          name: `${language === "EN" ? "Say Hello" : "ทักทายเรา"}`,
+          name: menuName[15],
           to: "contact-form",
         },
         {
-          name: `${language === "EN" ? "FAQs" : "คำถามที่พบบ่อย"}`,
+          name: menuName[16],
           to: "faq",
         },
       ],

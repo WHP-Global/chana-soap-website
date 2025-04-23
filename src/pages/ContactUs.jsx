@@ -87,7 +87,7 @@ export default function ContactUs() {
                 />
               </div>
               <Link
-                to="https://lin.ee/fOhW8xt"
+                to={contactUsData[37]}
                 target="_bank"
                 className="bg-[#4b664e] font-color-secondary text-center font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
               >
@@ -130,7 +130,7 @@ export default function ContactUs() {
           <div className="flex flex-col gap-3 sm:gap-8">
             {/* email */}
             <a
-              href="mailto:info@chanasoapofficial.com"
+              href={`mailto:${contactUsData[14]}`}
               rel="noopener noreferrer"
               className="flex items-center justify-start gap-4 hover:opacity-60"
             >
@@ -176,7 +176,7 @@ export default function ContactUs() {
             </a>
             {/* facebook */}
             <a
-              href="https://www.facebook.com/share/15qZMQRGLa/"
+              href={contactUsData[36]}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-5 hover:opacity-60"
@@ -204,7 +204,7 @@ export default function ContactUs() {
             </a>
             {/* instragram */}
             <a
-              href=" https://www.instagram.com/chana_skincare"
+              href={contactUsData[38]}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-5 hover:opacity-60"
@@ -232,7 +232,7 @@ export default function ContactUs() {
             </a>
             {/* x */}
             <a
-              href="https://x.com/ChanaSkinCare"
+              href={contactUsData[39]}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-5 hover:opacity-60"
@@ -253,7 +253,7 @@ export default function ContactUs() {
             </a>
             {/* line  */}
             <a
-              href="https://lin.ee/fOhW8xt"
+              href={contactUsData[37]}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-5 hover:opacity-60"

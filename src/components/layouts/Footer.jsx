@@ -8,33 +8,32 @@ export default function Footer({
   setOpenMenu,
   findAndSetOpenMenu,
 }) {
-  const { language } = useGoogleSheets();
+  const { getLocalizedData } = useGoogleSheets();
+
+  // ดึงข้อมูลจากชีต "contact us"
+  const contactUsData = getLocalizedData("contact us");
+
   return (
     <div className="min-h-[350px] bg-primary py-[40px] font-color-secondary flex flex-col gap-[40px] items-center">
       <div className="grid grid-cols-4 lg:grid-cols-5 w-full px-[40px] gap-2 lg:px-0 lg:max-w-[85%] lg:w-auto ">
         {/* ข้อมูลติดต่อ (แสดงข้างบนเมื่อจอเล็ก) */}
         <div className="order-first lg:order-last col-span-5 lg:col-span-1">
-          <div className="font-menu mb-2">
-            {language === "EN"
-              ? "We’re Here to Connect"
-              : "เราพร้อมที่จะติดต่อกลับ"}
-          </div>
+          <div className="font-menu mb-2">{contactUsData[4]}</div>
           <div className="font-sub-menu">
-            <a href="mailto:info@chanasoapofficial.com">
+            <a href={`mailto:${contactUsData[14]}`}>
               <div className="text-wrap">
-                {language === "EN" ? "Email" : "อีเมล์"}:
-                info@chanasoapofficial.com
+                {contactUsData[10]}: {contactUsData[14]}
               </div>
             </a>
             <div>
-              {language === "EN" ? "Phone" : "เบอร์โทรศัพท์"}: 080-992-4299
+              {contactUsData[9]}:{contactUsData[15]}
             </div>
           </div>
           <hr className="my-2" />
           <div className="flex gap-3 mb-4 lg:gap-5 lg:justify-start lg:px-1">
             {/* facebook icon */}
             <a
-              href="https://www.facebook.com/share/15qZMQRGLa/"
+              href={contactUsData[36]}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -53,7 +52,7 @@ export default function Footer({
             </a>
             {/* line icon */}
             <a
-              href="https://lin.ee/fOhW8xt"
+              href={contactUsData[37]}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -72,7 +71,7 @@ export default function Footer({
             </a>
             {/* instragram icon */}
             <a
-              href=" https://www.instagram.com/chana_skincare"
+              href={contactUsData[38]}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -106,7 +105,7 @@ export default function Footer({
             </a>
             {/* x icon */}
             <a
-              href="https://x.com/ChanaSkinCare"
+              href={contactUsData[39]}
               target="_blank"
               rel="noopener noreferrer"
             >
