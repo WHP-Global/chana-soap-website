@@ -1,6 +1,6 @@
 export const sendEmail = async (dataFromInput, subject) => {
   try {
-    const response = await fetch("http://www.artandalice.co/send-email", {
+    const response = await fetch("https://www.artandalice.co/send-email", {
       // const response = await fetch("http://localhost:8888/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
