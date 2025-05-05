@@ -4,7 +4,7 @@ const GoogleSheetsContext = createContext();
 
 export const GoogleSheetsProvider = ({ children }) => {
   const [sheetsData, setSheetsData] = useState({});
-  const [language, setLanguage] = useState("EN");
+  const [language, setLanguage] = useState("English");
   const [isLoading, setIsLoading] = useState(true); // เพิ่มสถานะกำลังโหลด
 
   // const API_URL = import.meta.env.VITE_SHEET_API_URL;
@@ -15,7 +15,7 @@ export const GoogleSheetsProvider = ({ children }) => {
     "contact",
     "products",
     "gentle glow",
-    "active refresh",
+    "active fresh",
     "projects",
     "empowering project",
     "aloe vera project",
@@ -71,7 +71,9 @@ export const GoogleSheetsProvider = ({ children }) => {
   const getLocalizedData = (sheetName) => {
     const sheet = sheetsData[sheetName];
     if (!sheet) return [];
-    return sheet.map((row) => (language === "EN" ? row["EN"] : row["TH"]));
+    return sheet.map((row) =>
+      language === "English" ? row["English"] : row["ภาษาไทย"]
+    );
   };
 
   return (

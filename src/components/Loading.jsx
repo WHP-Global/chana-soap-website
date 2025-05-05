@@ -10,7 +10,7 @@ export default function Loading() {
       <div className="relative flex flex-col items-center">
         <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-white border-opacity-75"></div>
         <span className="mt-5 font-color-secondary font-title">
-          Art & Alice Soap
+          Art and Alice Soap
         </span>
         <span className="mt-5 font-color-secondary font-title">Loading...</span>
       </div>

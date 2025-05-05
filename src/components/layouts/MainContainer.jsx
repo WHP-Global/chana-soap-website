@@ -45,7 +45,7 @@ export default function MainContainer() {
         },
         {
           name: menuName[7],
-          to: "why-Art & Alice",
+          to: "why-Art-Alice",
         },
         {
           name: menuName[8],

@@ -64,7 +64,7 @@ const ImageSlider = ({ imgGroup = [] }) => {
   }, [groupedSlides]);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full px-6  sm:px-10  md:px-12">
       {/* preload images */}
       <div className="hidden">
         {imgGroup.map((img, index) => (
@@ -105,8 +105,8 @@ const ImageSlider = ({ imgGroup = [] }) => {
                     key={idx}
                     src={img}
                     alt={`Slide ${index}-${idx}`}
-                    className={`w-auto h-[320px] sm:h-[400px] lg:h-[500px] rounded-2xl sm:object-contain transition-opacity duration-500 ${
-                      index === activeIndex ? "opacity-100" : "opacity-0"
+                    className={`w-auto h-[320px] lg:h-[500px] rounded-2xl sm:object-contain transition-opacity duration-500 ${
+                      index === activeIndex ? "opacity-100" : " opacity-0"
                     }`}
                   />
                 ))}

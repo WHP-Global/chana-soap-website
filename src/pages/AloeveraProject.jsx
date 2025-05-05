@@ -15,6 +15,8 @@ import imgSlide4 from "/AloeVera/aloe-vera4.jpg";
 
 import { BoldText, BoldTextBySlash } from "../services/BoldText";
 import ImageSlider from "../components/ImageSlider";
+import ImgTwo from "../components/ImgTwo";
+import ImgOne from "../components/ImgOne";
 
 export default function AloeveraProject() {
   const { getLocalizedData } = useGoogleSheets();
@@ -30,30 +32,16 @@ export default function AloeveraProject() {
       </div>
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-[40px] font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-balance">
-          {aloeVeraProjectData[1]}
+          {aloeVeraProjectData[0]}
+          <div className="font-title mt-5">{aloeVeraProjectData[1]}</div>
         </div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4 text-justify">
           <BoldTextBySlash text={aloeVeraProjectData[2]} />
           <BoldTextBySlash text={aloeVeraProjectData[3]} />
-          {/* imgae */}
-          <div className="w-full flex justify-center ">
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-[20px] md:gap-[40] h-auto py-[20px] sm:py-[60px] max-w-6xl  mx-5 sm:mx-8 md:mx-10 lg:mx-16">
-              <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
-                <img
-                  src={child1}
-                  alt={child1}
-                  className="h-full w-auto rounded-2xl"
-                />
-              </div>
-              <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
-                <img
-                  src={child2}
-                  alt={child2}
-                  className="h-full w-auto rounded-2xl"
-                />
-              </div>
-            </div>
-          </div>
+
+          {/* 2imgae */}
+          <ImgTwo imgGroup={[child1, child2]} />
+
           <BoldTextBySlash text={aloeVeraProjectData[4]} />
           <BoldTextBySlash text={aloeVeraProjectData[5]} />
         </div>
@@ -75,31 +63,37 @@ export default function AloeveraProject() {
         </div>
       </div>
 
-      {/* imgae */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-[40px] py-[20px] sm:py-[60px] h-auto mx-5 sm:mx-[4%] md:mx-[8%] lg:mx-[12%]">
-        <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
-          <img
-            src={banner2}
-            alt={banner2}
-            className="h-full w-auto rounded-2xl"
-          />
-        </div>
-      </div>
+      {/* 1 imgae */}
+      <ImgOne img={banner2} />
 
       {/* Project Workflow */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="flex flex-col gap-5 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3">
           <div className="font-subtitle">{aloeVeraProjectData[10]}</div>
           <BoldText text={aloeVeraProjectData[11]} />
-          <BoldText text={aloeVeraProjectData[12]} />
+          <BoldTextBySlash text={aloeVeraProjectData[12]} />
           <BoldText text={aloeVeraProjectData[13]} />
-          <BoldText text={aloeVeraProjectData[14]} />
+          <BoldTextBySlash text={aloeVeraProjectData[14]} />
+          <BoldText text={aloeVeraProjectData[15]} />
+          <BoldTextBySlash text={aloeVeraProjectData[16]} />
+          <BoldText text={aloeVeraProjectData[17]} />
+          <BoldTextBySlash text={aloeVeraProjectData[18]} />
         </div>
       </div>
 
       {/* image slide */}
-      <div className="max-w-full mx-5 sm:mx-[4%] md:mx-[8%] lg:mx-[15%] flex justify-center py-[20px] sm:py-[60px]">
+      <div className="max-w-full mx-5 sm:mx-[4%] md:mx-[8%] lg:mx-[15%] flex justify-center py-[20px] sm:py-[40px]">
         <ImageSlider imgGroup={imgSlider} />
+      </div>
+
+      <div className="font-color-primary max-w-6xl mx-auto">
+        <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4  text-justify">
+          <div className="mt-2 sm:mt-4 mb-0 font-subtitle text-center indent-0 ">
+            {aloeVeraProjectData[19]}
+          </div>
+          <BoldTextBySlash text={aloeVeraProjectData[20]} />
+          <BoldTextBySlash text={aloeVeraProjectData[21]} />
+        </div>
       </div>
 
       <div className="flex justify-center py-15">

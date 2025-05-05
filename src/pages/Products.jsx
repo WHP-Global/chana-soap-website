@@ -7,13 +7,11 @@ import gentleGlow2 from "/Products/gentleGlow2.jfif";
 import gentleGlow3 from "/Products/gentleGlow3.jfif";
 import gentleGlow4 from "/Products/gentleGlow4.jfif";
 import activeRefresh1 from "/Products/activeRefresh1.jfif";
-// import activeRefresh2 from "/Products/activeRefresh2.jfif";
-// import activeRefresh3 from "/Products/activeRefresh3.jfif";
-// import activeRefresh4 from "/Products/activeRefresh4.jfif";
+import activeRefresh2 from "/Products/activeRefresh2.jfif";
+import activeRefresh3 from "/Products/activeRefresh3.jfif";
+import activeRefresh4 from "/Products/activeRefresh4.jfif";
 import banner1 from "/Products/banner1.jpg";
 import banner2 from "/Products/banner2.jpg";
-// import before from "/Products/before.jfif";
-// import after from "/Products/after.jfif";
 import notoxic from "/Products/no-toxic.png";
 import oil from "/Products/oil.png";
 import earth from "/Products/earth.png";
@@ -49,9 +47,7 @@ export default function Products() {
 
       {/* Products Section */}
       <div className=" z-0 max-w-6xl mx-auto pt-5 px-6 text-center font-color-primary">
-        <div className="font-header">
-          {language === "EN" ? "Our Products" : "สินค้าของเรา"}
-        </div>
+        <div className="font-header">{productsData[0]}</div>
         <div className="max-w-3xl mx-auto mt-6">
           <div className="border-t bg-fourth  w-1/3 mx-auto mt-5 mb-10"></div>
           <div className="font-body-bold  font-semibold leading-[2rem] text-center">
@@ -68,14 +64,8 @@ export default function Products() {
       <div id="gentle-glow"></div>
       {/* Two Types of Soaps Section */}
       <div className="max-w-5xl mx-auto text-center pt-12 px-6 font-color-primary">
-        <div className="font-title">
-          {language === "EN" ? "Two types of soaps" : "ผลิตภัณฑ์สบู่สองชนิด"}
-        </div>
-        <div className="mt-3  font-body text-balance">
-          {language === "EN"
-            ? "Our thoughtfully crafted soap collection offers two distinct experiences designed to cater to your skin’s needs and your lifestyle."
-            : "สบู่อาชว์ แอนด์ อลิสที่รังสรรค์อย่างพิถีพิถันของเรา มอบสองประสบการณ์อันโดดเด่น เพื่อตอบสนองความต้องการของผิวคุณและสอดคล้องกับไลฟ์สไตล์ของคุณอย่างลงตัว"}
-        </div>
+        <div className="font-title">{productsData[40]}</div>
+        <div className="mt-3  font-body text-balance">{productsData[41]}</div>
       </div>
 
       {/* Gentle Glow  */}
@@ -94,7 +84,7 @@ export default function Products() {
         />
         <div className=" bg-secondary p-4 sm:p-6  rounded-lg shadow-md w-full sm:max-w-[65%] lg:max-w-[45%] text-balance sm:text-wrap">
           <div className="font-subtitle text-center  mb-6">
-            {language === "EN" ? "Natural Ingredients" : "ส่วนผสมของสบู่"}
+            {productsData[39]}
           </div>
           <ul className="list-disc list-inside  mt-3 font-sub-menu">
             {productsData[4]
@@ -110,12 +100,12 @@ export default function Products() {
             onClick={() => (navigate("/gentle-glow"), window.scroll(0, 0))}
             className="mt-4 font-body bg-primary font-color-secondary px-6 py-2 rounded-lg shadow-md hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 ml-auto flex"
           >
-            {language === "EN" ? "LEARN MORE" : "ดูเพิ่มเติม"}
+            {productsData[38]}
           </button>
         </div>
       </div>
       {/* Gentle Glow image */}
-      <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center sm:py-12 rounded-lg -mt-4 ">
+      <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center py-3 sm:py-12 rounded-lg -mt-4 ">
         <img
           src={gentleGlow1}
           alt={gentleGlow1}
@@ -140,87 +130,91 @@ export default function Products() {
       {/* Active Fresh */}
       <div className="max-w-5xl mx-auto text-center pb-8 sm:py-12 px-6 font-color-primary">
         <div className="font-subtitle ">{productsData[5]}</div>
-        {/* <div className="mt-3 text-balance font-body">
-          <BoldTextBySlash text={productsData[6]} />
-        </div> */}
+        {productsData[34] !== "isHaveData" && (
+          <div className="mt-3 text-balance font-body">
+            <BoldTextBySlash text={productsData[6]} />
+          </div>
+        )}
       </div>
       {/* Coming soon */}
-      <div className="flex w-full justify-center">
-        <div className="relative w-xs max-h-[440px] flex justify-center  items-center">
+      {productsData[34] === "isHaveData" && (
+        <div className="flex w-full justify-center">
+          <div className="relative w-xs max-h-[440px] flex justify-center  items-center">
+            <img
+              src={activeRefresh1}
+              alt={activeRefresh1}
+              className="w-full h-full object-center rounded-lg shadow-lg "
+            />
+
+            <div className="absolute text-center sm:text-start py-6 sm:py-12 top-0">
+              <h2 className="font-header text-white  drop-shadow-2xl shadow-amber-950">
+                Coming Soon
+              </h2>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Ingredients */}
+      {productsData[34] !== "isHaveData" && (
+        <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
           <img
             src={activeRefresh1}
             alt={activeRefresh1}
-            className="w-full h-full object-center rounded-lg shadow-lg "
+            className="w-full max-w-xs rounded-lg shadow-lg max-h-[440px]"
           />
 
-          <div className="absolute text-center sm:text-start py-6 sm:py-12 top-0">
-            <h2 className="font-header text-white  drop-shadow-2xl shadow-amber-950">
-              Coming Soon
-            </h2>
+          <div className=" bg-secondary p-4 sm:p-6 rounded-lg shadow-md w-full sm:max-w-[65%] lg:max-w-[45%] text-balance sm:text-wrap">
+            <div className="font-subtitle text-center  mb-6">
+              {productsData[39]}
+            </div>
+            <ul className="list-disc list-inside  mt-3 font-sub-menu">
+              {productsData[7]
+                ? productsData[7].split("\n").map((item, index) => (
+                    <li key={index}>
+                      <BoldTextBySlash text={item} isHaveList />
+                    </li>
+                  ))
+                : "Loading..."}
+            </ul>
+            <button
+              onClick={() => (navigate("/active-fresh"), window.scroll(0, 0))}
+              className="mt-4 font-body bg-primary font-color-secondary px-6 py-2 rounded-lg shadow-md hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 ml-auto flex"
+            >
+              {productsData[38]}
+            </button>
           </div>
         </div>
-      </div>
-
-      {/* Ingredients */}
-      {/* <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
-        <img
-          src={activeRefresh1}
-          alt={activeRefresh1}
-          className="w-full max-w-xs rounded-lg shadow-lg max-h-[440px]"
-        />
-
-        <div className=" bg-secondary p-4 sm:p-6 rounded-lg shadow-md w-full sm:max-w-[65%] lg:max-w-[45%] text-balance sm:text-wrap">
-          <div className="font-subtitle text-center  mb-6">
-            {language === "EN" ? "Natural Ingredients" : "ส่วนผสมของสบู่"}
-          </div>
-          <ul className="list-disc list-inside  mt-3 font-sub-menu">
-            {productsData[7]
-              ? productsData[7].split("\n").map((item, index) => (
-                  <li key={index}>
-                    <BoldTextBySlash text={item} isHaveList />
-                  </li>
-                ))
-              : "Loading..."}
-          </ul>
-          <button
-            onClick={() => (navigate("/active-fresh"), window.scroll(0, 0))}
-            className="mt-4 font-body bg-primary font-color-secondary px-6 py-2 rounded-lg shadow-md hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 ml-auto flex"
-          >
-            {language === "EN" ? "LEARN MORE" : "ดูเพิ่มเติม"}
-          </button>
-        </div>
-      </div> */}
+      )}
       {/* Active Fresh image*/}
-      {/* <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center py-12 -mt-4 font-color-primary">
-        <img
-          src={activeRefresh2}
-          alt={activeRefresh2}
-          className="w-1/3 max-w-xs rounded-lg "
-        />
-        <img
-          src={activeRefresh3}
-          alt={activeRefresh3}
-          className="w-1/3 max-w-xs rounded-lg "
-        />
-        <img
-          src={activeRefresh4}
-          alt={activeRefresh4}
-          className="w-1/3 max-w-xs rounded-lg "
-        />
-      </div> */}
-
-      <div className="max-w-5xl mx-auto text-center  px-6 sm:mt-6 font-color-primary">
-        <div className="font-caption text-balance">
-          {language === "EN"
-            ? "Elevate your skincare routine with soaps that blend the finest natural ingredients for a luxurious, eco-conscious experience. Choose the care you deserve"
-            : "ดูแลผิวของคุณให้ดียิ่งขึ้นด้วยสบู่ที่ผสานส่วนผสมจากธรรมชาติอย่างลงตัว มอบสัมผัสพอเศษและเป็นมิตรกับสิ่งแวดล้อม เพราะผิวของคุณสมควรได้รับการดูแลที่ดีที่สุด"}
+      {productsData[34] !== "isHaveData" && (
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center py-3 sm:py-12 rounded-lg -mt-4 ">
+          <img
+            src={activeRefresh2}
+            alt={activeRefresh2}
+            className="w-1/3 max-w-xs rounded-lg "
+          />
+          <img
+            src={activeRefresh3}
+            alt={activeRefresh3}
+            className="w-1/3 max-w-xs rounded-lg "
+          />
+          <img
+            src={activeRefresh4}
+            alt={activeRefresh4}
+            className="w-1/3 max-w-xs rounded-lg "
+          />
         </div>
+      )}
+
+      <div className="max-w-5xl mx-auto text-center  px-6 mt-6 font-color-primary">
+        <div className="font-caption text-balance">{productsData[35]}</div>
 
         <div className="flex justify-center py-15">
           <hr className="w-[250px] h-[1px] bg-primary border-none" />
         </div>
       </div>
-      <div id="why-Art & Alice"></div>
+      <div id="why-Art-Alice"></div>
       <Banner src={banner1} />
 
       {/* Why Art & Alice */}
@@ -233,13 +227,11 @@ export default function Products() {
             <thead>
               <tr className="font-body-bold border-b border-gray-400 ">
                 <th className="py-4 px-6 text-center w-1/2">
-                  {language === "EN" ? "Property" : "คุณสมบัติ"}
+                  {productsData[36]}
                 </th>
                 <th className="border-l border-gray-500"></th>
                 <th className="py-4 px-6 text-center w-1/2">
-                  {language === "EN"
-                    ? " Art & Alice Soap"
-                    : "สบู่อาชว์ แอนด์ อลิส"}
+                  {productsData[37]}
                 </th>
               </tr>
             </thead>
@@ -426,34 +418,6 @@ export default function Products() {
           ))}
         </div>
       </div>
-      {/* Before and After Section */}
-      {/* <div className="max-w-5xl mx-auto text-center sm:py-12 px-6">
-        <div className="font-title  my-10">{productsData[33]}</div>
-
-        <div className="grid grid-cols-2 gap-8">
-          <div className="flex flex-col items-center max-h-[680px]">
-            <img
-              src={before}
-              alt={before}
-              className="w-full max-w-sm rounded-lg h-full"
-            />
-            <p className="mt-4 font-title font-medium font-color-primary">
-              {language === "EN" ? "Before" : "ก่อน"}
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center max-h-[680px]">
-            <img
-              src={after}
-              alt={after}
-              className="w-full max-w-sm rounded-lg h-full"
-            />
-            <p className="mt-4 font-title font-medium font-color-primary">
-              {language === "EN" ? "After" : "หลัง"}
-            </p>
-          </div>
-        </div>
-      </div> */}
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>

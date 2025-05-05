@@ -7,7 +7,7 @@ export const getDataByLanguage = (sheetName) => {
   if (!sheet) return [];
 
   return sheet.map((row) => {
-    const text = language === "EN" ? row[3] : row[2]; // index 2 = ภาษาไทย, index 3 = ภาษาอังกฤษ
+    const text = language === "English" ? row[3] : row[2]; // index 2 = ภาษาไทย, index 3 = ภาษาอังกฤษ
     return text;
   });
 };

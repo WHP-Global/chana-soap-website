@@ -16,6 +16,7 @@ import imgSlide9 from "/EmpoweringFarmerProject/imgSlide-9.png";
 import imgSlide10 from "/EmpoweringFarmerProject/imgSlide-10.png";
 import { BoldText, BoldTextBySlash } from "../services/BoldText";
 import ImageSlider from "../components/ImageSlider";
+import ImgTwo from "../components/ImgTwo";
 
 export default function EmpoweringFarmerProject() {
   const { getLocalizedData } = useGoogleSheets();
@@ -40,70 +41,45 @@ export default function EmpoweringFarmerProject() {
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img src={hero} alt={hero} className="h-full w-full object-cover" />
       </div>
-      {/* Introduction to African Nightcrawler Vermicomposting */}
+      {/*  Turning Food Waste into Fertilizer, Supporting Farmers, and Creating Natural Soap */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-[40px] font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-balance">
-          {empoweringProjectData[1]}
-          {/* <div className="font-title mt-5">{empoweringProjectData[1]}</div> */}
+          {empoweringProjectData[0]}
+          <div className="font-title mt-5">{empoweringProjectData[1]}</div>
         </div>
         <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4  text-justify">
           <BoldTextBySlash text={empoweringProjectData[2]} />
           <BoldTextBySlash text={empoweringProjectData[3]} />
+
+          {/* Sharing Knowledge with the Community */}
           <div className="mt-2 sm:mt-4 mb-0 font-subtitle text-center indent-0 ">
             {empoweringProjectData[4]}
           </div>
           <BoldTextBySlash text={empoweringProjectData[5]} />
           <BoldTextBySlash text={empoweringProjectData[6]} />
+
+          {/* 2 imgae */}
+          <ImgTwo imgGroup={[AFImg2, AFImg1]} />
         </div>
       </div>
-      {/* imgae */}
-      <div className="w-full flex justify-center ">
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-[20px] md:gap-[40] h-auto py-[20px] sm:py-[60px] max-w-6xl  mx-5 sm:mx-8 md:mx-10 lg:mx-16">
-          <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
-            <img
-              src={AFImg2}
-              alt={AFImg2}
-              className="h-full w-auto rounded-2xl"
-            />
-          </div>
-          <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
-            <img
-              src={AFImg1}
-              alt={AFImg1}
-              className="h-full w-auto rounded-2xl"
-            />
-          </div>
-        </div>
-      </div>
+
       {/* 4 Steps to Make AF Earthworm Compost */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="flex flex-col gap-5 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3">
           <div className="font-subtitle">{empoweringProjectData[7]}</div>
-          <BoldText text={empoweringProjectData[9]} />
-          <BoldText text={empoweringProjectData[11]} />
-          <BoldText text={empoweringProjectData[13]} />
-          <BoldText text={empoweringProjectData[15]} />
+          <BoldText text={empoweringProjectData[8]} />
+          <BoldTextBySlash text={empoweringProjectData[9]} />
+          <BoldText text={empoweringProjectData[10]} />
+          <BoldTextBySlash text={empoweringProjectData[11]} />
+          <BoldText text={empoweringProjectData[12]} />
+          <BoldTextBySlash text={empoweringProjectData[13]} />
+          <BoldText text={empoweringProjectData[14]} />
+          <BoldTextBySlash text={empoweringProjectData[15]} />
+          {/* 2 imgae */}
+          <ImgTwo imgGroup={[AFImg3, AFImg4]} />
         </div>
       </div>
-      {/* imgae */}
-      <div className="w-full flex justify-center ">
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-[20px] md:gap-[40] h-auto py-[20px] sm:py-[60px] max-w-6xl  mx-5 sm:mx-8 md:mx-10 lg:mx-16">
-          <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
-            <img
-              src={AFImg3}
-              alt={AFImg3}
-              className="h-full w-auto rounded-2xl"
-            />
-          </div>
-          <div className="md:h-[500px] sm:h-[400px] h-full w-auto">
-            <img
-              src={AFImg4}
-              alt={AFImg4}
-              className="h-full w-auto rounded-2xl"
-            />
-          </div>
-        </div>
-      </div>
+
       {/* Project Outcomes of the AF Earthworm Project */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="flex flex-col gap-4 font-body mx-5 sm:mx-8 md:mx-10 lg:mx-16">
@@ -185,7 +161,7 @@ export default function EmpoweringFarmerProject() {
         </div>
       </div>
       {/* image slide */}
-      <div className="max-w-full mx-5 sm:mx-[4%] md:mx-[8%] lg:mx-[15%] flex justify-center py-[20px] sm:py-[60px]">
+      <div className="max-w-full mx-5 sm:mx-[4%] md:mx-[8%] lg:mx-[15%] flex justify-center py-[20px] sm:py-[40px]">
         <ImageSlider imgGroup={imgSlider} />
       </div>
       <div className="flex justify-center py-15">

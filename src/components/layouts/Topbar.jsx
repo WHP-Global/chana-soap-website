@@ -107,7 +107,6 @@ export default function Navbar({
         to="/"
         onClick={() => window.scroll(0, 0)}
       >
-        {/* {language === "EN" ? "Art & Alice" : "อาชว์ แอนด์ อลิส"} */}
         <div className="w-[200px] h-auto">
           <LogoTopBar />
         </div>
@@ -116,7 +115,7 @@ export default function Navbar({
       {/* Show Language */}
       <div className="relative">
         <div
-          className="flex justify-center items-center pr-2 lg:pr-[40px]  max-w-[80px] w-auto h-full hover:opacity-50 cursor-pointer font-color-secondary font-menu"
+          className="flex justify-center items-center pr-2 lg:pr-[40px]  max-w-[80px] w-auto h-full hover:opacity-50 cursor-pointer font-color-secondary font-menu text-nowrap"
           role="button"
           onClick={toggleDropdown}
         >
@@ -128,16 +127,16 @@ export default function Navbar({
           <div className="absolute shadow-lg right-3 rounded-md font-color-primary bg-fourth z-50">
             <ul>
               <li
-                className="px-3 py-2 cursor-pointer hover:bg-[#dde7d9] rounded-t-md"
-                onClick={() => handleLanguageChange("EN")}
+                className="px-3 py-2 cursor-pointer hover:bg-[#dde7d9] rounded-t-md text-nowrap"
+                onClick={() => handleLanguageChange("English")}
               >
-                EN
+                English
               </li>
               <li
-                className="px-3 py-2 cursor-pointer hover:bg-[#dde7d9] rounded-b-md"
-                onClick={() => handleLanguageChange("TH")}
+                className="px-3 py-2 cursor-pointer hover:bg-[#dde7d9] rounded-b-md text-nowrap"
+                onClick={() => handleLanguageChange("ภาษาไทย")}
               >
-                TH
+                ภาษาไทย
               </li>
             </ul>
           </div>

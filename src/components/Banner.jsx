@@ -1,7 +1,7 @@
 // full width image
 export default function Banner({ src, type = "image", isHavePosition }) {
   return (
-    <div className="w-full py-[20px] sm:py-[60px]">
+    <div className="w-full py-[20px] sm:py-[40px]">
       <div className="h-[350px] sm:h-[450px] md:h-[550px] w-full bg-amber-950">
         {type === "video" ? (
           <video autoPlay loop muted className="h-full w-full object-cover">

@@ -11,9 +11,12 @@ import { BoldTextBySlash } from "../services/BoldText";
 
 export default function GentleGlow() {
   const { getLocalizedData } = useGoogleSheets();
+  // ดึงข้อมูลจากชีต "contact us"
   const gentleGlowData = getLocalizedData("gentle glow");
-
   const [selectedImage, setSelectedImage] = useState(gentleGlow4);
+
+  // ดึงข้อมูลจากชีต "contact us"
+  const contactUsData = getLocalizedData("contact us");
 
   return (
     <div className="w-full bg-[#fdf8f2] font-color-primary">
@@ -78,14 +81,10 @@ export default function GentleGlow() {
 
           {/* Ingredients List */}
           <div className="bg-third p-3 sm:p-8 rounded-lg shadow-md w-full max-w-2xl">
-            <h3 className="font-subtitle  mb-6">
-              {gentleGlowData[3] || "Loading..."}
-            </h3>
+            <h3 className="font-subtitle  mb-6">{gentleGlowData[3]}</h3>
 
             <ul className=" space-y-3">
-              <li className="font-body-bold">
-                {gentleGlowData[4] || "Loading..."}
-              </li>
+              <li className="font-body-bold">{gentleGlowData[4]}</li>
               <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
                 <li>
                   <BoldTextBySlash text={gentleGlowData[5]} isHaveList />
@@ -101,9 +100,7 @@ export default function GentleGlow() {
                 </li>
               </ul>
 
-              <li className="font-body-bold">
-                {gentleGlowData[9] || "Loading..."}
-              </li>
+              <li className="font-body-bold">{gentleGlowData[9]}</li>
               <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
                 <li>
                   <BoldTextBySlash text={gentleGlowData[10]} isHaveList />
@@ -113,9 +110,7 @@ export default function GentleGlow() {
                 </li>
               </ul>
 
-              <li className="font-body-bold">
-                {gentleGlowData[12] || "Loading..."}
-              </li>
+              <li className="font-body-bold">{gentleGlowData[12]}</li>
               <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
                 <li>
                   <BoldTextBySlash text={gentleGlowData[13]} isHaveList />
@@ -125,9 +120,7 @@ export default function GentleGlow() {
                 </li>
               </ul>
 
-              <li className="font-body-bold">
-                {gentleGlowData[15] || "Loading..."}
-              </li>
+              <li className="font-body-bold">{gentleGlowData[15]}</li>
               <ul className="pl-3 md:pl-7 list-disc font-sub-menu">
                 <li>
                   <BoldTextBySlash text={gentleGlowData[16]} isHaveList />
@@ -152,7 +145,7 @@ export default function GentleGlow() {
       {/* shopee lazada line button */}
       <div className=" flex justify-center space-x-1 sm:space-x-6 mb-10 mx-5">
         <a
-          href="https://th.shp.ee/7zH4EQ3"
+          href={contactUsData[41]}
           target="_blank"
           rel="noopener noreferrer"
           className="w-[275px] h-[60px] flex items-center justify-center bg-[#4b664e] font-button font-color-secondary rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
@@ -160,15 +153,15 @@ export default function GentleGlow() {
           Shopee
         </a>
         <a
-          // href="https://www.lazada.com"
-          // target="_blank"
+          href={contactUsData[40]}
+          target="_blank"
           rel="noopener noreferrer"
           className="w-[275px] h-[60px] flex items-center justify-center bg-[#4b664e] font-button font-color-secondary rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
         >
           Lazada
         </a>
         <a
-          href="https://lin.ee/fOhW8xt"
+          href={contactUsData[37]}
           target="_blank"
           rel="noopener noreferrer"
           className="text-nowrap w-[275px] h-[60px] flex items-center justify-center bg-[#4b664e] font-button font-color-secondary rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
@@ -180,16 +173,14 @@ export default function GentleGlow() {
       <div className="max-w-6xl mx-auto px-6 py-6 sm:py-12">
         {/* Section Title */}
         <h2 className="font-title text-center mb-10 text-balance">
-          {gentleGlowData[20] || "Loading..."}
+          {gentleGlowData[20]}
         </h2>
 
         {/* Benefits List */}
         <div className="space-y-10">
           {/* 1. Soothes and Relieves Skin Irritation */}
           <div>
-            <h3 className="font-subtitle">
-              {gentleGlowData[21] || "Loading..."}
-            </h3>
+            <h3 className="font-subtitle">{gentleGlowData[21]}</h3>
             <ul className="mt-3 font-body space-y-2 list-disc ml-4">
               <li>
                 <BoldTextBySlash text={gentleGlowData[22]} isHaveList />
@@ -205,9 +196,7 @@ export default function GentleGlow() {
 
           {/* 2. Provides Deep Moisturization and Barrier Protection */}
           <div>
-            <h3 className="font-subtitle ">
-              {gentleGlowData[25] || "Loading..."}
-            </h3>
+            <h3 className="font-subtitle ">{gentleGlowData[25]}</h3>
             <ul className="mt-3 font-body space-y-2  list-disc ml-4">
               <li>
                 <BoldTextBySlash text={gentleGlowData[26]} isHaveList />
@@ -220,9 +209,7 @@ export default function GentleGlow() {
 
           {/* 3. Anti-Allergen & Anti-Pollution Shield */}
           <div>
-            <h3 className="font-subtitle ">
-              {gentleGlowData[28] || "Loading..."}
-            </h3>
+            <h3 className="font-subtitle ">{gentleGlowData[28]}</h3>
             <ul className="mt-3 font-body space-y-2  list-disc ml-4">
               <li>
                 <BoldTextBySlash text={gentleGlowData[29]} isHaveList />
@@ -235,9 +222,7 @@ export default function GentleGlow() {
 
           {/* 4. Hypoallergenic & Chemical-Free Formulation */}
           <div>
-            <h3 className="font-subtitle ">
-              {gentleGlowData[31] || "Loading..."}
-            </h3>
+            <h3 className="font-subtitle ">{gentleGlowData[31]}</h3>
             <ul className="mt-3 font-body space-y-2  list-disc ml-4">
               <li>
                 <BoldTextBySlash text={gentleGlowData[32]} isHaveList />
@@ -253,9 +238,7 @@ export default function GentleGlow() {
 
           {/* 5. Ideal for Sensitive & Allergy-Prone Skin */}
           <div>
-            <h3 className="font-subtitle ">
-              {gentleGlowData[35] || "Loading..."}
-            </h3>
+            <h3 className="font-subtitle ">{gentleGlowData[35]}</h3>
             <ul className="mt-3 font-body space-y-2  list-disc ml-4">
               <li>
                 <BoldTextBySlash text={gentleGlowData[36]} isHaveList />

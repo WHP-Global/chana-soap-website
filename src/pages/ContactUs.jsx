@@ -55,7 +55,7 @@ export default function ContactUs() {
                 />
               </div>
               <Link
-                to="https://th.shp.ee/7zH4EQ3"
+                to={contactUsData[41]}
                 target="_bank"
                 className="bg-[#4b664e] font-color-secondary text-center font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
               >
@@ -71,8 +71,8 @@ export default function ContactUs() {
                 />
               </div>
               <Link
-                // to=""
-                // target="_bank"
+                to={contactUsData[40]}
+                target="_bank"
                 className="bg-[#4b664e] font-color-secondary text-center font-button py-1 w-[180px] rounded-lg shadow-md hover:bg-green-900 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
               >
                 Lazada
