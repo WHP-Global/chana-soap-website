@@ -1,7 +1,7 @@
 import { useGoogleSheets } from "../services/googleSheetService";
 import Banner from "../components/Banner";
-import hero from "/EqLife/hero.jpg";
-import banner1 from "/EqLife/banner1.jpg";
+import hero from "/EqLife/hero.jpeg";
+import banner1 from "/EqLife/banner1.jpeg";
 
 import { BoldText, BoldTextBySlash } from "../services/BoldText";
 

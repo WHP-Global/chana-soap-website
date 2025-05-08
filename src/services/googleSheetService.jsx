@@ -25,45 +25,49 @@ export const GoogleSheetsProvider = ({ children }) => {
   const fetchData = async () => {
     setIsLoading(true);
 
-    // เช็คใน localStorage
-    const cache = localStorage.getItem("sheetsDataCache");
-    if (cache) {
-      const parsed = JSON.parse(cache);
-      const now = Date.now();
-      const expireTime = 1000 * 60 * 60 * 6; // 6 ชั่วโมง
+    const cacheRaw = localStorage.getItem("sheetsDataCache");
+    const cache = cacheRaw ? JSON.parse(cacheRaw) : { data: {}, updated: {} };
 
-      if (now - parsed.timestamp < expireTime) {
-        setSheetsData(parsed.data);
-        setIsLoading(false);
-        return;
-      }
-    }
+    const newData = {};
+    const newUpdated = {};
 
     try {
-      const data = await Promise.all(
-        sheetNames.map(async (sheetName) => {
-          const url = `${
+      for (const sheetName of sheetNames) {
+        const metaUrl = `${
+          import.meta.env.VITE_SHEET_API_URL
+        }?sheet=${encodeURIComponent(sheetName)}&meta=1`;
+
+        const metaRes = await fetch(metaUrl);
+        const metaJson = await metaRes.json();
+        const serverLastUpdated = metaJson.lastUpdated;
+
+        const localLastUpdated = cache.updated?.[sheetName];
+
+        if (
+          serverLastUpdated !== localLastUpdated ||
+          !cache.data?.[sheetName]
+        ) {
+          // fetch ข้อมูลใหม่จาก sheet
+          const dataUrl = `${
             import.meta.env.VITE_SHEET_API_URL
           }?sheet=${encodeURIComponent(sheetName)}`;
-          const response = await fetch(url, { redirect: "follow" });
-          if (!response.ok)
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          const result = await response.json();
-          return { sheetName, values: result };
-        })
-      );
+          const dataRes = await fetch(dataUrl);
+          const sheetData = await dataRes.json();
 
-      const sheets = data.reduce((acc, { sheetName, values }) => {
-        acc[sheetName] = values;
-        return acc;
-      }, {});
+          newData[sheetName] = sheetData;
+          newUpdated[sheetName] = serverLastUpdated;
+        } else {
+          // ใช้ข้อมูลจาก cache ได้
+          newData[sheetName] = cache.data[sheetName];
+          newUpdated[sheetName] = localLastUpdated;
+        }
+      }
 
-      setSheetsData(sheets);
+      setSheetsData(newData);
 
-      // บันทึกลง localStorage พร้อม timestamp
       localStorage.setItem(
         "sheetsDataCache",
-        JSON.stringify({ data: sheets, timestamp: Date.now() })
+        JSON.stringify({ data: newData, updated: newUpdated })
       );
     } catch (error) {
       console.error("Error fetching data:", error);

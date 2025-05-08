@@ -5,7 +5,7 @@ import tennis from "/AboutUs/tennis.jpg";
 import swimming from "/AboutUs/swimming.jpg";
 import banner1 from "/AboutUs/banner1.jpg";
 import banner2 from "/AboutUs/banner2.jpg";
-import bannerGif from "/AboutUs/forest.gif";
+import banner from "/AboutUs/hero.jpeg";
 import founder from "/AboutUs/founder.jpg";
 import Banner from "../components/Banner";
 import { BoldTextBySlash } from "../services/BoldText";
@@ -81,11 +81,11 @@ export default function AboutUs() {
       <div id="our-story"></div>
       {/* banner */}
       <div className="relative w-full h-[450px] sm:h-[587] md:h-[678px] flex justify-center items-center">
-        <img
-          src={bannerGif}
-          alt={bannerGif}
-          className="h-full w-full object-cover"
-        />
+        <img src={banner} alt={banner} className="h-full w-full object-cover" />
+
+        {/* ด้านล่างมืดลงเพื่อให้อ่านข้อความได้ชัด */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+
         <div className="absolute bottom-4 left-4 font-color-secondary">
           <div className="font-header">{aboutUsData[1]}</div>
           <hr className="w-[80%] h-[2px] my-2 bg-fourth border-none" />

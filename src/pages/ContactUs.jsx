@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useGoogleSheets } from "../services/googleSheetService";
-import hero from "/ContactUs/hero.jpg";
+import hero from "/ContactUs/hero.jpeg";
 import shopeeImg from "/ContactUs/shopee.png";
 import lazadaImg from "/ContactUs/lazada.png";
 import lineImg from "/ContactUs/line.png";
