@@ -96,8 +96,6 @@ const GoogleSheetsContext = createContext();
 //   return useContext(GoogleSheetsContext);
 // };
 
-import Cookies from "js-cookie";
-
 export const GoogleSheetsProvider = ({ children }) => {
   const [sheetsData, setSheetsData] = useState({});
   const [language, setLanguage] = useState("English");
@@ -120,24 +118,30 @@ export const GoogleSheetsProvider = ({ children }) => {
 
   const fetchData = async () => {
     setIsLoading(true);
-    try {
-      // เช็คข้อมูลใน Cookie
-      const cachedData = Cookies.get("sheetsData");
-      if (cachedData) {
-        setSheetsData(JSON.parse(cachedData));
+
+    // เช็คใน localStorage
+    const cache = localStorage.getItem("sheetsDataCache");
+    if (cache) {
+      const parsed = JSON.parse(cache);
+      const now = Date.now();
+      const expireTime = 1000 * 60 * 60 * 6; // 6 ชั่วโมง
+
+      if (now - parsed.timestamp < expireTime) {
+        setSheetsData(parsed.data);
         setIsLoading(false);
         return;
       }
+    }
 
+    try {
       const data = await Promise.all(
         sheetNames.map(async (sheetName) => {
           const url = `${
             import.meta.env.VITE_SHEET_API_URL
           }?sheet=${encodeURIComponent(sheetName)}`;
           const response = await fetch(url, { redirect: "follow" });
-          if (!response.ok) {
+          if (!response.ok)
             throw new Error(`HTTP error! Status: ${response.status}`);
-          }
           const result = await response.json();
           return { sheetName, values: result };
         })
@@ -149,8 +153,12 @@ export const GoogleSheetsProvider = ({ children }) => {
       }, {});
 
       setSheetsData(sheets);
-      // เก็บข้อมูลใน Cookie
-      Cookies.set("sheetsData", JSON.stringify(sheets), { expires: 7 }); // เก็บไว้ 7 วัน
+
+      // บันทึกลง localStorage พร้อม timestamp
+      localStorage.setItem(
+        "sheetsDataCache",
+        JSON.stringify({ data: sheets, timestamp: Date.now() })
+      );
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
