@@ -122,11 +122,11 @@ export default function MainContainer() {
 
   return (
     <div>
-      {isLoading && (
+      {/* {isLoading && (
         <div className="fixed h-[100vh] w-[100vw] flex justify-center items-center z-50">
           <Loading />
         </div>
-      )}
+      )} */}
       {/* Topbar */}
       <div className="sticky top-0 z-10">
         <Topbar
