@@ -5,17 +5,14 @@ const ImgTwo = ({ imgGroup = [] }) => {
         {imgGroup.slice(0, 2).map((img, index) => (
           <div
             key={index}
-            className="relative w-full sm:w-1/2 rounded-2xl overflow-hidden"
+            className="relative w-full sm:w-1/2 rounded-2xl overflow-hidden aspect-[16/9]"
           >
-            <div className="pt-[56.25%]">
-              {/* 16:9 aspect ratio */}
-              <img
-                src={img}
-                alt={`image-${index}`}
-                loading="lazy"
-                className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
-              />
-            </div>
+            <img
+              src={img}
+              alt={`image-${index}`}
+              loading="lazy"
+              className="w-full h-full object-cover rounded-2xl"
+            />
           </div>
         ))}
       </div>
