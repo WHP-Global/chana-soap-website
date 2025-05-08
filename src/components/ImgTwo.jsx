@@ -6,14 +6,14 @@ const ImgTwo = ({ imgGroup = [] }) => {
           <img
             src={imgGroup[0]}
             alt={imgGroup[0]}
-            className="h-full w-auto rounded-2xl"
+            className="w-auto h-[320px] lg:h-[500px] rounded-2xl sm:object-contain"
           />
         </div>
         <div className="h-auto  sm:h-[320px] lg:h-[500px] w-auto">
           <img
             src={imgGroup[1]}
             alt={imgGroup[1]}
-            className="h-full w-auto rounded-2xl"
+            className="w-auto h-[320px] lg:h-[500px] rounded-2xl sm:object-contain"
           />
         </div>
       </div>
