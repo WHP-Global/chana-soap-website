@@ -14,7 +14,7 @@ export default function AboutUs() {
   const { allImages } = useImageContext();
   console.log("allImages", allImages);
   const categoryImages = allImages.filter((image) => image.includes("AboutUs"));
-  console.log("first", categoryImages);
+  console.log("categoryImages", categoryImages);
 
   const imgSlider = [
     getImageUrl(categoryImages[4]),
