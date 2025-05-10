@@ -156,7 +156,10 @@ export default function UploadPage() {
                 alt={`รูปที่ ${index + 1}`}
                 className="w-full h-48 object-contain border border-gray-300 rounded-lg"
               />
-              <div className="mt-2 text-sm text-gray-500">{imgUrl}</div>{" "}
+              <div className="mt-2 text-sm text-gray-500 break-words overflow-hidden max-h-12">
+                {imgUrl}
+              </div>
+
               {/* แสดงชื่อไฟล์ */}
             </div>
           ))}
