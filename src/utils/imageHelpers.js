@@ -1,2 +1,3 @@
 export const getImageUrl = (filename) =>
-  `https://www.artandalice.co${filename}?t=${Date.now()}`;
+  new URL(filename, "https://www.artandalice.co").toString() +
+  `?t=${Date.now()}`;
