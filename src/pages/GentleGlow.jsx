@@ -1,19 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGoogleSheets } from "../services/googleSheetService";
-import hero from "/Products/hero.jpg";
-import gentleGlow1 from "/GentleGlow/gentleGlow1.jfif";
-import gentleGlow2 from "/GentleGlow/gentleGlow2.jfif";
-import gentleGlow3 from "/GentleGlow/gentleGlow3.jfif";
-import gentleGlow4 from "/GentleGlow/gentleGlow4.jfif";
-import ingredients from "/GentleGlow/ingredients.jpg";
-import banner1 from "/GentleGlow/banner1.jpg";
 import { BoldTextBySlash } from "../services/BoldText";
+import { useImageContext } from "../Context/ImageContext";
+import { getImageUrl } from "../utils/imageHelpers";
 
 export default function GentleGlow() {
   const { getLocalizedData } = useGoogleSheets();
   // ดึงข้อมูลจากชีต "contact us"
   const gentleGlowData = getLocalizedData("gentle glow");
-  const [selectedImage, setSelectedImage] = useState(gentleGlow4);
+  const { allImages } = useImageContext();
+  const categoryImages = allImages.filter((image) =>
+    image.includes("GentleGlow")
+  );
+  const [selectedImage, setSelectedImage] = useState("");
+
+  useEffect(() => {
+    if (categoryImages && categoryImages > 1) {
+      setSelectedImage(getImageUrl(categoryImages[4]));
+    }
+  }, []);
 
   // ดึงข้อมูลจากชีต "contact us"
   const contactUsData = getLocalizedData("contact us");
@@ -22,7 +27,11 @@ export default function GentleGlow() {
     <div className="w-full bg-[#fdf8f2] font-color-primary">
       {/* Banner */}
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
-        <img src={hero} alt={hero} className="w-full h-full object-cover" />
+        <img
+          src={getImageUrl(categoryImages[5])}
+          alt={categoryImages[5]}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Section Title */}
@@ -43,7 +52,7 @@ export default function GentleGlow() {
       {/* Main Product Image*/}
       <div className="max-w-2xl mx-auto p-6 flex justify-center">
         <img
-          src={selectedImage}
+          src={selectedImage || getImageUrl(categoryImages[4])}
           alt="Selected Product"
           className="w-[400px] h-[400px] object-cover rounded-lg shadow-lg"
         />
@@ -51,7 +60,11 @@ export default function GentleGlow() {
 
       {/* Small Image Grid */}
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 px-6 py-8">
-        {[gentleGlow1, gentleGlow2, gentleGlow3].map((image, index) => (
+        {[
+          getImageUrl(categoryImages[1]),
+          getImageUrl(categoryImages[2]),
+          getImageUrl(categoryImages[3]),
+        ].map((image, index) => (
           <div key={index} className="flex justify-center">
             <button
               onClick={() => setSelectedImage(image)}
@@ -73,8 +86,8 @@ export default function GentleGlow() {
           {/* Product Image */}
           <div className="max-w-md">
             <img
-              src={ingredients}
-              alt={ingredients}
+              src={getImageUrl(categoryImages[6])}
+              alt={categoryImages[6]}
               className="w-full rounded-lg shadow-lg h-auto"
             />
           </div>
@@ -256,8 +269,8 @@ export default function GentleGlow() {
       <div className="w-full">
         <div className="w-full h-[400px]">
           <img
-            src={banner1}
-            alt={banner1}
+            src={getImageUrl(categoryImages[0])}
+            alt={categoryImages[0]}
             className="w-full h-full object-cover"
           />
         </div>

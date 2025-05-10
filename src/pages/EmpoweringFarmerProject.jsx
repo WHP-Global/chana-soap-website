@@ -1,36 +1,28 @@
 import { useGoogleSheets } from "../services/googleSheetService";
-import hero from "/EmpoweringFarmerProject/hero.jpg";
-import AFImg1 from "/EmpoweringFarmerProject/AF-2.png";
-import AFImg2 from "/EmpoweringFarmerProject/AF-4.png";
-import AFImg3 from "/EmpoweringFarmerProject/AF-6.png";
-import AFImg4 from "/EmpoweringFarmerProject/AF-7.png";
-import imgSlide1 from "/EmpoweringFarmerProject/imgSlide-1.png";
-import imgSlide2 from "/EmpoweringFarmerProject/imgSlide-2.png";
-import imgSlide3 from "/EmpoweringFarmerProject/imgSlide-3.png";
-import imgSlide4 from "/EmpoweringFarmerProject/imgSlide-4.png";
-import imgSlide5 from "/EmpoweringFarmerProject/imgSlide-5.png";
-import imgSlide6 from "/EmpoweringFarmerProject/imgSlide-6.png";
-import imgSlide7 from "/EmpoweringFarmerProject/imgSlide-7.png";
-import imgSlide8 from "/EmpoweringFarmerProject/imgSlide-8.png";
-import imgSlide9 from "/EmpoweringFarmerProject/imgSlide-9.png";
-import imgSlide10 from "/EmpoweringFarmerProject/imgSlide-10.png";
 import { BoldText, BoldTextBySlash } from "../services/BoldText";
 import ImageSlider from "../components/ImageSlider";
 import ImgTwo from "../components/ImgTwo";
+import { useImageContext } from "../Context/ImageContext";
+import { getImageUrl } from "../utils/imageHelpers";
 
 export default function EmpoweringFarmerProject() {
   const { getLocalizedData } = useGoogleSheets();
+  const { allImages } = useImageContext();
+  const categoryImages = allImages.filter((image) =>
+    image.includes("EmpoweringFarmerProject")
+  );
+
   const imgSlider = [
-    imgSlide1,
-    imgSlide2,
-    imgSlide3,
-    imgSlide4,
-    imgSlide5,
-    imgSlide6,
-    imgSlide7,
-    imgSlide8,
-    imgSlide9,
-    imgSlide10,
+    getImageUrl(categoryImages[5]),
+    getImageUrl(categoryImages[6]),
+    getImageUrl(categoryImages[7]),
+    getImageUrl(categoryImages[8]),
+    getImageUrl(categoryImages[9]),
+    getImageUrl(categoryImages[10]),
+    getImageUrl(categoryImages[11]),
+    getImageUrl(categoryImages[12]),
+    getImageUrl(categoryImages[13]),
+    getImageUrl(categoryImages[14]),
   ];
 
   // ดึงข้อมูลจากชีต "empowering project"
@@ -39,7 +31,11 @@ export default function EmpoweringFarmerProject() {
     <div>
       {/* banner */}
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
-        <img src={hero} alt={hero} className="h-full w-full object-cover" />
+        <img
+          src={getImageUrl(categoryImages[4])}
+          alt={categoryImages[4]}
+          className="h-full w-full object-cover"
+        />
       </div>
       {/*  Turning Food Waste into Fertilizer, Supporting Farmers, and Creating Natural Soap */}
       <div className="font-color-primary max-w-6xl mx-auto">
@@ -59,7 +55,12 @@ export default function EmpoweringFarmerProject() {
           <BoldTextBySlash text={empoweringProjectData[6]} />
 
           {/* 2 imgae */}
-          <ImgTwo imgGroup={[AFImg2, AFImg1]} />
+          <ImgTwo
+            imgGroup={[
+              getImageUrl(categoryImages[1]),
+              getImageUrl(categoryImages[0]),
+            ]}
+          />
         </div>
       </div>
 
@@ -76,7 +77,12 @@ export default function EmpoweringFarmerProject() {
           <BoldText text={empoweringProjectData[14]} />
           <BoldTextBySlash text={empoweringProjectData[15]} />
           {/* 2 imgae */}
-          <ImgTwo imgGroup={[AFImg3, AFImg4]} />
+          <ImgTwo
+            imgGroup={[
+              getImageUrl(categoryImages[6]),
+              getImageUrl(categoryImages[7]),
+            ]}
+          />
         </div>
       </div>
 

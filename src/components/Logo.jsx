@@ -1,28 +1,23 @@
-// import logo from "/logo/logo3.png";
-// import logo2 from "/logo/logo5.png";
-// import logo3 from "/logo/logo4.png";
-import logo4 from "/logo/logo6.png";
-import logo5 from "/logo/logo7.png";
-function Logo() {
+function Logo({ logo }) {
   return (
     <div className="w-full h-full">
-      <img src={logo5} alt={logo5} className="w-full h-full" />
+      <img src={logo} alt={logo} className="w-full h-full" />
     </div>
   );
 }
 
-function LogoLayout() {
+function LogoLayout({ logo }) {
   return (
     <div className="w-full h-full">
-      <img src={logo4} alt={logo4} className="w-full h-full" />
+      <img src={logo} alt={logo} className="w-full h-full" />
     </div>
   );
 }
 
-function LogoTopBar() {
+function LogoTopBar({ logo }) {
   return (
     <div className="w-full h-full">
-      <img src={logo4} alt={logo4} className="w-full h-full" />
+      <img src={logo} alt={logo} className="w-full h-full" />
     </div>
   );
 }

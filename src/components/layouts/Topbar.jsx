@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { useGoogleSheets } from "../../services/googleSheetService";
 import { LogoTopBar } from "../Logo";
+import { useImageContext } from "../../Context/ImageContext";
+import { getImageUrl } from "../../utils/imageHelpers";
 
 export default function Navbar({
   onToggleSidebar,
@@ -13,6 +15,8 @@ export default function Navbar({
   const [isOpenLanguage, setIsOpenLanguage] = useState(false);
   const { switchLanguage, language } = useGoogleSheets();
   const location = useLocation();
+  const { allImages } = useImageContext();
+  const categoryImages = allImages.filter((image) => image.includes("logo"));
 
   const toggleDropdown = () => setIsOpenLanguage(!isOpenLanguage);
 
@@ -108,7 +112,7 @@ export default function Navbar({
         onClick={() => window.scroll(0, 0)}
       >
         <div className="w-[200px] h-auto">
-          <LogoTopBar />
+          <LogoTopBar logo={getImageUrl(categoryImages[0])} />
         </div>
       </RouterLink>
 

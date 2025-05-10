@@ -1,22 +1,25 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useGoogleSheets } from "../services/googleSheetService";
-import hero from "/ContactUs/hero.jpeg";
-import shopeeImg from "/ContactUs/shopee.png";
-import lazadaImg from "/ContactUs/lazada.png";
-import lineImg from "/ContactUs/line.png";
 import InputFormToSendEmail from "../components/InputFormToSendEmail";
 import FAQ from "../components/FAQ";
 import { Logo } from "../components/Logo";
 import { BoldTextBySlash } from "../services/BoldText";
+import { useImageContext } from "../Context/ImageContext";
+import { getImageUrl } from "../utils/imageHelpers";
 
 export default function ContactUs() {
   const location = useLocation();
-
   const { getLocalizedData } = useGoogleSheets();
 
   // ดึงข้อมูลจากชีต "contact us"
   const contactUsData = getLocalizedData("contact us");
+
+  const { allImages } = useImageContext();
+  const categoryImages = allImages.filter((image) =>
+    image.includes("ContactUs")
+  );
+  const logoImages = allImages.filter((image) => image.includes("logo"));
 
   useEffect(() => {
     const hash = location.hash;
@@ -33,7 +36,11 @@ export default function ContactUs() {
       {/*1. where to buy */}
       {/* banner */}
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
-        <img src={hero} alt={hero} className="w-full h-full object-cover" />
+        <img
+          src={getImageUrl(categoryImages[0])}
+          alt={categoryImages[0]}
+          className="w-full h-full object-cover"
+        />
         <div id="where-to-buy"></div>
       </div>
       {/* content */}
@@ -49,7 +56,7 @@ export default function ContactUs() {
             <div className="flex flex-col items-center ">
               <div className="h-[150px] w-auto mb-3">
                 <img
-                  src={shopeeImg}
+                  src={getImageUrl(categoryImages[3])}
                   alt="shopeeImg"
                   className="h-full w-auto object-cover rounded-2xl"
                 />
@@ -65,7 +72,7 @@ export default function ContactUs() {
             <div className="flex flex-col items-center">
               <div className="h-[123px] w-auto my-[25px]">
                 <img
-                  src={lazadaImg}
+                  src={getImageUrl(categoryImages[1])}
                   alt="lazadaImg "
                   className="h-full w-auto object-cover rounded-2xl"
                 />
@@ -81,7 +88,7 @@ export default function ContactUs() {
             <div className="flex flex-col items-center">
               <div className="h-[170px] w-auto">
                 <img
-                  src={lineImg}
+                  src={getImageUrl(categoryImages[2])}
                   alt="lineImg"
                   className="h-full w-auto object-cover rounded-2xl"
                 />
@@ -109,7 +116,7 @@ export default function ContactUs() {
           {/* Logo and Name product */}
           <div className="flex flex-col items-center gap-1">
             <div className="w-[275px] h-auto">
-              <Logo />
+              <Logo logo={logoImages[1]} />
             </div>
           </div>
           <div className="font-subtitle text-center text-balance">

@@ -2,6 +2,8 @@
 import { Link as RouterLink } from "react-router-dom";
 import { LogoLayout } from "../Logo";
 import { useGoogleSheets } from "../../services/googleSheetService";
+import { useImageContext } from "../../Context/ImageContext";
+import { getImageUrl } from "../../utils/imageHelpers";
 export default function Footer({
   menus,
   openMenu,
@@ -12,6 +14,8 @@ export default function Footer({
 
   // ดึงข้อมูลจากชีต "contact us"
   const contactUsData = getLocalizedData("contact us");
+  const { allImages } = useImageContext();
+  const categoryImages = allImages.filter((image) => image.includes("logo"));
 
   return (
     <div className="min-h-[350px] bg-primary py-[40px] font-color-secondary flex flex-col gap-[40px] items-center">
@@ -185,7 +189,7 @@ export default function Footer({
           onClick={() => window.scroll(0, 0)}
           className="w-[200px] h-auto"
         >
-          <LogoLayout />
+          <LogoLayout logo={getImageUrl(categoryImages[0])} />
         </RouterLink>
       </div>
     </div>

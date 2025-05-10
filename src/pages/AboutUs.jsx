@@ -1,65 +1,41 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useGoogleSheets } from "../services/googleSheetService";
-import tennis from "/AboutUs/tennis.jpg";
-import swimming from "/AboutUs/swimming.jpg";
-import banner1 from "/AboutUs/banner1.jpg";
-import banner2 from "/AboutUs/banner2.jpg";
-import banner from "/AboutUs/hero.jpeg";
-import founder from "/AboutUs/founder.jpg";
-import Banner from "../components/Banner";
 import { BoldTextBySlash } from "../services/BoldText";
 import ImageSlider from "../components/ImageSlider";
-import imgSlide1 from "/AboutUs/imgSlide-1.jpg";
-import imgSlide2 from "/AboutUs/imgSlide-2.jpg";
-import imgSlide3 from "/AboutUs/imgSlide-3.jpg";
-import imgSlide4 from "/AboutUs/imgSlide-4.jpg";
-import imgSlide5 from "/AboutUs/imgSlide-5.jpg";
-import imgSlide6 from "/AboutUs/imgSlide-6.jpg";
-import imgSlide7 from "/AboutUs/imgSlide-7.jpg";
-import imgSlide8 from "/AboutUs/imgSlide-8.jpg";
-import imgSlide9 from "/AboutUs/imgSlide-9.jpg";
-import imgSlide1SI from "/AboutUs/SourcingIngredients/imgSlide-1.jpg";
-import imgSlide2SI from "/AboutUs/SourcingIngredients/imgSlide-2.jpg";
-import imgSlide3SI from "/AboutUs/SourcingIngredients/imgSlide-3.jpg";
-import imgSlide4SI from "/AboutUs/SourcingIngredients/imgSlide-4.jpg";
-import imgSlide5SI from "/AboutUs/SourcingIngredients/imgSlide-5.jpg";
-import imgSlide6SI from "/AboutUs/SourcingIngredients/imgSlide-6.jpg";
-import imgSlide7SI from "/AboutUs/SourcingIngredients/imgSlide-7.jpg";
-import imgSlide8SI from "/AboutUs/SourcingIngredients/imgSlide-8.jpg";
-import imgSlide9SI from "/AboutUs/SourcingIngredients/imgSlide-9.jpg";
-import imgSlide10SI from "/AboutUs/SourcingIngredients/imgSlide-10.jpg";
-import imgSlide11SI from "/AboutUs/SourcingIngredients/imgSlide-11.jpg";
 import ImgTwo from "../components/ImgTwo";
+import Banner from "../components/Banner";
+import { useImageContext } from "../Context/ImageContext";
+import { getImageUrl } from "../utils/imageHelpers";
 
 export default function AboutUs() {
   const location = useLocation();
   const { getLocalizedData } = useGoogleSheets();
+  const { allImages } = useImageContext();
+  const categoryImages = allImages.filter((image) => image.includes("AboutUs"));
+
   const imgSlider = [
-    imgSlide1,
-    imgSlide2,
-    imgSlide3,
-    imgSlide4,
-    imgSlide5,
-    imgSlide6,
-    imgSlide7,
-    imgSlide8,
-    imgSlide9,
+    getImageUrl(categoryImages[7]),
+    getImageUrl(categoryImages[8]),
+    getImageUrl(categoryImages[9]),
+    getImageUrl(categoryImages[10]),
+    getImageUrl(categoryImages[11]),
+    getImageUrl(categoryImages[12]),
+    getImageUrl(categoryImages[13]),
+    getImageUrl(categoryImages[14]),
+    getImageUrl(categoryImages[15]),
   ];
 
-  const imgSliderSoucingIngredients = [
-    imgSlide1SI,
-    imgSlide2SI,
-    imgSlide3SI,
-    imgSlide4SI,
-    imgSlide5SI,
-    imgSlide11SI,
-    imgSlide6SI,
-    imgSlide7SI,
-    imgSlide8SI,
-    imgSlide9SI,
-    imgSlide10SI,
-  ];
+  const imgSliderSoucingIngredients = categoryImages
+    .filter((img) => img.includes("SourcingIngredients"))
+    .sort((a, b) => {
+      // Extract number after "SourcingIngredients-"
+      const getNumber = (str) =>
+        parseInt(str.match(/SourcingIngredients-(\d+)\.jpg/)?.[1] || 0);
+      return getNumber(a) - getNumber(b);
+    });
+
+  console.log("imgSliderSoucingIngredients", imgSliderSoucingIngredients);
 
   // ดึงข้อมูลจากชีต "about us"
   const aboutUsData = getLocalizedData("about us");
@@ -81,7 +57,11 @@ export default function AboutUs() {
       <div id="our-story"></div>
       {/* banner */}
       <div className="relative w-full h-[450px] sm:h-[587] md:h-[678px] flex justify-center items-center">
-        <img src={banner} alt={banner} className="h-full w-full object-cover" />
+        <img
+          src={getImageUrl(categoryImages[6])}
+          alt={categoryImages[6]}
+          className="h-full w-full object-cover"
+        />
 
         {/* ด้านล่างมืดลงเพื่อให้อ่านข้อความได้ชัด */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
@@ -108,7 +88,12 @@ export default function AboutUs() {
           <BoldTextBySlash text={aboutUsData[9]} />
 
           {/* 2 image */}
-          <ImgTwo imgGroup={[swimming, tennis]} />
+          <ImgTwo
+            imgGroup={[
+              getImageUrl(categoryImages[32]),
+              getImageUrl(categoryImages[31]),
+            ]}
+          />
 
           <BoldTextBySlash text={aboutUsData[10]} />
           <BoldTextBySlash text={aboutUsData[11]} />
@@ -124,8 +109,8 @@ export default function AboutUs() {
           <div className="text-center font-caption indent-0">
             <div className=" md:h-[500px] sm:h-[400px] h-[350px] w-auto flex justify-center mb-5">
               <img
-                src={founder}
-                alt={founder}
+                src={getImageUrl(categoryImages[3])}
+                alt={categoryImages[3]}
                 className="h-full w-auto object-cover rounded-2xl"
               />
             </div>
@@ -140,7 +125,7 @@ export default function AboutUs() {
       {/*2. sourcing and impact */}
       <div id="sourcing-and-impact"></div>
       {/* banner */}
-      <Banner src={banner1} />
+      <Banner src={getImageUrl(categoryImages[1])} />
       {/* content */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-title text-center">{aboutUsData[16]}</div>
@@ -168,7 +153,9 @@ export default function AboutUs() {
 
           {/* image slide */}
           <div className="max-w-full flex justify-center py-[20px] sm:py-[60px]">
-            <ImageSlider imgGroup={imgSliderSoucingIngredients} />
+            {imgSliderSoucingIngredients.length >= 11 && (
+              <ImageSlider imgGroup={imgSliderSoucingIngredients} />
+            )}
           </div>
         </div>
       </div>
@@ -177,7 +164,7 @@ export default function AboutUs() {
         {aboutUsData[23]}
       </div>
       {/* banner */}
-      <Banner src={banner2} />
+      <Banner src={getImageUrl(categoryImages[2])} />
 
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />

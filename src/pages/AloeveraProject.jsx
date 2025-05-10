@@ -1,26 +1,25 @@
 import { useGoogleSheets } from "../services/googleSheetService";
-import hero from "/AloeVera/hero.jpg";
-import banner1 from "/AloeVera/banner1.jpg";
-import banner2 from "/AloeVera/banner2.jpg";
-import child1 from "/AloeVera/child1.jpg";
-import child2 from "/AloeVera/child2.jpg";
 import Banner from "../components/Banner";
-import imgSlide1 from "/AloeVera/aloe-vera1.jpg";
-import imgSlide2 from "/AloeVera/aloe-vera2.jpg";
-import imgSlide3 from "/AloeVera/aloe-vera3.jpg";
-import imgSlide4 from "/AloeVera/aloe-vera4.jpg";
-// import community from "/AloeVera/community.jpg";
-// import empoweringYouth from "/AloeVera/empoweringYouth.jpg";
-// import banner3 from "/AloeVera/banner3.jpg";
-
 import { BoldText, BoldTextBySlash } from "../services/BoldText";
 import ImageSlider from "../components/ImageSlider";
 import ImgTwo from "../components/ImgTwo";
 import ImgOne from "../components/ImgOne";
+import { useImageContext } from "../Context/ImageContext";
+import { getImageUrl } from "../utils/imageHelpers";
 
 export default function AloeveraProject() {
   const { getLocalizedData } = useGoogleSheets();
-  const imgSlider = [imgSlide1, imgSlide2, imgSlide3, imgSlide4];
+  const { allImages } = useImageContext();
+  const categoryImages = allImages.filter((image) =>
+    image.includes("AloeVera")
+  );
+
+  const imgSlider = [
+    getImageUrl(categoryImages[0]),
+    getImageUrl(categoryImages[1]),
+    getImageUrl(categoryImages[2]),
+    getImageUrl(categoryImages[3]),
+  ];
 
   // ดึงข้อมูลจากชีต "aloe vera project"
   const aloeVeraProjectData = getLocalizedData("aloe vera project");
@@ -28,7 +27,11 @@ export default function AloeveraProject() {
     <div>
       {/* banner */}
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
-        <img src={hero} alt={hero} className="h-full w-full object-cover" />
+        <img
+          src={getImageUrl(categoryImages[10])}
+          alt={categoryImages[10]}
+          className="h-full w-full object-cover"
+        />
       </div>
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-[40px] font-header text-center mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-balance">
@@ -40,14 +43,19 @@ export default function AloeveraProject() {
           <BoldTextBySlash text={aloeVeraProjectData[3]} />
 
           {/* 2imgae */}
-          <ImgTwo imgGroup={[child1, child2]} />
+          <ImgTwo
+            imgGroup={[
+              getImageUrl(categoryImages[6]),
+              getImageUrl(categoryImages[7]),
+            ]}
+          />
 
           <BoldTextBySlash text={aloeVeraProjectData[4]} />
           <BoldTextBySlash text={aloeVeraProjectData[5]} />
         </div>
       </div>
 
-      <Banner src={banner1} />
+      <Banner src={getImageUrl(categoryImages[4])} />
 
       {/* Integrating Learning with Sustainable Economic Growth */}
       <div className="font-color-primary max-w-6xl mx-auto">
@@ -64,7 +72,7 @@ export default function AloeveraProject() {
       </div>
 
       {/* 1 imgae */}
-      <ImgOne img={banner2} />
+      <ImgOne img={getImageUrl(categoryImages[5])} />
 
       {/* Project Workflow */}
       <div className="font-color-primary max-w-6xl mx-auto">
