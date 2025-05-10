@@ -51,6 +51,8 @@ export default function AboutUs() {
     }
   }, [location]);
 
+  console.log("categoryImages", categoryImages);
+
   return (
     <div>
       {/*1. our story */}
