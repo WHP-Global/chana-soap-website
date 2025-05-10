@@ -58,7 +58,7 @@ export default function AboutUs() {
       {/* banner */}
       <div className="relative w-full h-[450px] sm:h-[587] md:h-[678px] flex justify-center items-center">
         <img
-          src={getImageUrl(categoryImages[6])}
+          src={categoryImages[6]}
           alt={categoryImages[6]}
           className="h-full w-full object-cover"
         />
