@@ -13,29 +13,32 @@ export default function AboutUs() {
   const { getLocalizedData } = useGoogleSheets();
   const { allImages } = useImageContext();
   const categoryImages = allImages.filter((image) => image.includes("AboutUs"));
+  console.log("first", categoryImages);
 
   const imgSlider = [
+    getImageUrl(categoryImages[4]),
+    getImageUrl(categoryImages[5]),
+    getImageUrl(categoryImages[6]),
     getImageUrl(categoryImages[7]),
     getImageUrl(categoryImages[8]),
     getImageUrl(categoryImages[9]),
     getImageUrl(categoryImages[10]),
     getImageUrl(categoryImages[11]),
     getImageUrl(categoryImages[12]),
+  ];
+  const imgSliderSoucingIngredients = [
     getImageUrl(categoryImages[13]),
     getImageUrl(categoryImages[14]),
     getImageUrl(categoryImages[15]),
+    getImageUrl(categoryImages[16]),
+    getImageUrl(categoryImages[17]),
+    getImageUrl(categoryImages[18]),
+    getImageUrl(categoryImages[19]),
+    getImageUrl(categoryImages[20]),
+    getImageUrl(categoryImages[21]),
+    getImageUrl(categoryImages[22]),
+    getImageUrl(categoryImages[23]),
   ];
-
-  const imgSliderSoucingIngredients = categoryImages
-    .filter((img) => img.includes("SourcingIngredients"))
-    .sort((a, b) => {
-      // Extract number after "SourcingIngredients-"
-      const getNumber = (str) =>
-        parseInt(str.match(/SourcingIngredients-(\d+)\.jpg/)?.[1] || 0);
-      return getNumber(a) - getNumber(b);
-    });
-
-  console.log("imgSliderSoucingIngredients", imgSliderSoucingIngredients);
 
   // ดึงข้อมูลจากชีต "about us"
   const aboutUsData = getLocalizedData("about us");
@@ -51,8 +54,6 @@ export default function AboutUs() {
     }
   }, [location]);
 
-  console.log("categoryImages", categoryImages);
-
   return (
     <div>
       {/*1. our story */}
@@ -60,8 +61,8 @@ export default function AboutUs() {
       {/* banner */}
       <div className="relative w-full h-[450px] sm:h-[587] md:h-[678px] flex justify-center items-center">
         <img
-          src={categoryImages[6]}
-          alt={categoryImages[6]}
+          src={getImageUrl(categoryImages[3])}
+          alt={categoryImages[3]}
           className="h-full w-full object-cover"
         />
 
@@ -92,8 +93,8 @@ export default function AboutUs() {
           {/* 2 image */}
           <ImgTwo
             imgGroup={[
-              getImageUrl(categoryImages[32]),
-              getImageUrl(categoryImages[31]),
+              getImageUrl(categoryImages[24]),
+              getImageUrl(categoryImages[25]),
             ]}
           />
 
@@ -111,8 +112,8 @@ export default function AboutUs() {
           <div className="text-center font-caption indent-0">
             <div className=" md:h-[500px] sm:h-[400px] h-[350px] w-auto flex justify-center mb-5">
               <img
-                src={getImageUrl(categoryImages[3])}
-                alt={categoryImages[3]}
+                src={getImageUrl(categoryImages[2])}
+                alt={categoryImages[2]}
                 className="h-full w-auto object-cover rounded-2xl"
               />
             </div>
@@ -127,7 +128,7 @@ export default function AboutUs() {
       {/*2. sourcing and impact */}
       <div id="sourcing-and-impact"></div>
       {/* banner */}
-      <Banner src={getImageUrl(categoryImages[1])} />
+      <Banner src={getImageUrl(categoryImages[0])} />
       {/* content */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-title text-center">{aboutUsData[16]}</div>
@@ -166,7 +167,7 @@ export default function AboutUs() {
         {aboutUsData[23]}
       </div>
       {/* banner */}
-      <Banner src={getImageUrl(categoryImages[2])} />
+      <Banner src={getImageUrl(categoryImages[1])} />
 
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
