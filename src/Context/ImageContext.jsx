@@ -11,7 +11,7 @@ export const ImageProvider = ({ children }) => {
 
   const fetchAllImages = async () => {
     try {
-      const response = await fetch("https://www.artandalice.co/images");
+      const response = await fetch("http://localhost:8888/images");
       const data = await response.json();
       console.log(data);
       if (data.success) {

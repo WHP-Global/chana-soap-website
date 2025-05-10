@@ -1,2 +1,3 @@
 export const getImageUrl = (filename) =>
-  `https://www.artandalice.co/${filename}?t=${Date.now()}`;
+  `http://localhost:8888/${filename}?t=${Date.now()}`;
+// `https://www.artandalice.co/${filename}?t=${Date.now()}`;
