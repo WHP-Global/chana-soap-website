@@ -12,8 +12,8 @@ export const ImageProvider = ({ children }) => {
 
   const fetchAllImages = async () => {
     try {
-      const cached = JSON.parse(localStorage.getItem("allImagesCache"));
-      const cacheExpiryTime = 3600000; // เก็บข้อมูลใน cache 1 ชั่วโมง (3600000 ms)
+      // const cached = JSON.parse(localStorage.getItem("allImagesCache"));
+      // const cacheExpiryTime = 3600000; // เก็บข้อมูลใน cache 1 ชั่วโมง (3600000 ms)
       const now = new Date().getTime();
 
       // ตรวจสอบว่า cached data มีอยู่และยังไม่หมดอายุ
@@ -27,8 +27,8 @@ export const ImageProvider = ({ children }) => {
       //   return; // หยุดการทำงานตรงนี้เลย
       // }
 
-      // const response = await fetch("https://www.artandalice.co/images");
-      const response = await fetch("http://localhost:8888/images");
+      const response = await fetch("https://www.artandalice.co/images");
+      // const response = await fetch("http://localhost:8888/images");
       const data = await response.json();
 
       if (data.success) {
