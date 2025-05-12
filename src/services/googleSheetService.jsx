@@ -7,7 +7,6 @@ export const GoogleSheetsProvider = ({ children }) => {
   const [language, setLanguage] = useState("English");
   const [isLoading, setIsLoading] = useState(true); // เพิ่มสถานะกำลังโหลด
 
-  // const API_URL = import.meta.env.VITE_SHEET_API_URL;
   const sheetNames = [
     "menu bar",
     "about us",
@@ -28,14 +27,6 @@ export const GoogleSheetsProvider = ({ children }) => {
     try {
       const data = await Promise.all(
         sheetNames.map(async (sheetName) => {
-          // const url = `${API_URL}?sheet=${encodeURIComponent(
-          //   sheetName
-          // )}&format=json`;
-          // const url = `${
-          //   import.meta.env.VITE_SHEET_API_URL
-          // }?sheet=${encodeURIComponent(sheetName)}`;
-          // console.log("first", import.meta.env.VITE_SHEET_API_URL);
-
           const timestamp = new Date().getTime(); // query param ใหม่
           const url = `${
             import.meta.env.VITE_SHEET_API_URL
@@ -46,8 +37,6 @@ export const GoogleSheetsProvider = ({ children }) => {
             cache: "no-store", // บอก browser ไม่ต้อง cache
           });
 
-          // const response = await fetch(url, { redirect: "follow" });
-
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
@@ -57,7 +46,6 @@ export const GoogleSheetsProvider = ({ children }) => {
 
           // ถ้า result มี updatedAt และ data
           const cached = JSON.parse(localStorage.getItem(sheetName));
-          // console.log("cached", cached);
 
           if (!cached || cached.updatedAt !== result.updatedAt) {
             localStorage.setItem(sheetName, JSON.stringify(result));
@@ -73,9 +61,7 @@ export const GoogleSheetsProvider = ({ children }) => {
         return acc;
       }, {});
 
-      console.log("sheets", sheets);
       setSheetsData(sheets);
-      console.log("sheetsData", sheetsData);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
