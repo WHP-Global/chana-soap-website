@@ -87,10 +87,9 @@ export const ImageProvider = ({ children }) => {
       const result = await res.json();
 
       if (result.success) {
-        alert("อัปเดตไฟล์สำเร็จ");
         setImage(null); // ล้างไฟล์
-
         fetchAllImages(true); // ⬅️ โหลดใหม่ ไม่ใช้ cache
+        alert("อัปเดตไฟล์สำเร็จ");
       } else {
         alert("เกิดข้อผิดพลาดในการอัปโหลด");
       }
