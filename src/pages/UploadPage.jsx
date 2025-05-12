@@ -44,12 +44,17 @@ export default function UploadPage() {
     const filenameWithExtension = image.name;
     const filenameWithoutExtension = filenameWithExtension.split(".")[0];
 
+    console.log("image", image);
+    console.log("filenameWithoutExtension", filenameWithoutExtension);
+    console.log("selectedFolder", selectedFolder);
+
     const formData = new FormData();
     formData.append("file", image);
     formData.append("filename", filenameWithoutExtension);
     formData.append("folderName", selectedFolder); // ส่งชื่อโฟลเดอร์ที่เลือกไปด้วย
 
     try {
+      // const res = await fetch("http://localhost:8888/upload", {
       const res = await fetch("https://www.artandalice.co/upload", {
         method: "PUT",
         body: formData,
@@ -60,7 +65,8 @@ export default function UploadPage() {
       if (result.success) {
         alert("อัปเดตไฟล์สำเร็จ");
         setImage(null); // ล้างไฟล์
-        await fetchAllImages();
+
+        fetchAllImages();
       } else {
         alert("เกิดข้อผิดพลาดในการอัปโหลด");
       }
@@ -152,6 +158,7 @@ export default function UploadPage() {
               className="text-center flex-1 sm:flex-none sm:w-1/4 md:w-1/5 lg:w-1/5 xl:w-1/5 box-border"
             >
               <img
+                // src={`http://localhost:8888${imgUrl}?t=${Date.now()}`}
                 src={`https://www.artandalice.co${imgUrl}?t=${Date.now()}`}
                 alt={`รูปที่ ${index + 1}`}
                 className="w-full h-48 object-contain border border-gray-300 rounded-lg"
