@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useContext, useEffect } from "react";
 
 // สร้าง context
@@ -13,38 +12,36 @@ export const ImageProvider = ({ children }) => {
   const fetchAllImages = async () => {
     try {
       const cached = JSON.parse(localStorage.getItem("allImagesCache"));
-      // const response = await fetch("http://localhost:8888/images", {
-      //   headers: {
-      //     "Cache-Control": "no-cache",
-      //   },
-      // });
+      const cacheExpiryTime = 3600000; // เก็บข้อมูลใน cache 1 ชั่วโมง (3600000 ms)
+      const now = new Date().getTime();
 
-      if (cached && cached.images.length > 0) {
+      // ตรวจสอบว่า cached data มีอยู่และยังไม่หมดอายุ
+      if (
+        cached &&
+        cached.images.length > 0 &&
+        now - cached.timestamp < cacheExpiryTime
+      ) {
         setAllImages(cached.images);
         setIsImageLoading(false);
         return; // หยุดการทำงานตรงนี้เลย
       }
 
       const response = await fetch("https://www.artandalice.co/images");
-
       const data = await response.json();
 
       if (data.success) {
         const updatedAt = data.updatedAt;
-        // ถ้าไม่มี cached หรือ updatedAt ไม่ตรงกัน ให้โหลดใหม่
-        if (!cached || cached.updatedAt !== updatedAt) {
-          localStorage.setItem(
-            "allImagesCache",
-            JSON.stringify({
-              updatedAt,
-              images: data.images,
-            })
-          );
-          setAllImages(data.images);
-        } else {
-          // ถ้าเหมือนเดิม ใช้ cache แทน
-          setAllImages(cached.images);
-        }
+
+        // อัพเดต localStorage และใช้ข้อมูลใหม่
+        localStorage.setItem(
+          "allImagesCache",
+          JSON.stringify({
+            updatedAt,
+            images: data.images,
+            timestamp: now, // บันทึกเวลาใน cache
+          })
+        );
+        setAllImages(data.images);
       }
     } catch (error) {
       console.error("Error fetching images:", error);
@@ -55,7 +52,7 @@ export const ImageProvider = ({ children }) => {
 
   useEffect(() => {
     fetchAllImages();
-  }, []);
+  }, []); // เรียกแค่ครั้งเดียวตอน component โหลด
 
   const updateImage = (newImage) => {
     setImage(newImage);
