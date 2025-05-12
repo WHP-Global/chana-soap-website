@@ -23,18 +23,18 @@ export const GoogleSheetsProvider = ({ children }) => {
   ];
 
   useEffect(() => {
-    // const preloadFromCache = () => {
-    //   const cachedSheets = {};
-    //   sheetNames.forEach((sheetName) => {
-    //     const cached = JSON.parse(localStorage.getItem(sheetName));
-    //     if (cached?.data) {
-    //       cachedSheets[sheetName] = cached.data;
-    //     }
-    //   });
-    //   setSheetsData(cachedSheets);
-    // };
+    const preloadFromCache = () => {
+      const cachedSheets = {};
+      sheetNames.forEach((sheetName) => {
+        const cached = JSON.parse(localStorage.getItem(sheetName));
+        if (cached?.data) {
+          cachedSheets[sheetName] = cached.data;
+        }
+      });
+      setSheetsData(cachedSheets);
+    };
 
-    // preloadFromCache(); // แสดง cache ทันที
+    preloadFromCache(); // แสดง cache ทันที
     fetchData(); // แล้วค่อยไปเช็กข้อมูลจริง
   }, []);
 
