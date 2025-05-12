@@ -48,6 +48,8 @@ export default function UploadPage() {
     return allImages.filter((imgUrl) => imgUrl.path.includes(folder));
   };
 
+  console.log("filterImagesByFolder", allImages);
+
   const folderNav = (folder) => {
     return (
       <button
@@ -124,8 +126,8 @@ export default function UploadPage() {
               className="text-center flex-1 sm:flex-none sm:w-1/4 md:w-1/5 lg:w-1/5 xl:w-1/5 box-border"
             >
               <img
-                src={`http://localhost:8888${imgUrl.path}?t=${imgUrl.mtime}`}
-                // src={`https://www.artandalice.co${imgUrl}?t=${Date.now()}`}
+                // src={`http://localhost:8888${imgUrl.path}?t=${imgUrl.mtime}`}
+                src={`https://www.artandalice.co${imgUrl.path}?t=${imgUrl.mtime}`}
                 alt={`รูปที่ ${index + 1}`}
                 className="w-full h-48 object-contain border border-gray-300 rounded-lg"
               />

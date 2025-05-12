@@ -12,20 +12,8 @@ export const ImageProvider = ({ children }) => {
 
   const fetchAllImages = async () => {
     try {
-      // const cached = JSON.parse(localStorage.getItem("allImagesCache"));
-      // const cacheExpiryTime = 3600000; // เก็บข้อมูลใน cache 1 ชั่วโมง (3600000 ms)
+      const cached = JSON.parse(localStorage.getItem("allImagesCache"));
       const now = new Date().getTime();
-
-      // ตรวจสอบว่า cached data มีอยู่และยังไม่หมดอายุ
-      // if (
-      //   cached &&
-      //   cached.images.length > 0 &&
-      //   now - cached.timestamp < cacheExpiryTime
-      // ) {
-      //   setAllImages(cached.images);
-      //   setIsImageLoading(false);
-      //   return; // หยุดการทำงานตรงนี้เลย
-      // }
 
       const response = await fetch("https://www.artandalice.co/images");
       // const response = await fetch("http://localhost:8888/images");
@@ -33,6 +21,15 @@ export const ImageProvider = ({ children }) => {
 
       if (data.success) {
         const updatedAt = data.mtime;
+
+        const shouldUseCache =
+          cached && cached.images.length > 0 && cached.updatedAt === updatedAt;
+
+        if (shouldUseCache) {
+          setAllImages(cached.images);
+          setIsImageLoading(false);
+          return;
+        }
 
         // อัพเดต localStorage และใช้ข้อมูลใหม่
         localStorage.setItem(
@@ -77,8 +74,8 @@ export const ImageProvider = ({ children }) => {
     formData.append("folderName", selectedFolder); // ส่งชื่อโฟลเดอร์ที่เลือกไปด้วย
 
     try {
-      const res = await fetch("http://localhost:8888/upload", {
-        // const res = await fetch("https://www.artandalice.co/upload", {
+      // const res = await fetch("http://localhost:8888/upload", {
+      const res = await fetch("https://www.artandalice.co/upload", {
         method: "PUT",
         body: formData,
       });
