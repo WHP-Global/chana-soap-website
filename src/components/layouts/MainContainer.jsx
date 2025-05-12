@@ -124,7 +124,7 @@ export default function MainContainer() {
 
   return (
     <div>
-      {isLoading && (
+      {isImageLoading && (
         <div className="fixed h-[100vh] w-[100vw] flex justify-center items-center z-50">
           <Loading />
         </div>
