@@ -16,11 +16,8 @@ export const ImageProvider = ({ children }) => {
       //     "Cache-Control": "no-cache",
       //   },
       // });
-      const response = await fetch("https://www.artandalice.co/images", {
-        headers: {
-          "Cache-Control": "no-cache",
-        },
-      });
+      const response = await fetch("https://www.artandalice.co/images");
+
       const data = await response.json();
       console.log(data);
       if (data.success) {
