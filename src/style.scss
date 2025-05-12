@@ -1,28 +1,28 @@
 // src/styles/fonts.scss
 
 @font-face {
-  font-family: "Sweet Sans Pro";
+  font-family: "Lora";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/SweetSansProRegular.otf") format("woff");
+  src: url("/fonts/Lora-Regular.ttf") format("woff");
 }
 
 @font-face {
-  font-family: "Sweet Sans Pro";
+  font-family: "Lora";
   font-style: italic;
   font-weight: 400;
-  src: url("/fonts/SweetSansProItalic.otf") format("woff");
+  src: url("/fonts/Lora-italic.ttf") format("woff");
 }
 
 @font-face {
-  font-family: "Sweet Sans Pro";
+  font-family: "Lora";
   font-style: normal;
   font-weight: 700;
-  src: url("/fonts/SweetSansProBold.otf") format("woff");
+  src: url("/fonts/Lora-Bold.ttf") format("woff");
 }
 
 // ตัวแปรสำหรับฟอนต์
-$font-primary: "Sweet Sans Pro", sans-serif;
+$font-primary: "Lora", sans-serif;
 
 .font-header {
   font-size: 48px;
