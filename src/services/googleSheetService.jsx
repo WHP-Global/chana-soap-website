@@ -53,15 +53,17 @@ export const GoogleSheetsProvider = ({ children }) => {
           }
 
           const result = await response.json();
+          const values = result.data ?? result;
 
           // ถ้า result มี updatedAt และ data
           const cached = JSON.parse(localStorage.getItem(sheetName));
+          // console.log("cached", cached);
 
           if (!cached || cached.updatedAt !== result.updatedAt) {
             localStorage.setItem(sheetName, JSON.stringify(result));
-            return { sheetName, values: result.data }; // ใช้ result.data แทน result โดยตรง
+            return { sheetName, values }; // ใช้ result.data แทน result โดยตรง
           } else {
-            return { sheetName, values: cached.data };
+            return { sheetName, values: cached.data ?? cached };
           }
         })
       );
@@ -71,7 +73,9 @@ export const GoogleSheetsProvider = ({ children }) => {
         return acc;
       }, {});
 
+      console.log("sheets", sheets);
       setSheetsData(sheets);
+      console.log("sheetsData", sheetsData);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
