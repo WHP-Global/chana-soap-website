@@ -116,7 +116,7 @@ export default function ContactUs() {
           {/* Logo and Name product */}
           <div className="flex flex-col items-center gap-1">
             <div className="w-[275px] h-auto">
-              <Logo logo={logoImages[1]} />
+              <Logo logo={buildImageSrc(logoImages[1])} />
             </div>
           </div>
           <div className="font-subtitle text-center text-balance">
