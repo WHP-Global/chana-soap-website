@@ -19,7 +19,7 @@ export default function ContactUs() {
   const categoryImages = allImages.filter((image) =>
     image.path.includes("ContactUs")
   );
-  const logoImages = allImages.filter((image) => image.includes("logo"));
+  const logoImages = allImages.filter((image) => image.path.includes("logo"));
 
   useEffect(() => {
     const hash = location.hash;

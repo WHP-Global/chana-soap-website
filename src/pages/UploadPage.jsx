@@ -6,11 +6,10 @@ const CORRECT_PASSWORD = import.meta.env.VITE_CORRECT_PASSWORD;
 export default function UploadPage() {
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [uploading, setUploading] = useState(false);
   const [selectedFolder, setSelectedFolder] = useState("AboutUs");
 
   // ใช้ useImageContext เพื่อเข้าถึง context
-  const { allImages, fetchAllImages, image, setImage } = useImageContext();
+  const { allImages, setImage, handleUpload, uploading } = useImageContext();
 
   const folders = [
     "AboutUs",
@@ -37,44 +36,16 @@ export default function UploadPage() {
     setImage(e.target.files[0]);
   };
 
-  const handleUpload = async () => {
-    if (!image) return;
-    setUploading(true);
-
-    const filenameWithExtension = image.name;
-    const filenameWithoutExtension = filenameWithExtension.split(".")[0];
-
-    const formData = new FormData();
-    formData.append("file", image);
-    formData.append("filename", filenameWithoutExtension);
-    formData.append("folderName", selectedFolder); // ส่งชื่อโฟลเดอร์ที่เลือกไปด้วย
-
-    try {
-      // const res = await fetch("http://localhost:8888/upload", {
-      const res = await fetch("https://www.artandalice.co/upload", {
-        method: "PUT",
-        body: formData,
-      });
-
-      const result = await res.json();
-
-      if (result.success) {
-        alert("อัปเดตไฟล์สำเร็จ");
-        setImage(null); // ล้างไฟล์
-
-        fetchAllImages();
-      } else {
-        alert("เกิดข้อผิดพลาดในการอัปโหลด");
-      }
-    } catch (error) {
-      alert("อัปโหลดล้มเหลว: " + error.message);
-    } finally {
-      setUploading(false);
+  const onSubmit = () => {
+    if (!selectedFolder) {
+      alert("กรุณาเลือกโฟลเดอร์");
+      return;
     }
+    handleUpload(selectedFolder);
   };
 
   const filterImagesByFolder = (folder) => {
-    return allImages.filter((imgUrl) => imgUrl.includes(folder));
+    return allImages.filter((imgUrl) => imgUrl.path.includes(folder));
   };
 
   const folderNav = (folder) => {
@@ -126,7 +97,7 @@ export default function UploadPage() {
           className="font-body"
         />
         <button
-          onClick={handleUpload}
+          onClick={onSubmit}
           disabled={uploading}
           className="w-fit font-body-bold bg-primary font-color-secondary px-6 py-2 rounded-lg shadow-md hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
         >
@@ -153,13 +124,13 @@ export default function UploadPage() {
               className="text-center flex-1 sm:flex-none sm:w-1/4 md:w-1/5 lg:w-1/5 xl:w-1/5 box-border"
             >
               <img
-                // src={`http://localhost:8888${imgUrl}?t=${Date.now()}`}
-                src={`https://www.artandalice.co${imgUrl}?t=${Date.now()}`}
+                src={`http://localhost:8888${imgUrl.path}?t=${imgUrl.mtime}`}
+                // src={`https://www.artandalice.co${imgUrl}?t=${Date.now()}`}
                 alt={`รูปที่ ${index + 1}`}
                 className="w-full h-48 object-contain border border-gray-300 rounded-lg"
               />
               <div className="mt-2 text-sm text-gray-500 break-words overflow-hidden max-h-12">
-                {imgUrl}
+                {imgUrl.path}
               </div>
 
               {/* แสดงชื่อไฟล์ */}

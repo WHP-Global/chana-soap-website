@@ -8,6 +8,7 @@ export const ImageProvider = ({ children }) => {
   const [allImages, setAllImages] = useState([]);
   const [image, setImage] = useState(null);
   const [isImageLoading, setIsImageLoading] = useState(true);
+  const [uploading, setUploading] = useState(false);
 
   const fetchAllImages = async () => {
     try {
@@ -16,18 +17,18 @@ export const ImageProvider = ({ children }) => {
       const now = new Date().getTime();
 
       // ตรวจสอบว่า cached data มีอยู่และยังไม่หมดอายุ
-      if (
-        cached &&
-        cached.images.length > 0 &&
-        now - cached.timestamp < cacheExpiryTime
-      ) {
-        setAllImages(cached.images);
-        setIsImageLoading(false);
-        return; // หยุดการทำงานตรงนี้เลย
-      }
+      // if (
+      //   cached &&
+      //   cached.images.length > 0 &&
+      //   now - cached.timestamp < cacheExpiryTime
+      // ) {
+      //   setAllImages(cached.images);
+      //   setIsImageLoading(false);
+      //   return; // หยุดการทำงานตรงนี้เลย
+      // }
 
-      const response = await fetch("https://www.artandalice.co/images");
-      // const response = await fetch("http://localhost:8888/images");
+      // const response = await fetch("https://www.artandalice.co/images");
+      const response = await fetch("http://localhost:8888/images");
       const data = await response.json();
 
       if (data.success) {
@@ -51,6 +52,42 @@ export const ImageProvider = ({ children }) => {
     }
   };
 
+  const handleUpload = async (selectedFolder) => {
+    if (!image) return;
+    setUploading(true);
+
+    const filenameWithExtension = image.name;
+    const filenameWithoutExtension = filenameWithExtension.split(".")[0];
+
+    const formData = new FormData();
+    formData.append("file", image);
+    formData.append("filename", filenameWithoutExtension);
+    formData.append("folderName", selectedFolder); // ส่งชื่อโฟลเดอร์ที่เลือกไปด้วย
+
+    try {
+      const res = await fetch("http://localhost:8888/upload", {
+        // const res = await fetch("https://www.artandalice.co/upload", {
+        method: "PUT",
+        body: formData,
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        alert("อัปเดตไฟล์สำเร็จ");
+        setImage(null); // ล้างไฟล์
+
+        fetchAllImages();
+      } else {
+        alert("เกิดข้อผิดพลาดในการอัปโหลด");
+      }
+    } catch (error) {
+      alert("อัปโหลดล้มเหลว: " + error.message);
+    } finally {
+      setUploading(false);
+    }
+  };
+
   useEffect(() => {
     fetchAllImages();
   }, []); // เรียกแค่ครั้งเดียวตอน component โหลด
@@ -68,6 +105,8 @@ export const ImageProvider = ({ children }) => {
         image,
         setImage,
         isImageLoading,
+        uploading,
+        handleUpload,
       }}
     >
       {children}
