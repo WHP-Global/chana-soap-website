@@ -142,7 +142,7 @@ export default function UploadPage() {
             >
               <img
                 // src={`http://localhost:8888${imgUrl.path}?t=${imgUrl.mtime}`}
-                src={`https://www.artandalice.co${imgUrl.path}?t=${imgUrl.mtime}`}
+                src={`https://www.artandalice.co${imgUrl.path}?v=${imgUrl.mtime}`}
                 alt={`รูปที่ ${index + 1}`}
                 className="w-full h-48 object-contain border border-gray-300 rounded-lg"
               />
