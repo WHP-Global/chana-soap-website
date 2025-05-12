@@ -14,7 +14,7 @@ export default function Products() {
   const categoryImages = allImages.filter((image) =>
     image.includes("Products")
   );
-  console.log("categoryImages", categoryImages);
+
   const navigate = useNavigate();
 
   const productsData = getLocalizedData("products");

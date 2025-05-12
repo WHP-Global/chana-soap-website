@@ -12,9 +12,7 @@ export default function AboutUs() {
   const location = useLocation();
   const { getLocalizedData } = useGoogleSheets();
   const { allImages } = useImageContext();
-  console.log("allImages", allImages);
   const categoryImages = allImages.filter((image) => image.includes("AboutUs"));
-  console.log("categoryImages", categoryImages);
 
   const imgSlider = [
     getImageUrl(categoryImages[4]),

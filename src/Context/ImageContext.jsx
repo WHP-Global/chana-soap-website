@@ -11,17 +11,33 @@ export const ImageProvider = ({ children }) => {
 
   const fetchAllImages = async () => {
     try {
+      const cached = JSON.parse(localStorage.getItem("allImagesCache"));
       // const response = await fetch("http://localhost:8888/images", {
       //   headers: {
       //     "Cache-Control": "no-cache",
       //   },
       // });
+
       const response = await fetch("https://www.artandalice.co/images");
 
       const data = await response.json();
-      console.log(data);
+
       if (data.success) {
-        setAllImages(data.images);
+        const updatedAt = data.updatedAt;
+        // ถ้าไม่มี cached หรือ updatedAt ไม่ตรงกัน ให้โหลดใหม่
+        if (!cached || cached.updatedAt !== updatedAt) {
+          localStorage.setItem(
+            "allImagesCache",
+            JSON.stringify({
+              updatedAt,
+              images: data.images,
+            })
+          );
+          setAllImages(data.images);
+        } else {
+          // ถ้าเหมือนเดิม ใช้ cache แทน
+          setAllImages(cached.images);
+        }
       }
     } catch (error) {
       console.error("Error fetching images:", error);

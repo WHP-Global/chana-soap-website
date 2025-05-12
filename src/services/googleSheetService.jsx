@@ -53,7 +53,16 @@ export const GoogleSheetsProvider = ({ children }) => {
           }
 
           const result = await response.json();
-          return { sheetName, values: result };
+
+          // ถ้า result มี updatedAt และ data
+          const cached = JSON.parse(localStorage.getItem(sheetName));
+
+          if (!cached || cached.updatedAt !== result.updatedAt) {
+            localStorage.setItem(sheetName, JSON.stringify(result));
+            return { sheetName, values: result.data }; // ใช้ result.data แทน result โดยตรง
+          } else {
+            return { sheetName, values: cached.data };
+          }
         })
       );
 

@@ -44,10 +44,6 @@ export default function UploadPage() {
     const filenameWithExtension = image.name;
     const filenameWithoutExtension = filenameWithExtension.split(".")[0];
 
-    console.log("image", image);
-    console.log("filenameWithoutExtension", filenameWithoutExtension);
-    console.log("selectedFolder", selectedFolder);
-
     const formData = new FormData();
     formData.append("file", image);
     formData.append("filename", filenameWithoutExtension);
@@ -71,7 +67,6 @@ export default function UploadPage() {
         alert("เกิดข้อผิดพลาดในการอัปโหลด");
       }
     } catch (error) {
-      console.log("error", error);
       alert("อัปโหลดล้มเหลว: " + error.message);
     } finally {
       setUploading(false);
