@@ -8,6 +8,7 @@ const ImageContext = createContext();
 export const ImageProvider = ({ children }) => {
   const [allImages, setAllImages] = useState([]);
   const [image, setImage] = useState(null);
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   const fetchAllImages = async () => {
     try {
@@ -41,6 +42,8 @@ export const ImageProvider = ({ children }) => {
       }
     } catch (error) {
       console.error("Error fetching images:", error);
+    } finally {
+      setIsImageLoading(false); // ✅ จบการโหลด
     }
   };
 
@@ -54,7 +57,14 @@ export const ImageProvider = ({ children }) => {
 
   return (
     <ImageContext.Provider
-      value={{ allImages, fetchAllImages, updateImage, image, setImage }}
+      value={{
+        allImages,
+        fetchAllImages,
+        updateImage,
+        image,
+        setImage,
+        isImageLoading,
+      }}
     >
       {children}
     </ImageContext.Provider>

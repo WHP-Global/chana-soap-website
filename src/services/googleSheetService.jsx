@@ -22,19 +22,34 @@ export const GoogleSheetsProvider = ({ children }) => {
     "contact us",
   ];
 
+  useEffect(() => {
+    const preloadFromCache = () => {
+      const cachedSheets = {};
+      sheetNames.forEach((sheetName) => {
+        const cached = JSON.parse(localStorage.getItem(sheetName));
+        if (cached?.data) {
+          cachedSheets[sheetName] = cached.data;
+        }
+      });
+      setSheetsData(cachedSheets);
+    };
+
+    preloadFromCache(); // แสดง cache ทันที
+    fetchData(); // แล้วค่อยไปเช็กข้อมูลจริง
+  }, []);
+
   const fetchData = async () => {
     setIsLoading(true); // เริ่มโหลดข้อมูล
     try {
       const data = await Promise.all(
         sheetNames.map(async (sheetName) => {
-          const timestamp = new Date().getTime(); // query param ใหม่
+          // const timestamp = new Date().getTime(); // query param ใหม่
           const url = `${
             import.meta.env.VITE_SHEET_API_URL
-          }?sheet=${encodeURIComponent(sheetName)}&t=${timestamp}`;
+          }?sheet=${encodeURIComponent(sheetName)}`;
 
           const response = await fetch(url, {
             redirect: "follow",
-            cache: "no-store", // บอก browser ไม่ต้อง cache
           });
 
           if (!response.ok) {
@@ -68,10 +83,6 @@ export const GoogleSheetsProvider = ({ children }) => {
       setIsLoading(false); // โหลดเสร็จ
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const switchLanguage = (lang) => {
     setLanguage(lang);

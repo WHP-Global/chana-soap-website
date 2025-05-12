@@ -5,12 +5,14 @@ import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import { useGoogleSheets } from "../../services/googleSheetService";
 import Loading from "../Loading";
+import { useImageContext } from "../../Context/ImageContext";
 
 export default function MainContainer() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
   const sidebarRef = useRef(null);
   const { isLoading } = useGoogleSheets();
+  const { isImageLoading } = useImageContext();
   const { getLocalizedData } = useGoogleSheets();
 
   // ดึงข้อมูลจากชีต "contact us"
@@ -122,7 +124,7 @@ export default function MainContainer() {
 
   return (
     <div>
-      {isLoading && (
+      {(isLoading || isImageLoading) && (
         <div className="fixed h-[100vh] w-[100vw] flex justify-center items-center z-50">
           <Loading />
         </div>

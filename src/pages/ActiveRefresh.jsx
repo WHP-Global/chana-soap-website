@@ -7,7 +7,6 @@ export default function ActiveRefresh() {
   const { getLocalizedData } = useGoogleSheets();
   const activeRefreshData = getLocalizedData("active fresh");
   const [selectedImage, setSelectedImage] = useState("");
-
   const { allImages } = useImageContext();
   const categoryImages = allImages.filter((image) =>
     image.includes("ActiveFresh")
