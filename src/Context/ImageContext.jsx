@@ -19,6 +19,12 @@ export const ImageProvider = ({ children }) => {
       //   },
       // });
 
+      if (cached && cached.images.length > 0) {
+        setAllImages(cached.images);
+        setIsImageLoading(false);
+        return; // หยุดการทำงานตรงนี้เลย
+      }
+
       const response = await fetch("https://www.artandalice.co/images");
 
       const data = await response.json();
