@@ -10,16 +10,13 @@ import Products from "../pages/Products";
 import Projects from "../pages/Projects";
 import MainContainer from "../components/layouts/MainContainer";
 import UploadPage from "../pages/UploadPage";
-import { ImageProvider } from "../Context/ImageContext";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-        <ImageProvider>
-          <MainContainer />
-        </ImageProvider>
+        <MainContainer />
       </>
     ),
     children: [
