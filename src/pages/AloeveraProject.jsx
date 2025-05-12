@@ -5,20 +5,20 @@ import ImageSlider from "../components/ImageSlider";
 import ImgTwo from "../components/ImgTwo";
 import ImgOne from "../components/ImgOne";
 import { useImageContext } from "../Context/ImageContext";
-import { getImageUrl } from "../utils/imageHelpers";
+import { buildImageSrc } from "../utils/imageHelpers";
 
 export default function AloeveraProject() {
   const { getLocalizedData } = useGoogleSheets();
   const { allImages } = useImageContext();
   const categoryImages = allImages.filter((image) =>
-    image.includes("AloeVera")
+    image.path.includes("AloeVera")
   );
 
   const imgSlider = [
-    getImageUrl(categoryImages[0]),
-    getImageUrl(categoryImages[1]),
-    getImageUrl(categoryImages[2]),
-    getImageUrl(categoryImages[3]),
+    buildImageSrc(categoryImages[0]),
+    buildImageSrc(categoryImages[1]),
+    buildImageSrc(categoryImages[2]),
+    buildImageSrc(categoryImages[3]),
   ];
 
   // ดึงข้อมูลจากชีต "aloe vera project"
@@ -28,7 +28,7 @@ export default function AloeveraProject() {
       {/* banner */}
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img
-          src={getImageUrl(categoryImages[10])}
+          src={buildImageSrc(categoryImages[10])}
           alt={categoryImages[10]}
           className="h-full w-full object-cover"
         />
@@ -45,8 +45,8 @@ export default function AloeveraProject() {
           {/* 2imgae */}
           <ImgTwo
             imgGroup={[
-              getImageUrl(categoryImages[6]),
-              getImageUrl(categoryImages[7]),
+              buildImageSrc(categoryImages[6]),
+              buildImageSrc(categoryImages[7]),
             ]}
           />
 
@@ -55,7 +55,7 @@ export default function AloeveraProject() {
         </div>
       </div>
 
-      <Banner src={getImageUrl(categoryImages[4])} />
+      <Banner src={buildImageSrc(categoryImages[4])} />
 
       {/* Integrating Learning with Sustainable Economic Growth */}
       <div className="font-color-primary max-w-6xl mx-auto">
@@ -72,7 +72,7 @@ export default function AloeveraProject() {
       </div>
 
       {/* 1 imgae */}
-      <ImgOne img={getImageUrl(categoryImages[5])} />
+      <ImgOne img={buildImageSrc(categoryImages[5])} />
 
       {/* Project Workflow */}
       <div className="font-color-primary max-w-6xl mx-auto">

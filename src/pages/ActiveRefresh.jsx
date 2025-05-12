@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import { useGoogleSheets } from "../services/googleSheetService";
 import { BoldTextBySlash } from "../services/BoldText";
 import { useImageContext } from "../Context/ImageContext";
-import { getImageUrl } from "../utils/imageHelpers";
+import { buildImageSrc } from "../utils/imageHelpers";
 export default function ActiveRefresh() {
   const { getLocalizedData } = useGoogleSheets();
   const activeRefreshData = getLocalizedData("active fresh");
   const [selectedImage, setSelectedImage] = useState("");
   const { allImages } = useImageContext();
   const categoryImages = allImages.filter((image) =>
-    image.includes("ActiveFresh")
+    image.path.includes("ActiveFresh")
   );
 
   useEffect(() => {
     if (categoryImages && categoryImages > 1) {
-      setSelectedImage(getImageUrl(categoryImages[4]));
+      setSelectedImage(buildImageSrc(categoryImages[4]));
     }
   }, []);
 
@@ -26,7 +26,7 @@ export default function ActiveRefresh() {
       {/* Banner */}
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img
-          src={getImageUrl(categoryImages[5])}
+          src={buildImageSrc(categoryImages[5])}
           alt={categoryImages[5]}
           className="w-full h-full object-cover"
         />
@@ -50,7 +50,7 @@ export default function ActiveRefresh() {
       {/* Main Product Image*/}
       <div className="max-w-2xl mx-auto p-6 flex justify-center">
         <img
-          src={selectedImage || getImageUrl(categoryImages[4])}
+          src={selectedImage || buildImageSrc(categoryImages[4])}
           alt="Selected Product"
           className="w-[400px] h-[400px] object-cover rounded-lg shadow-lg"
         />
@@ -59,9 +59,9 @@ export default function ActiveRefresh() {
       {/* Small Image Grid */}
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 px-6 py-8">
         {[
-          getImageUrl(categoryImages[1]),
-          getImageUrl(categoryImages[2]),
-          getImageUrl(categoryImages[3]),
+          buildImageSrc(categoryImages[1]),
+          buildImageSrc(categoryImages[2]),
+          buildImageSrc(categoryImages[3]),
         ].map((image, index) => (
           <div key={index} className="flex justify-center">
             <button
@@ -84,7 +84,7 @@ export default function ActiveRefresh() {
           {/* Product Image */}
           <div className="max-w-md">
             <img
-              src={getImageUrl(categoryImages[6])}
+              src={buildImageSrc(categoryImages[6])}
               alt={categoryImages[6]}
               className="w-full rounded-lg shadow-lg h-auto"
             />
@@ -267,7 +267,7 @@ export default function ActiveRefresh() {
       <div className="w-full">
         <div className="w-full h-[400px]">
           <img
-            src={getImageUrl(categoryImages[0])}
+            src={buildImageSrc(categoryImages[0])}
             alt={categoryImages[0]}
             className="w-full h-full object-cover"
           />

@@ -3,26 +3,26 @@ import { BoldText, BoldTextBySlash } from "../services/BoldText";
 import ImageSlider from "../components/ImageSlider";
 import ImgTwo from "../components/ImgTwo";
 import { useImageContext } from "../Context/ImageContext";
-import { getImageUrl } from "../utils/imageHelpers";
+import { buildImageSrc } from "../utils/imageHelpers";
 
 export default function EmpoweringFarmerProject() {
   const { getLocalizedData } = useGoogleSheets();
   const { allImages } = useImageContext();
   const categoryImages = allImages.filter((image) =>
-    image.includes("EmpoweringFarmerProject")
+    image.path.includes("EmpoweringFarmerProject")
   );
 
   const imgSlider = [
-    getImageUrl(categoryImages[5]),
-    getImageUrl(categoryImages[6]),
-    getImageUrl(categoryImages[7]),
-    getImageUrl(categoryImages[8]),
-    getImageUrl(categoryImages[9]),
-    getImageUrl(categoryImages[10]),
-    getImageUrl(categoryImages[11]),
-    getImageUrl(categoryImages[12]),
-    getImageUrl(categoryImages[13]),
-    getImageUrl(categoryImages[14]),
+    buildImageSrc(categoryImages[5]),
+    buildImageSrc(categoryImages[6]),
+    buildImageSrc(categoryImages[7]),
+    buildImageSrc(categoryImages[8]),
+    buildImageSrc(categoryImages[9]),
+    buildImageSrc(categoryImages[10]),
+    buildImageSrc(categoryImages[11]),
+    buildImageSrc(categoryImages[12]),
+    buildImageSrc(categoryImages[13]),
+    buildImageSrc(categoryImages[14]),
   ];
 
   // ดึงข้อมูลจากชีต "empowering project"
@@ -32,7 +32,7 @@ export default function EmpoweringFarmerProject() {
       {/* banner */}
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img
-          src={getImageUrl(categoryImages[4])}
+          src={buildImageSrc(categoryImages[4])}
           alt={categoryImages[4]}
           className="h-full w-full object-cover"
         />
@@ -57,8 +57,8 @@ export default function EmpoweringFarmerProject() {
           {/* 2 imgae */}
           <ImgTwo
             imgGroup={[
-              getImageUrl(categoryImages[1]),
-              getImageUrl(categoryImages[0]),
+              buildImageSrc(categoryImages[1]),
+              buildImageSrc(categoryImages[0]),
             ]}
           />
         </div>
@@ -79,8 +79,8 @@ export default function EmpoweringFarmerProject() {
           {/* 2 imgae */}
           <ImgTwo
             imgGroup={[
-              getImageUrl(categoryImages[6]),
-              getImageUrl(categoryImages[7]),
+              buildImageSrc(categoryImages[6]),
+              buildImageSrc(categoryImages[7]),
             ]}
           />
         </div>

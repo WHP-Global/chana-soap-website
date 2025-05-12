@@ -2,7 +2,7 @@
 import { Link as RouterLink } from "react-router-dom";
 import { LogoTopBar } from "../Logo";
 import { useImageContext } from "../../Context/ImageContext";
-import { getImageUrl } from "../../utils/imageHelpers";
+import { buildImageSrc } from "../../utils/imageHelpers";
 
 export default function Sidebar({
   onToggleSidebar,
@@ -12,7 +12,9 @@ export default function Sidebar({
   findAndSetOpenMenu,
 }) {
   const { allImages } = useImageContext();
-  const categoryImages = allImages.filter((image) => image.includes("logo"));
+  const categoryImages = allImages.filter((image) =>
+    image.path.includes("logo")
+  );
   return (
     <div className=" h-[93%] rounded-lg shadow-lg">
       <div
@@ -24,7 +26,7 @@ export default function Sidebar({
       </div>
       <div className="flex-1 font-color-secondary font-header flex items-center justify-center bg-primary py-3 rounded-t-lg">
         <div className="w-[200px] h-auto">
-          <LogoTopBar logo={getImageUrl(categoryImages[0])} />
+          <LogoTopBar logo={buildImageSrc(categoryImages[0])} />
         </div>
       </div>
       <div className="py-[25px] px-[15px] font-color-primary font-menu h-[93%] bg-fourth overflow-y-auto custom-scrollbar rounded-b-lg">

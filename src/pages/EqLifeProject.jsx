@@ -2,12 +2,14 @@ import { useGoogleSheets } from "../services/googleSheetService";
 import Banner from "../components/Banner";
 import { BoldText, BoldTextBySlash } from "../services/BoldText";
 import { useImageContext } from "../Context/ImageContext";
-import { getImageUrl } from "../utils/imageHelpers";
+import { buildImageSrc } from "../utils/imageHelpers";
 
 export default function EqLifeProject() {
   const { getLocalizedData } = useGoogleSheets();
   const { allImages } = useImageContext();
-  const categoryImages = allImages.filter((image) => image.includes("EqLife"));
+  const categoryImages = allImages.filter((image) =>
+    image.path.includes("EqLife")
+  );
 
   // ดึงข้อมูลจากชีต "eq life project"
   const eqLifeProjectData = getLocalizedData("eq life project");
@@ -16,7 +18,7 @@ export default function EqLifeProject() {
       {/* banner */}
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img
-          src={getImageUrl(categoryImages[1])}
+          src={buildImageSrc(categoryImages[1])}
           alt={categoryImages[1]}
           className="h-full w-full object-cover"
         />
@@ -84,7 +86,7 @@ export default function EqLifeProject() {
         <BoldTextBySlash text={eqLifeProjectData[20]} />
       </div>
 
-      <Banner src={getImageUrl(categoryImages[0])} />
+      <Banner src={buildImageSrc(categoryImages[0])} />
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
       </div>

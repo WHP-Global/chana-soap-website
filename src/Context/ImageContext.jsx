@@ -27,10 +27,11 @@ export const ImageProvider = ({ children }) => {
       }
 
       const response = await fetch("https://www.artandalice.co/images");
+      // const response = await fetch("http://localhost:8888/images");
       const data = await response.json();
 
       if (data.success) {
-        const updatedAt = data.updatedAt;
+        const updatedAt = data.mtime;
 
         // อัพเดต localStorage และใช้ข้อมูลใหม่
         localStorage.setItem(
@@ -75,6 +76,7 @@ export const ImageProvider = ({ children }) => {
 };
 
 // Hook สำหรับใช้ context ในหน้าอื่น ๆ
+// eslint-disable-next-line react-refresh/only-export-components
 export const useImageContext = () => {
   return useContext(ImageContext);
 };

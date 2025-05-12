@@ -6,37 +6,39 @@ import ImageSlider from "../components/ImageSlider";
 import ImgTwo from "../components/ImgTwo";
 import Banner from "../components/Banner";
 import { useImageContext } from "../Context/ImageContext";
-import { getImageUrl } from "../utils/imageHelpers";
+import { buildImageSrc } from "../utils/imageHelpers";
 
 export default function AboutUs() {
   const location = useLocation();
   const { getLocalizedData } = useGoogleSheets();
   const { allImages } = useImageContext();
-  const categoryImages = allImages.filter((image) => image.includes("AboutUs"));
+  const categoryImages = allImages.filter((image) =>
+    image.path.includes("AboutUs")
+  );
 
   const imgSlider = [
-    getImageUrl(categoryImages[4]),
-    getImageUrl(categoryImages[5]),
-    getImageUrl(categoryImages[6]),
-    getImageUrl(categoryImages[7]),
-    getImageUrl(categoryImages[8]),
-    getImageUrl(categoryImages[9]),
-    getImageUrl(categoryImages[10]),
-    getImageUrl(categoryImages[11]),
-    getImageUrl(categoryImages[12]),
+    buildImageSrc(categoryImages[4]),
+    buildImageSrc(categoryImages[5]),
+    buildImageSrc(categoryImages[6]),
+    buildImageSrc(categoryImages[7]),
+    buildImageSrc(categoryImages[8]),
+    buildImageSrc(categoryImages[9]),
+    buildImageSrc(categoryImages[10]),
+    buildImageSrc(categoryImages[11]),
+    buildImageSrc(categoryImages[12]),
   ];
   const imgSliderSoucingIngredients = [
-    getImageUrl(categoryImages[13]),
-    getImageUrl(categoryImages[14]),
-    getImageUrl(categoryImages[15]),
-    getImageUrl(categoryImages[16]),
-    getImageUrl(categoryImages[17]),
-    getImageUrl(categoryImages[18]),
-    getImageUrl(categoryImages[19]),
-    getImageUrl(categoryImages[20]),
-    getImageUrl(categoryImages[21]),
-    getImageUrl(categoryImages[22]),
-    getImageUrl(categoryImages[23]),
+    buildImageSrc(categoryImages[13]),
+    buildImageSrc(categoryImages[14]),
+    buildImageSrc(categoryImages[15]),
+    buildImageSrc(categoryImages[16]),
+    buildImageSrc(categoryImages[17]),
+    buildImageSrc(categoryImages[18]),
+    buildImageSrc(categoryImages[19]),
+    buildImageSrc(categoryImages[20]),
+    buildImageSrc(categoryImages[21]),
+    buildImageSrc(categoryImages[22]),
+    buildImageSrc(categoryImages[23]),
   ];
 
   // ดึงข้อมูลจากชีต "about us"
@@ -60,7 +62,7 @@ export default function AboutUs() {
       {/* banner */}
       <div className="relative w-full h-[450px] sm:h-[587] md:h-[678px] flex justify-center items-center">
         <img
-          src={getImageUrl(categoryImages[3])}
+          src={buildImageSrc(categoryImages[3])}
           alt={categoryImages[3]}
           className="h-full w-full object-cover"
         />
@@ -92,8 +94,8 @@ export default function AboutUs() {
           {/* 2 image */}
           <ImgTwo
             imgGroup={[
-              getImageUrl(categoryImages[24]),
-              getImageUrl(categoryImages[25]),
+              buildImageSrc(categoryImages[24]),
+              buildImageSrc(categoryImages[25]),
             ]}
           />
 
@@ -111,7 +113,7 @@ export default function AboutUs() {
           <div className="text-center font-caption indent-0">
             <div className=" md:h-[500px] sm:h-[400px] h-[350px] w-auto flex justify-center mb-5">
               <img
-                src={getImageUrl(categoryImages[2])}
+                src={buildImageSrc(categoryImages[2])}
                 alt={categoryImages[2]}
                 className="h-full w-auto object-cover rounded-2xl"
               />
@@ -127,7 +129,7 @@ export default function AboutUs() {
       {/*2. sourcing and impact */}
       <div id="sourcing-and-impact"></div>
       {/* banner */}
-      <Banner src={getImageUrl(categoryImages[0])} />
+      <Banner src={buildImageSrc(categoryImages[0])} />
       {/* content */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-title text-center">{aboutUsData[16]}</div>
@@ -166,7 +168,7 @@ export default function AboutUs() {
         {aboutUsData[23]}
       </div>
       {/* banner */}
-      <Banner src={getImageUrl(categoryImages[1])} />
+      <Banner src={buildImageSrc(categoryImages[1])} />
 
       <div className="flex justify-center py-15">
         <hr className="w-[250px] h-[1px] bg-primary border-none" />
