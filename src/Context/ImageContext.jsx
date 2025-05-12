@@ -46,17 +46,17 @@ export const ImageProvider = ({ children }) => {
         );
         setAllImages(data.images);
 
-        // // ✅ โหลดรูปทุกภาพให้เสร็จก่อน
-        // const imageLoadPromises = data.images.map((img) => {
-        //   return new Promise((resolve) => {
-        //     const image = new Image();
-        //     image.src = `https://www.artandalice.co${img.path}?t=${img.mtime}`;
-        //     image.onload = resolve;
-        //     image.onerror = resolve;
-        //   });
-        // });
+        // ✅ โหลดรูปทุกภาพให้เสร็จก่อน
+        const imageLoadPromises = data.images.map((img) => {
+          return new Promise((resolve) => {
+            const image = new Image();
+            image.src = `https://www.artandalice.co${img.path}?t=${img.mtime}`;
+            image.onload = resolve;
+            image.onerror = resolve;
+          });
+        });
 
-        // await Promise.all(imageLoadPromises); // รอทุกภาพโหลดครบ
+        await Promise.all(imageLoadPromises); // รอทุกภาพโหลดครบ
       }
     } catch (error) {
       console.error("Error fetching images:", error);
@@ -90,8 +90,7 @@ export const ImageProvider = ({ children }) => {
         alert("อัปเดตไฟล์สำเร็จ");
         setImage(null); // ล้างไฟล์
 
-        await fetchAllImages(true); // ⬅️ โหลดใหม่ ไม่ใช้ cache
-        return result.filePath;
+        fetchAllImages(true); // ⬅️ โหลดใหม่ ไม่ใช้ cache
       } else {
         alert("เกิดข้อผิดพลาดในการอัปโหลด");
       }
