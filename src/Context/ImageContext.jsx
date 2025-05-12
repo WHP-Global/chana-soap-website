@@ -10,7 +10,8 @@ export const ImageProvider = ({ children }) => {
   const [isImageLoading, setIsImageLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
 
-  const fetchAllImages = async () => {
+  // eslint-disable-next-line no-unused-vars
+  const fetchAllImages = async (forceRefresh = false) => {
     try {
       const cached = JSON.parse(localStorage.getItem("allImagesCache"));
       const now = new Date().getTime();
@@ -23,7 +24,10 @@ export const ImageProvider = ({ children }) => {
         const updatedAt = data.mtime;
 
         const shouldUseCache =
-          cached && cached.images.length > 0 && cached.updatedAt === updatedAt;
+          !forceRefresh &&
+          cached &&
+          cached.images.length > 0 &&
+          cached.updatedAt === updatedAt;
 
         if (shouldUseCache) {
           setAllImages(cached.images);
@@ -86,7 +90,8 @@ export const ImageProvider = ({ children }) => {
         alert("อัปเดตไฟล์สำเร็จ");
         setImage(null); // ล้างไฟล์
 
-        fetchAllImages();
+        await fetchAllImages(true); // ⬅️ โหลดใหม่ ไม่ใช้ cache
+        return result.filePath;
       } else {
         alert("เกิดข้อผิดพลาดในการอัปโหลด");
       }
@@ -101,16 +106,11 @@ export const ImageProvider = ({ children }) => {
     fetchAllImages();
   }, []); // เรียกแค่ครั้งเดียวตอน component โหลด
 
-  const updateImage = (newImage) => {
-    setImage(newImage);
-  };
-
   return (
     <ImageContext.Provider
       value={{
         allImages,
         fetchAllImages,
-        updateImage,
         image,
         setImage,
         isImageLoading,

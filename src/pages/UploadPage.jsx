@@ -48,8 +48,6 @@ export default function UploadPage() {
     return allImages.filter((imgUrl) => imgUrl.path.includes(folder));
   };
 
-  console.log("filterImagesByFolder", allImages);
-
   const folderNav = (folder) => {
     return (
       <button
