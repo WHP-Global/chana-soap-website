@@ -89,7 +89,7 @@ export const ImageProvider = ({ children }) => {
       if (result.success) {
         setImage(null); // ล้างไฟล์
         fetchAllImages(true); // ⬅️ โหลดใหม่ ไม่ใช้ cache
-        alert("อัปเดตไฟล์สำเร็จ");
+        // alert("อัปเดตไฟล์สำเร็จ");
       } else {
         alert("เกิดข้อผิดพลาดในการอัปโหลด");
       }
