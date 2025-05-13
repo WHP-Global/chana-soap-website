@@ -34,7 +34,8 @@ export default function EmpoweringFarmerProject() {
         <img
           src={buildImageSrc(categoryImages[4])}
           alt={categoryImages[4]}
-          className="h-full w-full object-cover"
+          className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
       {/*  Turning Food Waste into Fertilizer, Supporting Farmers, and Creating Natural Soap */}

@@ -29,6 +29,7 @@ export default function ActiveRefresh() {
           src={buildImageSrc(categoryImages[5])}
           alt={categoryImages[5]}
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
 

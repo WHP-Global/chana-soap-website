@@ -20,6 +20,7 @@ export default function Projects() {
             src={buildImageSrc(categoryImages[6])}
             alt={categoryImages[6]}
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
       </div>
@@ -44,6 +45,7 @@ export default function Projects() {
             src={buildImageSrc(categoryImages[2])}
             alt={categoryImages[2]}
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
       </div>
@@ -142,6 +144,7 @@ export default function Projects() {
             src={buildImageSrc(categoryImages[3])}
             alt={categoryImages[3]}
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
       </div>

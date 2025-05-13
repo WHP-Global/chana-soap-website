@@ -37,6 +37,7 @@ export default function Products() {
           src={buildImageSrc(categoryImages[12])}
           alt={categoryImages[12]}
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
 

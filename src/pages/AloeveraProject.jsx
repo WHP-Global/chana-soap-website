@@ -30,7 +30,8 @@ export default function AloeveraProject() {
         <img
           src={buildImageSrc(categoryImages[8])}
           alt={categoryImages[8]}
-          className="h-full w-full object-cover"
+          className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
       <div className="font-color-primary max-w-6xl mx-auto">

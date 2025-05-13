@@ -64,7 +64,8 @@ export default function AboutUs() {
         <img
           src={buildImageSrc(categoryImages[3])}
           alt={categoryImages[3]}
-          className="h-full w-full object-cover"
+          className="w-full h-full object-cover"
+          loading="lazy"
         />
 
         {/* ด้านล่างมืดลงเพื่อให้อ่านข้อความได้ชัด */}

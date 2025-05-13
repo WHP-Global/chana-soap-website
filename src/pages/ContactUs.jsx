@@ -40,6 +40,7 @@ export default function ContactUs() {
           src={buildImageSrc(categoryImages[0])}
           alt={categoryImages[0]}
           className="w-full h-full object-cover"
+          loading="lazy"
         />
         <div id="where-to-buy"></div>
       </div>

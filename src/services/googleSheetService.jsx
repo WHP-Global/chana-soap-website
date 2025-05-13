@@ -10,8 +10,6 @@ export const GoogleSheetsProvider = ({ children }) => {
   const sheetNames = [
     "menu bar",
     "about us",
-    "inspiration",
-    "contact",
     "products",
     "gentle glow",
     "active fresh",

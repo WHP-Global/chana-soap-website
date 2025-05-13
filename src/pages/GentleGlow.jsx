@@ -31,6 +31,7 @@ export default function GentleGlow() {
           src={buildImageSrc(categoryImages[5])}
           alt={categoryImages[5]}
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
 
@@ -272,6 +273,7 @@ export default function GentleGlow() {
             src={buildImageSrc(categoryImages[0])}
             alt={categoryImages[0]}
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
       </div>
