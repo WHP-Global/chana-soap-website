@@ -34,8 +34,8 @@ export default function Products() {
     <div className="w-full text-primary">
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img
-          src={buildImageSrc(categoryImages[14])}
-          alt={categoryImages[14]}
+          src={buildImageSrc(categoryImages[12])}
+          alt={categoryImages[12]}
           className="w-full h-full object-cover"
         />
       </div>
@@ -73,8 +73,8 @@ export default function Products() {
       {/* Ingredients */}
       <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
         <img
-          src={buildImageSrc(categoryImages[13])}
-          alt={categoryImages[13]}
+          src={buildImageSrc(categoryImages[8])}
+          alt={categoryImages[8]}
           className="w-full max-w-xs rounded-lg shadow-lg max-h-[440px]"
         />
         <div className=" bg-secondary p-4 sm:p-6  rounded-lg shadow-md w-full sm:max-w-[65%] lg:max-w-[45%] text-balance sm:text-wrap">
@@ -102,6 +102,11 @@ export default function Products() {
       {/* Gentle Glow image */}
       <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center py-3 sm:py-12 rounded-lg -mt-4 ">
         <img
+          src={buildImageSrc(categoryImages[9])}
+          alt={categoryImages[9]}
+          className="w-1/3 max-w-xs rounded-lg"
+        />
+        <img
           src={buildImageSrc(categoryImages[10])}
           alt={categoryImages[10]}
           className="w-1/3 max-w-xs rounded-lg"
@@ -109,11 +114,6 @@ export default function Products() {
         <img
           src={buildImageSrc(categoryImages[11])}
           alt={categoryImages[11]}
-          className="w-1/3 max-w-xs rounded-lg"
-        />
-        <img
-          src={buildImageSrc(categoryImages[12])}
-          alt={categoryImages[12]}
           className="w-1/3 max-w-xs rounded-lg"
         />
       </div>
@@ -154,8 +154,8 @@ export default function Products() {
       {productsData[34] !== "isHaveData" && (
         <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
           <img
-            src={buildImageSrc(categoryImages[0])}
-            alt={categoryImages[0]}
+            src={buildImageSrc(categoryImages[6])}
+            alt={categoryImages[6]}
             className="w-full max-w-xs rounded-lg shadow-lg max-h-[440px]"
           />
 
@@ -210,7 +210,7 @@ export default function Products() {
         </div>
       </div>
       <div id="why-Art-Alice"></div>
-      <Banner src={buildImageSrc(categoryImages[5])} />
+      <Banner src={buildImageSrc(categoryImages[4])} />
 
       {/* Why Art & Alice */}
       <div className="max-w-4xl mx-auto text-center py-12 px-6 -mt-6 font-color-primary">
@@ -304,7 +304,7 @@ export default function Products() {
                   text: productsData[21],
                   icon: (
                     <img
-                      src={buildImageSrc(categoryImages[16])}
+                      src={buildImageSrc(categoryImages[14])}
                       alt="Icon"
                       className="w-[70px] h-[70px]"
                     />
@@ -314,7 +314,7 @@ export default function Products() {
                   text: productsData[22],
                   icon: (
                     <img
-                      src={buildImageSrc(categoryImages[17])}
+                      src={buildImageSrc(categoryImages[15])}
                       alt="Icon"
                       className="w-[70px] h-[70px]"
                     />
@@ -324,7 +324,7 @@ export default function Products() {
                   text: productsData[23],
                   icon: (
                     <img
-                      src={buildImageSrc(categoryImages[9])}
+                      src={buildImageSrc(categoryImages[7])}
                       alt="Icon"
                       className="w-[70px] h-[70px]"
                     />
@@ -334,7 +334,7 @@ export default function Products() {
                   text: productsData[24],
                   icon: (
                     <img
-                      src={buildImageSrc(categoryImages[18])}
+                      src={buildImageSrc(categoryImages[16])}
                       alt="Icon"
                       className="w-[70px] h-[70px]"
                     />
@@ -344,7 +344,7 @@ export default function Products() {
                   text: productsData[25],
                   icon: (
                     <img
-                      src={buildImageSrc(categoryImages[15])}
+                      src={buildImageSrc(categoryImages[13])}
                       alt="Icon"
                       className="w-[70px] h-[70px]"
                     />
@@ -367,8 +367,8 @@ export default function Products() {
           {/* Right side image */}
           <div className="h-full hidden sm:block w-[100%]">
             <img
-              src={buildImageSrc(categoryImages[6])}
-              alt={categoryImages[6]}
+              src={buildImageSrc(categoryImages[5])}
+              alt={categoryImages[5]}
               className="w-full h-full object-center shadow-md rounded-l-lg md:rounded-r-lg md:rounded-l-none"
             />
           </div>

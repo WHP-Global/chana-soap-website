@@ -149,7 +149,6 @@ export default function UploadPage() {
               <div className="mt-2 text-sm text-gray-500 break-words overflow-hidden max-h-12">
                 {imgUrl.path}
               </div>
-
               {/* แสดงชื่อไฟล์ */}
             </div>
           ))}

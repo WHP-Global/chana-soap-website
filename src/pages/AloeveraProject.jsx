@@ -14,6 +14,7 @@ export default function AloeveraProject() {
     image.path.includes("AloeVera")
   );
 
+  console.log("categoryImages", categoryImages);
   const imgSlider = [
     buildImageSrc(categoryImages[0]),
     buildImageSrc(categoryImages[1]),
@@ -28,8 +29,8 @@ export default function AloeveraProject() {
       {/* banner */}
       <div className="w-full h-[450px] sm:h-[500px] lg:h-[678px] flex justify-center items-center">
         <img
-          src={buildImageSrc(categoryImages[10])}
-          alt={categoryImages[10]}
+          src={buildImageSrc(categoryImages[8])}
+          alt={categoryImages[8]}
           className="h-full w-full object-cover"
         />
       </div>
