@@ -14,7 +14,6 @@ export default function AloeveraProject() {
     image.path.includes("AloeVera")
   );
 
-  console.log("categoryImages", categoryImages);
   const imgSlider = [
     buildImageSrc(categoryImages[0]),
     buildImageSrc(categoryImages[1]),
