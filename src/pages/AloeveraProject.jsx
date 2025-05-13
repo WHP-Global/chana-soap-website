@@ -60,7 +60,7 @@ export default function AloeveraProject() {
 
       {/* Integrating Learning with Sustainable Economic Growth */}
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 text-justify">
+        <div className="flex flex-col gap-6 font-body sm:gap-10 mx-5 sm:mx-8 md:mx-10 lg:mx-16 my-3 ">
           <div className="font-subtitle">
             {aloeVeraProjectData[6]}
             <div className="flex flex-col gap-6 sm:gap-10 font-body indent-5 sm:indent-8 sm:my-4 text-justify">
@@ -96,7 +96,7 @@ export default function AloeveraProject() {
       </div>
 
       <div className="font-color-primary max-w-6xl mx-auto">
-        <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4  text-justify">
+        <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 indent-5 sm:indent-8 sm:my-4">
           <div className="mt-2 sm:mt-4 mb-0 font-subtitle text-center indent-0 ">
             {aloeVeraProjectData[19]}
           </div>

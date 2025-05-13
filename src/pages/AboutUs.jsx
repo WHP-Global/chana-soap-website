@@ -134,24 +134,24 @@ export default function AboutUs() {
       {/* content */}
       <div className="font-color-primary max-w-6xl mx-auto">
         <div className="py-5 font-title text-center">{aboutUsData[16]}</div>
-        <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16 text-justify">
+        <div className="flex flex-col gap-6 sm:gap-10 font-body mt-0 sm:mt-5 mx-5 sm:mx-8 md:mx-10 lg:mx-16">
           <div className="font-subtitle">
             {aboutUsData[17]}
-            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
               <BoldTextBySlash text={aboutUsData[18]} />
             </div>
           </div>
 
           <div className="font-subtitle">
             {aboutUsData[19]}
-            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
               <BoldTextBySlash text={aboutUsData[20]} />
             </div>
           </div>
 
           <div className="font-subtitle">
             {aboutUsData[21]}
-            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8">
+            <div className="font-body mt-2 sm:mt-3 indent-5 sm:indent-8 text-justify">
               <BoldTextBySlash text={aboutUsData[22]} />
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="text-center font-caption my-2 sm:my-3 indent-0 text-balance">
+      <div className="text-center font-caption -1 my-2 sm:my-3 indent-0 text-balance font-color-primary ">
         {aboutUsData[23]}
       </div>
       {/* banner */}

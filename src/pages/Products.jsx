@@ -72,7 +72,7 @@ export default function Products() {
         </div>
       </div>
       {/* Ingredients */}
-      <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
+      <div className="font-color-primary w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
         <img
           src={buildImageSrc(categoryImages[8])}
           alt={categoryImages[8]}
@@ -134,7 +134,7 @@ export default function Products() {
       </div>
       {/* Coming soon */}
       {productsData[34] === "isHaveData" && (
-        <div className="flex w-full justify-center">
+        <div className="flex w-full justify-center px-2">
           <div className="relative w-xs max-h-[440px] flex justify-center  items-center">
             <img
               src={buildImageSrc(categoryImages[0])}
@@ -153,7 +153,7 @@ export default function Products() {
 
       {/* Ingredients */}
       {productsData[34] !== "isHaveData" && (
-        <div className="w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
+        <div className="font-color-primary w-full justify-center px-5 sm:px-0 mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 items-center py-6 -mt-4">
           <img
             src={buildImageSrc(categoryImages[6])}
             alt={categoryImages[6]}

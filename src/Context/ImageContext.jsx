@@ -13,50 +13,6 @@ export const ImageProvider = ({ children }) => {
   // eslint-disable-next-line no-unused-vars
   const fetchAllImages = async () => {
     try {
-      // const cached = JSON.parse(localStorage.getItem("allImagesCache"));
-      // const now = new Date().getTime();
-
-      // const response = await fetch("https://www.artandalice.co/images");
-      // // const response = await fetch("http://localhost:8888/images");
-      // const data = await response.json();
-
-      // if (data.success) {
-      //   const updatedAt = data.mtime;
-
-      //   const shouldUseCache =
-      //     !forceRefresh &&
-      //     cached &&
-      //     cached.images.length > 0 &&
-      //     cached.updatedAt === updatedAt;
-
-      //   if (shouldUseCache) {
-      //     setAllImages(cached.images);
-      //     setIsImageLoading(false);
-      //     return;
-      //   }
-
-      //   // อัพเดต localStorage และใช้ข้อมูลใหม่
-      //   localStorage.setItem(
-      //     "allImagesCache",
-      //     JSON.stringify({
-      //       updatedAt,
-      //       images: data.images,
-      //       timestamp: now, // บันทึกเวลาใน cache
-      //     })
-      //   );
-      //   setAllImages(data.images);
-
-      //   // ✅ โหลดรูปทุกภาพให้เสร็จก่อน
-      //   const imageLoadPromises = data.images.map((img) => {
-      //     return new Promise((resolve) => {
-      //       const image = new Image();
-      //       image.src = `https://www.artandalice.co${img.path}?v=${img.mtime}`;
-      //       image.onload = resolve;
-      //       image.onerror = resolve;
-      //     });
-      //   });
-
-      //   await Promise.all(imageLoadPromises); // รอทุกภาพโหลดครบ
 
       const response = await fetch("https://www.artandalice.co/images");
       const data = await response.json();

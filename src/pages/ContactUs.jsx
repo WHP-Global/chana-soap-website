@@ -305,7 +305,7 @@ export default function ContactUs() {
         <FAQ question={contactUsData[29]} answer={contactUsData[30]} />
         <FAQ question={contactUsData[31]} answer={contactUsData[32]} />
         <FAQ question={contactUsData[33]} answer={contactUsData[34]} />
-        <div className="sm:mt-4">
+        <div className="sm:mt-4 px-2">
           <BoldTextBySlash text={contactUsData[35]} />
         </div>
       </div>
